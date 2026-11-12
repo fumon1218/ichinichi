@@ -124,6 +124,14 @@ ruby rt{font-size:.5em;color:var(--sub);font-family:var(--f-jp);user-select:none
 .k b{font-family:var(--f-jp);font-size:clamp(20px,6vw,30px);font-weight:500;line-height:1.1}
 .k i{font-style:normal;font-size:11px;color:var(--sub)}
 .k.empty{visibility:hidden}
+/* 플래시카드 */
+.fcbox{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:14px;display:flex;flex-direction:column;gap:12px}
+.fr{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:start}
+.fr>b{font-size:12.5px;color:var(--sub);font-weight:500;padding-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;min-width:0}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px;font-size:13.5px;min-height:34px;color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ai);border-color:var(--ai);color:var(--on-ai);font-weight:700}
+[data-flipcard]{cursor:pointer}
 /* 한자 */
 .k.kj b{font-family:var(--f-min);font-weight:600}
 .kjl{font-family:var(--f-jp);font-size:15px;font-weight:700;color:var(--ai);background:var(--ai-soft);border-radius:4px;padding:1px 6px;margin-right:4px;min-height:24px}
@@ -174,7 +182,7 @@ nav .badge{position:absolute;top:6px;left:calc(50% + 10px);background:var(--shu)
   <button data-go="home"><b>今</b>오늘</button>
   <button data-go="kana"><b>あ</b>가나</button>
   <button data-go="kanji"><b>漢</b>한자</button>
-  <button data-go="review"><b>復</b>복습<span class="badge" id="due" hidden></span></button>
+  <button data-go="review"><b>札</b>카드<span class="badge" id="due" hidden></span></button>
   <button data-go="travel"><b>旅</b>여행</button>
   <button data-go="options"><b>設</b>설정</button>
 </div></nav>
@@ -293,16 +301,64 @@ function vDay(){
 }
 /* 카드 외우기 */
 function startCards(keys,kind){sess={kind:kind||'cards',q:keys,i:0,flip:false,ok:0,no:0};render()}
+function isK(k){return k.slice(0,2)==='k:'}
+function cardSay(k){if(isK(k)){var w=(KW[k.slice(2)]||[])[0];if(w){var v0=LV[w[0]][w[1]].vocab[w[2]];say(v0.r.replace(/[〜∕].*$/,'')||v0.w)}}else{var v=item(k);say(v.r.replace(/[〜∕].*$/,'')||v.w)}}
 function vCards(){
-  var s=sess;if(s.i>=s.q.length){var t='<div class="card"><div class="stamp jp">済</div><p class="q">'+s.q.length+'개를 살펴봤습니다</p><p class="meta">알아요 '+s.ok+' · 다시 볼래요 '+s.no+'</p><p class="meta">다시 볼 낱말은 복습에 담겼습니다.</p><button class="btn" data-endcards="1">닫기</button></div>';return t}
-  var v=item(s.q[s.i]);
-  var h='<p class="prog">'+(s.i+1)+' / '+s.q.length+'</p><div class="card"><div class="big">'+(s.flip?wruby(v):esc(v.w))+'</div>';
-  if(s.flip){h+='<div class="kread">['+esc(v.k)+']</div><div class="q">'+esc(v.m)+'</div>'+(v.h?'<div class="hun meta">'+esc(v.h)+'</div>':'')+'<div class="jp" style="line-height:2.1">'+ruby(v.e)+'</div><div class="meta">'+esc(v.t)+'</div>'}
-  h+=spk(v.r.replace(/[〜∕].*$/,'')||v.w)+'</div>';
-  h+=s.flip?'<div class="two"><button class="btn no" data-card="no">다시 볼래요</button><button class="btn yes" data-card="ok">알아요</button></div>':'<button class="btn" data-card="flip">뜻 보기</button>';
+  var s=sess;if(s.i>=s.q.length){var t='<div class="card"><div class="stamp jp">済</div><p class="q">'+s.q.length+'장을 살펴봤습니다</p><p class="meta">알아요 '+s.ok+' · 다시 볼래요 '+s.no+'</p>'+(s.no?'<p class="meta">다시 볼 낱말은 복습에 담겼습니다.</p>':'')+'<div class="row">'+(s.wrong&&s.wrong.length?'<button class="btn ghost" data-again="1">틀린 '+s.wrong.length+'장만 다시</button>':'')+'<button class="btn" data-endcards="1">닫기</button></div></div>';return t}
+  var k=s.q[s.i],h='<p class="prog">'+(s.i+1)+' / '+s.q.length+'</p>';
+  if(isK(k)){var c=k.slice(2),K=KJ[c];
+    h+='<div class="card" data-flipcard="1"><div class="big jp" style="font-family:var(--f-min);font-size:84px">'+c+'</div>';
+    if(s.flip){h+='<div class="q">'+esc(K[0])+'</div><div class="jp meta">'+(K[1]?'음 '+esc(K[1]):'')+(K[1]&&K[2]?' · ':'')+(K[2]?'훈 '+esc(K[2]):'')+'</div>'+(KW[c]||[]).slice(0,3).map(function(w){var v=LV[w[0]][w[1]].vocab[w[2]];return '<div class="jp" style="line-height:2">'+wruby(v)+' <span class="meta">'+esc(v.m)+'</span></div>'}).join('')}
+    else h+='<p class="meta">카드를 누르면 뒤집힙니다</p>';
+    h+='</div>';
+  }else{var v=item(k),rev=s.dir==='m2w';
+    h+='<div class="card" data-flipcard="1">';
+    if(rev&&!s.flip){h+='<div class="q" style="font-size:26px">'+esc(v.m)+'</div><span class="pos">'+esc(v.p)+'</span><p class="meta">일본어로 떠올려 보십시오 · 카드를 누르면 뒤집힙니다</p>'}
+    else{h+='<div class="big">'+(s.flip?wruby(v):esc(v.w))+'</div>';
+      if(s.flip){h+='<div class="kread">['+esc(v.k)+']</div><div class="q">'+esc(v.m)+'</div>'+hunLine(v).replace('class="hun"','class="hun meta"')+'<div class="jp" style="line-height:2.1">'+ruby(v.e)+'</div><div class="meta">'+esc(v.t)+'</div>'}
+      else h+='<p class="meta">카드를 누르면 뒤집힙니다</p>';
+      if(!rev||s.flip)h+=spk(v.r.replace(/[〜∕].*$/,'')||v.w)}
+    h+='</div>';
+  }
+  h+=s.flip?'<div class="two"><button class="btn no" data-card="no">다시 볼래요</button><button class="btn yes" data-card="ok">알아요</button></div>':'<button class="btn" data-card="flip">뒤집기</button>';
   h+='<button class="back" data-endcards="1">그만하기</button>';
   return h;
 }
+/* 플래시카드: 급수·회차·종류를 골라 바로 암기하거나 문제를 풉니다 */
+if(!S.fc)S.fc={type:'v',lv:'N5',day:0,dir:'w2m',n:20};
+function fcKeys(){var f=S.fc,L=LV[f.lv],ks=[];
+  if(f.type==='k'){KG[f.lv].forEach(function(g,di){if(!f.day||f.day===di+1)g.forEach(function(c){ks.push('k:'+c)})})}
+  else L.forEach(function(D){if(!f.day||f.day===D.day)D.vocab.forEach(function(v,i){ks.push(id(f.lv,D.day,i))})});
+  return ks}
+function fcPick(){var ks=fcKeys();if(!S.fc.day||S.fc.n)ks=shuffle(ks);return S.fc.n?ks.slice(0,S.fc.n):ks}
+function fcQuiz(){var f=S.fc,keys=shuffle(fcKeys()).slice(0,f.n||20),qs=[];
+  if(f.type==='k'){var allk=[].concat.apply([],KG[f.lv]);
+    keys.forEach(function(k,n){var c=k.slice(2),o=shuffle([c].concat(shuffle(allk.filter(function(x){return KJ[x][0]!==KJ[c][0]})).slice(0,3)));
+      if(n%2===0)qs.push({ask:'<span class="big jp" style="font-size:64px;font-family:var(--f-min)">'+c+'</span>',sub:'뜻과 음을 고르십시오',opts:o.map(function(x){return esc(KJ[x][0])}),ans:o.indexOf(c),after:'<span class="jp">'+kjInfo(c)+'</span>'});
+      else qs.push({ask:'<span class="q">'+esc(KJ[c][0])+'</span>',sub:'알맞은 한자를 고르십시오',opts:o.map(function(x){return '<span class="jp" style="font-size:26px;font-family:var(--f-min)">'+x+'</span>'}),ans:o.indexOf(c),after:'<span class="jp">'+c+' · '+kjInfo(c)+'</span>'})})}
+  else{var allv=[];LV[f.lv].forEach(function(D){D.vocab.forEach(function(v){allv.push(v)})});
+    keys.forEach(function(k,n){var v=item(k),o=shuffle([v].concat(shuffle(allv.filter(function(x){return x!==v&&x.m!==v.m&&x.w!==v.w})).slice(0,3)));
+      var w2m=f.dir==='w2m'?true:f.dir==='m2w'?false:n%2===0;
+      if(w2m)qs.push({key:k,say:v.r,ask:'<span class="big" style="font-size:36px">'+wruby(v)+'</span>',sub:'뜻을 고르십시오',opts:o.map(function(x){return esc(x.m)}),ans:o.indexOf(v),after:'<span class="jp">'+ruby(v.e)+'</span><br>'+esc(v.t)});
+      else qs.push({key:k,say:v.r,ask:'<span class="q">'+esc(v.m)+'</span>',sub:'알맞은 낱말을 고르십시오',opts:o.map(function(x){return '<span class="jp" style="font-size:18px">'+esc(x.w)+'</span>'}),ans:o.indexOf(v),after:'<span class="jp">'+wruby(v)+'</span> ['+esc(v.k)+']'})})}
+  return qs}
+function vFQ(){var s=sess;
+  if(s.i>=s.q.length){var pct=Math.round(s.ok/s.q.length*100);return '<div class="card">'+(pct>=80?'<div class="stamp jp">合格</div>':'')+'<p class="q">'+s.q.length+'문제 중 '+s.ok+'개 정답</p><p class="meta">정답률 '+pct+'%'+(S.fc.type==='v'&&s.ok<s.q.length?' · 틀린 낱말은 복습에 담겼습니다':'')+'</p><div class="row"><button class="btn ghost" data-fc="quiz">새 문제로 다시</button><button class="btn" data-endcards="1">닫기</button></div></div>'}
+  var q=s.q[s.i],h='<p class="prog">'+(s.i+1)+' / '+s.q.length+' · 정답 '+s.ok+'</p><div class="card" style="min-height:150px">'+q.ask+'<p class="meta">'+(s.pick==null?q.sub:q.after)+'</p></div><div class="'+(S.fc.type==='k'?'two':'opts')+'">';
+  q.opts.forEach(function(o,j){var c=s.pick==null?'':(j===q.ans?' right':(j===s.pick?' wrong':''));h+='<button class="opt'+c+'"'+(S.fc.type==='k'?' style="text-align:center"':'')+' data-pick="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+o+'</button>'});
+  h+='</div>'+(s.pick!=null?'<button class="btn" data-fc="next">'+(s.i+1<s.q.length?'다음':'결과 보기')+'</button>':'')+'<button class="back" data-endcards="1">그만하기</button>';
+  return h}
+function vFcSetup(){var f=S.fc,L=LV[f.lv],cnt=fcKeys().length;
+  function seg(key,list){return '<div class="chips">'+list.map(function(x){return '<button class="chip" data-fcset="'+key+':'+x[0]+'" aria-pressed="'+(String(f[key])===String(x[0]))+'">'+x[1]+'</button>'}).join('')+'</div>'}
+  var h='<section class="sec"><h3>플래시카드 <span>고른 범위 '+cnt+'장</span></h3><div class="fcbox">';
+  h+='<div class="fr"><b>종류</b>'+seg('type',[['v','낱말'],['k','한자']])+'</div>';
+  h+='<div class="fr"><b>급수</b>'+seg('lv',[['N5','N5'],['N4','N4']])+'</div>';
+  h+='<div class="fr"><b>범위</b>'+seg('day',[[0,'전체']].concat(L.map(function(D){return [D.day,D.day+'회']})))+'</div>';
+  if(f.type==='v')h+='<div class="fr"><b>방향</b>'+seg('dir',[['w2m','일본어 → 뜻'],['m2w','뜻 → 일본어'],['mix','섞어서']])+'</div>';
+  h+='<div class="fr"><b>장수</b>'+seg('n',[[10,'10장'],[20,'20장'],[50,'50장'],[0,'전부']])+'</div>';
+  if(f.day)h+='<p class="meta">'+f.lv+' 제 '+f.day+' 회 · '+esc(L[f.day-1].theme)+'</p>';
+  h+='<div class="two"><button class="btn" data-fc="memo">암기 시작</button><button class="btn ghost" data-fc="quiz">문제 풀기</button></div></div></section>';
+  return h}
 /* 확인 문제: 이 회차 낱말·문형에서 10문제 */
 function makeQuiz(D,lv){
   var qs=[],vs=shuffle(D.vocab.map(function(v,i){return i})).slice(0,8);
@@ -345,7 +401,9 @@ function vKana(){
 /* 복습 */
 function vReview(){
   var h=head(),due=dueList(),total=Object.keys(S.srs).length;
-  if(sess&&sess.kind==='review')return h+vCards();
+  if(sess&&(sess.kind==='review'||sess.kind==='fc'))return h+vCards();
+  if(sess&&sess.kind==='fq')return h+vFQ();
+  h+=vFcSetup();
   h+='<section class="sheet"><div class="bind"></div><div class="in"><div class="daynum jp">'+due.length+'<small>오늘 복습</small></div><div class="txt"><div class="eyebrow">간격 반복</div><h2>'+(due.length?'틀렸던 낱말을 다시 봅니다':'오늘 복습할 낱말이 없습니다')+'</h2><p class="meta">틀린 낱말은 1일 뒤에 다시 나오고, 맞힐 때마다 3일 · 7일 · 14일로 간격이 늘어납니다. 복습함에 '+total+'개가 있습니다.</p>'+(due.length?'<div class="row" style="margin-top:6px"><button class="btn" data-review="1">복습 시작</button></div>':'')+'</div></div></section>';
   var keys=Object.keys(S.srs).filter(item).sort(function(a,b){return S.srs[a].due-S.srs[b].due});
   if(keys.length){h+='<section class="sec"><h3>복습함 <span>다음 복습까지</span></h3><div class="vlist">';var n=dayNo(today());
@@ -490,8 +548,14 @@ function vTravel(){
 }
 /* ---------- 누르기 ---------- */
 document.addEventListener('click',function(e){
-  var t=e.target.closest('button');if(!t)return;var d=t.dataset;
+  var t=e.target.closest('button');
+  if(!t){var fl=e.target.closest('[data-flipcard]');if(fl&&sess&&!sess.flip&&sess.q){sess.flip=true;cardSay(sess.q[sess.i]);render()}return}
+  var d=t.dataset;
+  if(d.fcset){var kv=d.fcset.split(':'),val=kv[1];if(kv[0]==='day'||kv[0]==='n')val=+val;S.fc[kv[0]]=val;if(kv[0]==='lv'||kv[0]==='type'){if(S.fc.day>LV[S.fc.lv].length)S.fc.day=0}save();render();return}
+  if(d.fc){if(d.fc==='memo'){var ks=fcPick();if(ks.length){sess={kind:'fc',q:ks,i:0,flip:false,ok:0,no:0,wrong:[],dir:S.fc.dir==='mix'?'w2m':S.fc.dir};touch()}}else if(d.fc==='quiz'){var qq=fcQuiz();if(qq.length){sess={kind:'fq',q:qq,i:0,ok:0,pick:null};touch()}}else if(d.fc==='next'){sess.i++;sess.pick=null}render();window.scrollTo(0,0);return}
+  if(d.again){var w=sess.wrong.slice();sess={kind:sess.kind,q:shuffle(w),i:0,flip:false,ok:0,no:0,wrong:[],dir:sess.dir};render();return}
   if(d.say!=null){say(d.say);return}
+  if(d.kj&&sess&&(sess.kind==='fc'||sess.kind==='review'||sess.kind==='cards')){return}
   if(d.kj){var fromOut=view!=='kanji';if(fromOut)kback={v:view,a:arg,tab:tab,y:window.scrollY};ksel=d.kj;if(fromOut){view='kanji';sess=null;render();try{history.replaceState(null,'','#kanji')}catch(e){}}else render();window.scrollTo(0,0);return}
   if(d.kjback){var b=kback;ksel=null;kback=null;if(b){go(b.v,b.a);tab=b.tab;render();window.scrollTo(0,b.y)}else render();return}
   if(d.klv){klv=d.klv;render();return}
@@ -502,7 +566,7 @@ document.addEventListener('click',function(e){
   if(d.tab){tab=d.tab;sess=null;render();return}
   if(d.cards){var C0=cur(),D=C0.D;startCards(D.vocab.map(function(v,i){return id(C0.lv,D.day,i)}),'cards');touch();return}
   if(d.review){startCards(shuffle(dueList()),'review');touch();return}
-  if(d.card){var s=sess,k=s.q[s.i];if(d.card==='flip'){s.flip=true;var v=item(k);say(v.r.replace(/[〜∕].*$/,'')||v.w)}else{if(d.card==='ok'){s.ok++;if(s.kind==='review')hit(k)}else{s.no++;miss(k)}s.i++;s.flip=false}render();return}
+  if(d.card){var s=sess,k=s.q[s.i];if(d.card==='flip'){s.flip=true;cardSay(k)}else{if(d.card==='ok'){s.ok++;if(s.kind==='review')hit(k)}else{s.no++;(s.wrong=s.wrong||[]).push(k);if(!isK(k))miss(k)}s.i++;s.flip=false}render();return}
   if(d.endcards){sess=null;render();return}
   if(d.quiz){var C2=cur(),D2=C2.D;if(d.quiz==='start'){sess={kind:'quiz',q:makeQuiz(D2,C2.lv),i:0,ok:0,pick:null};touch()}else{sess.i++;sess.pick=null;if(sess.i>=sess.q.length&&sess.ok>=8){S.done[dk(C2.lv,D2.day)]=today();save()}}render();return}
   if(d.pick!=null){var q=sess.q[sess.i];sess.pick=+d.pick;if(sess.pick===q.ans){sess.ok++}else if(q.key){miss(q.key)}if(q.say)say(q.say);render();return}
