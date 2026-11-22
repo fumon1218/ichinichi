@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>이찌니찌 - 하루 한 장 일본어</title>
-<meta name="description" content="하루 한 장씩 익히는 일본어. 가나, JLPT N5·N4 어휘·문형·독해, 복습, 오사카 여행 회화.">
+<meta name="description" content="하루 한 장씩 익히는 일본어. 그림 낱말·그림 동사·급수별 여행 회화 이야기. 가나, JLPT N5·N4 어휘·문형·독해, 복습, 오사카 여행 회화.">
 <meta name="theme-color" content="#23466e">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
@@ -270,6 +270,79 @@ nav button{padding:8px 4px 10px;display:flex;flex-direction:column;align-items:c
 nav button b{font-family:var(--f-min);font-size:19px;line-height:1.1;font-weight:600}
 nav button[aria-current="page"]{color:var(--ai)}
 nav .badge{position:absolute;top:6px;left:calc(50% + 10px);background:var(--shu);color:#fff;font-size:10px;border-radius:9px;padding:0 5px;min-width:16px;line-height:16px;font-variant-numeric:tabular-nums}
+/* 그림 · 이야기 */
+.pico{display:block;fill:none;stroke:#1b2230;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;background:#fff;border-radius:6px}
+.pico .thin{stroke-width:2}.pico .f{fill:#1b2230;stroke:none}.pico .hl{stroke:#c8402f;stroke-dasharray:5 4;stroke-width:2.5}.pico .hl0{stroke:#c8402f}
+.pico text{fill:#1b2230;stroke:none;font-family:var(--f-jp);font-weight:700}
+.pico.big{width:min(220px,60vw);height:min(220px,60vw);border:1px solid var(--line)}
+.pico.sm{width:44px;height:44px;flex:none;border:1px solid var(--line)}
+.pico.xs{width:26px;height:26px;display:inline-block;border-radius:3px}
+.pbar{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;border-bottom:1px dashed var(--line);scrollbar-width:none}.pbar::-webkit-scrollbar{display:none}.pbar .chip{flex:none}
+.ph{font-size:20px;font-weight:700}
+.ptiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
+.ptile{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.ptile .pico{width:72px;height:72px}.ptile small{color:var(--sub);font-size:12px}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:8px}
+.pcard{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 6px 10px;display:flex;flex-direction:column;align-items:center;gap:1px;text-align:center;min-width:0}
+.pcard .pico{width:84px;height:84px;margin-bottom:4px}
+.pw{font-size:17px;font-weight:500;line-height:1.5;overflow-wrap:anywhere}
+.pr{font-size:12px;color:var(--sub)}.pkr{font-size:12px;color:var(--sub)}.nok .pkr{display:none}.pko{font-size:13px}
+.sheetish{background:var(--ai-soft);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:8px;align-items:flex-start;font-size:13.5px}
+.pq{min-height:0;gap:8px;padding:18px 14px}
+.pbig{font-size:19px;text-align:center;justify-content:center}
+.pans{font-size:15px}
+.ppics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ppick{background:var(--paper);border:2px solid var(--line);border-radius:8px;padding:8px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.ppick .pico{width:100%;height:auto;aspect-ratio:1;max-width:160px}
+.ppick.right{border-color:var(--ok);background:var(--ok-soft)}.ppick.wrong{border-color:var(--shu);background:var(--shu-soft)}
+.pairs{display:flex;flex-direction:column;gap:8px}.pairrow{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.lkq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.lkb{border:2px dashed var(--line);border-radius:6px;padding:2px 10px;min-width:64px}.lkb.on{border-style:solid;border-color:var(--ai);background:var(--ai-soft)}
+.ctab{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:10px 12px}.ctab.pop{border-color:var(--ai)}
+.ctab table{width:100%;border-collapse:collapse}.ctab th{text-align:left;font-weight:500;color:var(--sub);font-size:13px;width:80px}.ctab td{padding:4px 0;font-size:17px}.ctab td:last-child{width:44px}
+.slist{display:flex;flex-direction:column;gap:8px}
+.sitem{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 10px;display:flex;gap:12px;align-items:center;text-align:left}
+.sitem .pico{width:56px;height:56px;flex:none}.sitem span{display:flex;flex-direction:column;gap:2px;min-width:0}.sitem b{font-size:17px;font-weight:500}.sitem small{font-size:12px;color:var(--sub)}
+.shead{display:flex;flex-direction:column;gap:2px}
+.lvtag{align-self:flex-start;background:var(--ai);color:var(--on-ai);font-size:12px;font-weight:700;border-radius:4px;padding:1px 8px}
+.slines{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.sline{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-bottom:1px solid var(--line)}.sline:last-child{border-bottom:0}
+.sline.on{background:var(--ai-soft)}
+.stx{flex:1;min-width:0}.stx .jp{font-size:18px;line-height:2;overflow-wrap:anywhere}.sko{font-size:13.5px;color:var(--sub)}
+.spk2{flex:none;font-size:11.5px;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin-top:8px;color:var(--sub);white-space:nowrap}.spk2.me{background:var(--ai);border-color:var(--ai);color:var(--on-ai)}
+.wtab{display:flex;flex-direction:column;background:var(--paper);border:1px solid var(--line);border-radius:6px}
+.wrow{display:grid;grid-template-columns:minmax(90px,1.1fr) minmax(70px,1fr) 2fr 40px;gap:8px;align-items:center;padding:8px 10px;border-bottom:1px solid var(--line);font-size:14px}
+.wrow:last-child{border-bottom:0}.wrow b{font-weight:500;font-size:16px}.wrow .spk{width:34px;height:34px}
+.wrow.two-c{grid-template-columns:1fr 1fr 40px}.wrow.qa{grid-template-columns:1fr 40px}.wrow.qa p{margin:0}
+.kdoks{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:6px}
+.kdok{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:6px;display:flex;flex-direction:column;align-items:center;gap:0;text-align:center}
+button.kdok{border-color:var(--ai)}.kdok b{font-family:var(--f-min);font-size:26px;font-weight:800}.kdok span{font-size:12.5px}.kdok small{font-size:10.5px;color:var(--sub)}
+.sord{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}.sord li{background:var(--ok-soft);border-radius:6px;padding:6px 8px;display:flex;gap:6px;align-items:center}
+.cform{display:flex;flex-direction:column;gap:10px}.cform>div{display:flex;flex-direction:column;gap:4px}.cform b{font-size:13px;color:var(--sub);font-weight:500}
+.order{gap:8px}.ordj{font-size:20px;line-height:2;text-align:center}
+.nseg{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.ns{border-radius:6px;padding:8px 12px;display:flex;flex-direction:column;align-items:center;min-width:90px;border:1px solid var(--line);background:var(--paper)}
+.ns b{font-size:22px;font-variant-numeric:tabular-nums}.ns small{font-size:11px;color:var(--sub)}.ns span{font-size:15px}
+.ns.s0{border-color:var(--ai)}.ns.s1{border-color:var(--ok)}.ns.s2{border-color:var(--shu)}
+.ctrg{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px}
+.ctr{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left}
+.ctr.odd span.jp{color:var(--shu);font-weight:700}.ctr span.jp{font-size:17px}
+.cicons{display:flex;flex-wrap:wrap;gap:2px;max-width:150px}
+.card .cicons{max-width:240px;justify-content:center}
+.scene{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.scene .scn{width:100%;height:auto;border-radius:0}
+.sit{cursor:pointer}.sit .hit{fill:transparent;stroke:none}.sit:hover .hit,.sit:focus .hit{fill:#e4ecf6}.sit.on .hit{fill:#e3f3ec}.sit.bad .hit{fill:#fbe9e6}.sit:focus{outline:none}
+.sfq{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--ai-soft);border-radius:6px;padding:8px 12px}.sfq b{font-size:20px;font-weight:500}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:6px}
+.fk{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:6px 2px;display:flex;flex-direction:column;align-items:center}
+.fk b{font-family:var(--f-min);font-size:26px;font-weight:800;line-height:1.2}.fk small{font-size:11px;color:var(--sub)}
+.fam{position:relative;width:100%;max-width:560px;aspect-ratio:1;margin:0 auto}
+.flines{position:absolute;inset:0;width:100%;height:100%}.flines line{stroke:var(--ai);stroke-width:.4;opacity:.5}
+.fcen{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:28%;aspect-ratio:1;border-radius:50%;background:var(--paper);border:2px solid var(--ai);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.fcen b{font-family:var(--f-min);font-size:clamp(34px,9vw,58px);font-weight:800;line-height:1.1}.fcen small{font-size:12px;color:var(--sub)}.fcen span{font-size:12px;color:var(--ai)}
+.fnode{position:absolute;transform:translate(-50%,-50%);width:27%;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:4px 2px;display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1.25}
+.fnode b{font-size:clamp(14px,3.8vw,20px);font-weight:700}.fnode .fr{font-size:10px;color:var(--sub)}.fnode span{font-size:11px}.fnode small{font-size:11px;color:var(--ai);font-weight:700}
+@media (max-width:440px){.wrow{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:center}.wrow b{flex:1 1 auto}.wrow .spk{margin-left:auto}.wrow>span{flex:1 1 100%;order:3}.wrow.qa>div{flex:1}.wrow.qa .spk{order:2}}
 </style>
 <div class="wrap" id="app"></div>
 <nav aria-label="주 메뉴"><div class="in">
@@ -351,13 +424,13 @@ var KAN=['一','二','三','四','五','六','七','八','九','十','十一','�
 var view='home',arg=null,tab='vocab',sess=null,kset='hira';
 function go(v,a){view=v;arg=a==null?null:a;sess=null;if(v==='day')tab='vocab';try{speechSynthesis.cancel()}catch(e){}render();window.scrollTo(0,0);
   var h=v==='day'?String(a).toLowerCase():v; if(location.hash!=='#'+h){try{location.hash=h}catch(e){}}}
-var ZONE={jp:'jp',talk:'jp',kana:'jp',kanji:'jp',travel:'jp',day:'jp',hanja:'hanja'};
-function zoneBar(){return '<div class="chips secs" role="tablist" aria-label="일본어 메뉴">'+[['jp','급수 학습'],['kana','가나'],['kanji','한자'],['talk','기초 문장'],['travel','여행 회화']].map(function(x){return '<button class="chip" role="tab" data-go="'+x[0]+'" aria-pressed="'+(view===x[0])+'">'+x[1]+'</button>'}).join('')+'</div>'}
+var ZONE={pic:'jp',verb:'jp',story:'jp',tool:'jp',scene:'jp',fam:'jp',jp:'jp',talk:'jp',kana:'jp',kanji:'jp',travel:'jp',day:'jp',hanja:'hanja'};
+function zoneBar(){return '<div class="chips secs" role="tablist" aria-label="일본어 메뉴">'+[['jp','급수 학습'],['kana','가나'],['kanji','한자'],['talk','기초 문장'],['travel','여행 회화'],['pic','그림 · 이야기']].map(function(x){return '<button class="chip" role="tab" data-go="'+x[0]+'" aria-pressed="'+(view===x[0]||(x[0]==='pic'&&isPlay(view)))+'">'+x[1]+'</button>'}).join('')+'</div>'}
 function render(){
   document.documentElement.classList.toggle('nofuri',!S.opt.furi);document.documentElement.classList.toggle('nok',!S.opt.kread);document.documentElement.classList.toggle('nohun',!S.opt.hun);
   var nb=document.querySelectorAll('nav button');for(var i=0;i<nb.length;i++){var on=nb[i].dataset.go===(ZONE[view]||view);if(on)nb[i].setAttribute('aria-current','page');else nb[i].removeAttribute('aria-current')}
   var d=dueList().length,b=$('#due');b.hidden=!d;b.textContent=d;
-  var html=({home:vHome,jp:vJp,talk:vTalk,day:vDay,kana:vKana,kanji:vKanji,hanja:vKanji,review:vReview,find:vFind,options:vOpt,travel:vTravel}[view]||vHome)();
+  var html=({home:vHome,jp:vJp,talk:vTalk,day:vDay,kana:vKana,kanji:vKanji,hanja:vKanji,review:vReview,find:vFind,options:vOpt,travel:vTravel,pic:vPic,verb:vVerb,story:vStory,tool:vTool,scene:vScene,fam:vFam}[view]||vHome)();
   if(view==='home'&&!S.ob)html=vWelcome();
   if(ZONE[view]==='jp'&&view!=='day'){var hd=head();if(html.indexOf(hd)===0)html=hd+zoneBar()+html.slice(hd.length)}
   app.innerHTML=html;
@@ -406,6 +479,7 @@ function vHome(){
     +'<button class="gbtn" data-go="jp"><small>일본어 · N5 '+doneCount('N5')+'/15회 · N4 '+doneCount('N4')+'/15회</small><span>급수 학습</span><small>외운 낱말 '+vk+' / 1500</small></button>'
     +'<button class="gbtn" data-go="hanja"><small>한자 · 사자성어 · 천자문</small><span>한자 교양</span><small>외운 한자 '+kc('h')+' / '+HJ.h.length+' · 성어 '+kc('s')+' · 천자문 '+kc('c')+'</small></button>'
     +'<button class="gbtn" data-go="review"><small>암기 · 문제 풀이</small><span>플래시카드</span><small>오늘 복습 '+dueList().length+'장</small></button>'
+    +'<button class="gbtn" data-go="pic"><small>그림 낱말 · 그림 동사 · 짧은 이야기</small><span>그림 · 이야기</span><small>여행 회화 N5~N1 · 여행 도구</small></button>'
     +'<button class="gbtn" data-go="find"><small>찾기 · 별표 모음</small><span>내 단어장</span><small>'+Object.keys(S.star).filter(has).length+'개 담음</small></button>'
     +'</div></section>';
   return h;
@@ -816,6 +890,832 @@ function vTravel(){
   return h;
 }
 function fcRun(m){if(m==='memo'){var ks=fcPick();if(ks.length){sess={kind:'fc',q:ks,i:0,flip:false,ok:0,no:0,wrong:[],dir:S.fc.dir==='mix'?'w2m':S.fc.dir};touch()}}else if(m==='quiz'){var qq=fcQuiz();if(qq.length){sess={kind:'fq',q:qq,i:0,ok:0,pick:null};touch()}}else if(m==='next'){sess.i++;sess.pick=null;if(sess.exam&&sess.i>=sess.q.length){var sc=Math.round(sess.ok/sess.q.length*100);if(S.exam[sess.exam]==null||sc>S.exam[sess.exam]){S.exam[sess.exam]=sc;save()}}}render();window.scrollTo(0,0);if(sess){var cq=sess.q[sess.i];if(sess.kind==='fq'&&cq&&cq.auto)say(cq.say.replace(/[〜∕].*$/,''));if(sess.kind==='fc'&&sess.dir==='listen'&&cq&&!isK(cq))cardSay(cq)}}
+/* ---------- 선 그림 (흰 바탕, 선만) — viewBox 0 0 100 100 ---------- */
+var IC={};
+function _a(o){var s='';for(var k in o)s+=' '+k+'="'+o[k]+'"';return s}
+function zP(d,c){return '<path d="'+d+'"'+(c?' class="'+c+'"':'')+'/>'}
+function zC(x,y,r,c){return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'"'+(c?' class="'+c+'"':'')+'/>'}
+function zE(x,y,rx,ry,c){return '<ellipse cx="'+x+'" cy="'+y+'" rx="'+rx+'" ry="'+ry+'"'+(c?' class="'+c+'"':'')+'/>'}
+function zL(a,b,c2,d,c){return '<line x1="'+a+'" y1="'+b+'" x2="'+c2+'" y2="'+d+'"'+(c?' class="'+c+'"':'')+'/>'}
+function zR(x,y,w,h,rx,c){return '<rect x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'"'+(rx?' rx="'+rx+'"':'')+(c?' class="'+c+'"':'')+'/>'}
+function zT(x,y,s,fs,c){return '<text x="'+x+'" y="'+y+'" font-size="'+(fs||12)+'" text-anchor="middle"'+(c?' class="'+c+'"':'')+'>'+s+'</text>'}
+function zG(t,s){return '<g transform="'+t+'">'+s+'</g>'}
+/* 부품 */
+function hand(x,y,rot,s,kind){var d;
+  if(kind==='point')d='M-28 -9H6M6 -9H22a4.5 4.5 0 0 1 0 9H8C13 3 12 12 2 12H-28M-28 -9V12';
+  else if(kind==='open')d='M-28 -10H16a4 4 0 0 1 0 8H4M4 -2H18a4 4 0 0 1 0 8H4M4 6H16a4 4 0 0 1 0 8H-28M-28 -10V14M-14 -10L-4 -20a4 4 0 0 1 6 5L-6 -10';
+  else d='M-28 -11H2C12 -11 16 -6 16 0S12 11 2 11H-28M-28 -11V11M-10 -11C-8 -19 4 -19 6 -11';
+  return zG('translate('+x+' '+y+') rotate('+(rot||0)+') scale('+(s||1)+')',zP(d))}
+function arrow(x1,y1,x2,y2,c){var a=Math.atan2(y2-y1,x2-x1),h=7,s='';
+  s+=zL(x1,y1,x2,y2,c);s+=zP('M'+(x2-h*Math.cos(a-0.5)).toFixed(1)+' '+(y2-h*Math.sin(a-0.5)).toFixed(1)+'L'+x2+' '+y2+'L'+(x2-h*Math.cos(a+0.5)).toFixed(1)+' '+(y2-h*Math.sin(a+0.5)).toFixed(1),c);return s}
+function drops(pts){return pts.map(function(p){return zP('M'+p[0]+' '+p[1]+'q3 5 0 7q-3 -2 0 -7','thin')}).join('')}
+function motion(x,y,n,dx){var s='';for(var i=0;i<n;i++)s+=zL(x,y+i*7,x+(dx||10),y+i*7,'thin');return s}
+/* 얼굴 */
+function face(o){o=o||{};var s=zC(50,52,32);
+  var eyes={dot:zC(39,47,3,'f')+zC(61,47,3,'f'),happy:zP('M33 49q6 -7 12 0M55 49q6 -7 12 0'),closed:zP('M33 47q6 5 12 0M55 47q6 5 12 0'),
+    wide:zC(39,46,6)+zC(61,46,6)+zC(39,46,2,'f')+zC(61,46,2,'f'),squeeze:zP('M33 43l10 4-10 4M67 43l-10 4 10 4'),half:zL(33,48,45,48)+zL(55,48,67,48),down:zC(39,50,3,'f')+zC(61,50,3,'f')}[o.e||'dot'];
+  var brow={angry:zP('M31 36l13 6M69 36l-13 6'),sad:zP('M32 41l12 -6M68 41l-12 -6'),up:zP('M32 36q6 -4 12 0M56 36q6 -4 12 0')}[o.b]||'';
+  var mouth={smile:zP('M39 64q11 11 22 0'),open:zP('M37 62h26q-2 15 -13 15t-13 -15z'),frown:zP('M39 72q11 -10 22 0'),flat:zL(41,68,59,68),wavy:zP('M38 68q3 -4 6 0t6 0t6 0t6 0'),o:zC(50,68,6),small:zP('M45 68q5 3 10 0'),grit:zR(39,63,22,10,3)+zL(39,68,61,68,'thin')}[o.m||'smile'];
+  var x={tear:zP('M63 55q5 9 0 11q-5 -2 0 -11'),blush:zP('M28 60l4 -3M33 61l4 -3M63 60l4 -3M68 61l4 -3','thin'),sweat:zP('M80 28q6 9 0 12q-6 -3 0 -12'),
+    zz:zT(84,26,'z',14,'tx')+zT(76,14,'z',10,'tx'),anger:zP('M74 16v8h8M88 16v8h-8M74 34v-6h8M88 34v-6h-8','hl0'),bang:zL(86,12,86,26)+zC(86,32,1.8,'f'),
+    sigh:zP('M68 76q8 -2 10 4q6 -2 8 4','thin'),cloud:zC(82,20,10)+zC(70,34,3)+zP('M76 20q3 -5 6 0t6 0','thin'),star:zP('M82 16l4 8M90 22l-8 4M80 30l4 -6','hl0'),lines:zP('M14 40l-6 -2M14 52h-7M14 64l-6 2M86 40l6 -2M86 52h7M86 64l6 2','thin'),
+    heart:zP('M80 22q-4 -6 -8 -2t2 10l6 5 6 -5q6 -6 2 -10t-8 2','hl0'),note:zP('M80 30v-16l10 -3v16','thin')+zC(77,30,3,'f')+zC(87,27,3,'f')};
+  return s+eyes+brow+mouth+(o.x||[]).map(function(k){return x[k]}).join('')}
+/* 사람 */
+function fig(x,y,s,o){o=o||{};var b='';
+  b+=zC(0,9,8);
+  if(o.hair==='m')b+=zP('M-8 7q1 -10 8 -10t8 10q-8 -5 -16 0');
+  if(o.hair==='f')b+=zP('M-8 10q-2 -14 8 -14t8 14v9M-8 10v9');
+  if(o.hair==='bun')b+=zC(0,-2,3.5)+zP('M-8 8q1 -9 8 -9t8 9');
+  if(o.hair==='kid')b+=zP('M-8 6q4 -8 8 -6q4 -4 8 6');
+  if(o.glass)b+=zC(-3,9,2.5,'thin')+zC(3,9,2.5,'thin');
+  if(o.skirt)b+=zP('M-7 18h14l9 30h-32z');else b+=zP('M-9 18h18l-2 30h-14z');
+  if(o.tie)b+=zP('M0 19l-2 4 2 10 2 -10z','thin');
+  b+=o.arms||zP('M-9 19l-7 24M9 19l7 24');
+  b+=o.legs||(o.skirt?zP('M-4 48v30M4 48v30'):zP('M-4 48v30M4 48v30'));
+  if(o.cane)b+=zP('M16 43l4 35M16 43q2 -5 6 -2','thin');
+  if(o.bag)b+=zR(14,40,12,12,2)+zP('M17 40q3 -6 6 0','thin');
+  return zG('translate('+x+' '+y+') scale('+s+')',b)}
+/* 몸 */
+function body(hl,back){var s=zC(50,16,10)+zL(50,26,50,30)+zP('M36 31Q50 28 64 31L62 66H38Z')+zP('M36 32L26 58M64 32L74 58')+zC(25,61,3)+zC(75,61,3)+zP('M42 66L40 94M58 66L60 94')+zP('M40 94h-6M60 94h6');
+  if(back)s+=zP('M40 14q10 -12 20 0v5q-10 -4 -20 0z');return s+hl}
+function bigface(hl,teeth){return zC(50,50,30)+zP('M20 44q-8 6 0 14M80 44q8 6 0 14')+zC(39,44,3,'f')+zC(61,44,3,'f')+zP('M50 48l-4 10h6')+(teeth?zP('M38 63h24q-2 13 -12 13t-12 -13z')+zL(38,67,62,67,'thin')+zL(44,63,44,67,'thin')+zL(50,63,50,67,'thin')+zL(56,63,56,67,'thin'):zP('M41 66q9 6 18 0'))+zP('M22 40q4 -26 28 -26t28 26q-14 -10 -28 -12q-14 2 -28 12')+hl}
+function zH(s){return s.replace(/class="[^"]*"/,'').replace(/\/>$/,' class="hl"/>')}
+function hc(x,y,r){return zC(x,y,r,'hl')}
+function he(x,y,rx,ry){return zE(x,y,rx,ry,'hl')}
+Object.assign(IC,{
+ 頭:body(hc(50,15,14)),首:body(hc(50,28,6)),肩:body(hc(64,32,7)),手:body(hc(75,61,7)),肘:body(hc(31,45,6)),お腹:body(he(50,52,9,8)),背中:body(he(50,42,11,9),1),
+ 足:body(he(60,84,8,13)),膝:body(hc(41,80,6)),足首:body(hc(40,92,5)),
+ 目:bigface(hc(61,44,8)),耳:bigface(he(81,51,6,11)),鼻:bigface(hc(49,54,8)),口:bigface(he(50,66,13,7)),歯:bigface(he(50,69,15,9),1),
+ 嬉しい:face({e:'happy',m:'open',x:['heart']}),楽しい:face({e:'closed',m:'open',x:['note']}),悲しい:face({b:'sad',m:'frown',x:['tear']}),怒る:face({b:'angry',m:'grit',x:['anger']}),
+ 怖い:face({e:'wide',m:'wavy',x:['sweat','lines']}),寂しい:face({e:'down',b:'sad',m:'small'})+zP('M80 14a9 9 0 1 0 8 12a7 7 0 1 1 -8 -12z'),恥ずかしい:face({e:'squeeze',m:'wavy',x:['blush']}),
+ 心配:face({b:'sad',m:'wavy',x:['cloud']}),安心:face({e:'closed',m:'smile',x:['sigh']}),驚く:face({e:'wide',b:'up',m:'o',x:['bang']}),疲れる:face({e:'half',m:'small',x:['sweat']}),
+ 眠い:face({e:'closed',m:'o',x:['zz']}),痛い:face({e:'squeeze',b:'sad',m:'frown',x:['star']}),
+ 人:fig(50,8,1,{hair:'m'}),男の人:fig(50,8,1,{hair:'m',tie:1}),女の人:fig(50,8,1,{hair:'f',skirt:1}),男の子:fig(50,34,0.7,{hair:'kid'}),女の子:fig(50,34,0.7,{hair:'f',skirt:1}),
+ 大人:fig(34,8,1,{hair:'m'})+fig(68,40,0.6,{hair:'kid'})+he(34,48,22,44),子ども:fig(34,8,1,{hair:'m'})+fig(68,40,0.6,{hair:'kid'})+he(68,68,15,30),
+ 友だち:fig(32,10,0.95,{hair:'m',arms:zP('M-9 19l-7 24M9 19l9 18')})+fig(68,10,0.95,{hair:'f',skirt:1,arms:zP('M-9 19l-9 18M9 19l7 24')})+zP('M50 26q-3 -5 -6 -2t1 7l5 4 5 -4q4 -4 1 -7t-6 2','hl0'),
+ 家族:fig(22,8,0.95,{hair:'m'})+fig(46,10,0.9,{hair:'f',skirt:1})+fig(66,40,0.58,{hair:'kid'})+fig(84,44,0.52,{hair:'f',skirt:1}),
+ 赤ちゃん:zC(50,40,18)+zP('M38 36q12 -14 24 0','thin')+zC(44,40,2,'f')+zC(56,40,2,'f')+zP('M46 47q4 3 8 0')+zE(50,72,16,14)+zP('M36 66l-8 -4M64 66l8 -4M42 84l-4 8M58 84l4 8'),
+ おじいさん:fig(46,8,1,{glass:1,cane:1}),おばあさん:fig(46,8,1,{hair:'bun',skirt:1,cane:1}),お客さん:fig(36,8,1,{hair:'f',skirt:1,bag:1})+zP('M64 56h30M70 56v32M88 56v32')+zR(68,44,10,12),
+ 先生:fig(30,10,0.95,{hair:'m',tie:1,arms:zP('M-9 19l-7 24M9 19l14 -8')})+zR(52,14,42,30,2)+zT(73,36,'あ',18,'tx')
+});
+/* 몸 상태 · 병원 */
+Object.assign(IC,{
+ 熱:zP('M44 16a6 6 0 0 1 12 0v46a12 12 0 1 1 -12 0z')+zC(50,72,6,'f')+zL(50,30,50,66)+zL(56,26,62,26,'thin')+zL(56,34,62,34,'thin')+zL(56,42,62,42,'thin')+zP('M70 20q6 -6 10 0','hl0')+zP('M74 30q6 -6 10 0','hl0'),
+ 薬:zP('M22 62l22 -22a11 11 0 0 1 16 16l-22 22a11 11 0 0 1 -16 -16z')+zL(33,51,49,67)+zC(72,66,10)+zL(65,59,79,73,'thin')+zC(74,30,8)+zL(66,30,82,30,'thin'),
+ 絆創膏:zG('rotate(-30 50 50)',zR(16,38,68,24,12)+zR(38,38,24,24,2)+zC(44,45,1.2,'f')+zC(56,45,1.2,'f')+zC(44,55,1.2,'f')+zC(56,55,1.2,'f')+zC(26,50,1.2,'f')+zC(74,50,1.2,'f')),
+ 包帯:zP('M8 40h60q12 0 12 10t-12 10h-60')+zP('M80 44l10 -4M80 50h12M80 56l10 4','thin')+zP('M24 40l10 20M34 40l10 20M44 40l10 20M54 40l10 20','thin')+zR(22,38,44,24,0,'thin'),
+ マスク:zP('M24 38q26 -8 52 0v26q-26 10 -52 0z')+zP('M24 44q-12 8 0 16M76 44q12 8 0 16')+zL(28,48,72,48,'thin')+zL(28,56,72,56,'thin'),
+ 虫刺され:zP('M6 62h60q14 0 14 12t-14 12h-60')+zC(46,70,4,'hl')+zE(66,30,10,4)+zC(54,30,3)+zL(51,30,44,36,'thin')+zP('M64 26q-4 -12 4 -14M68 26q2 -12 10 -10','thin')+zP('M60 34l-4 8M66 34v9M72 34l4 8','thin'),
+ 歯ブラシ:zG('rotate(-35 50 50)',zR(10,46,60,8,4)+zR(70,40,20,14,2)+zP('M72 40v-8M76 40v-8M80 40v-8M84 40v-8M88 40v-8','thin')),
+ 車椅子:zC(44,66,22)+zC(44,66,15,'thin')+zC(80,84,6)+zP('M30 18v42h34l14 24M30 44h32M22 18h10'),
+ 杖:zP('M54 92V34q0 -14 -12 -14t-12 12'),
+ 松葉杖:zP('M36 12h28M40 12l8 70v8M60 12l-8 70M44 48h12')+zC(50,90,3),
+ 病院:zR(22,26,56,64)+zR(38,12,24,14,2)+zP('M50 15v8M46 19h8','hl0')+zR(30,36,10,8)+zR(45,36,10,8)+zR(60,36,10,8)+zR(30,52,10,8)+zR(60,52,10,8)+zR(42,68,16,22),
+ 美容院:zR(22,26,56,64)+zR(30,36,40,30,4)+zG('translate(50 50) scale(.32)',zC(-18,22,10)+zC(10,26,10)+zP('M-12 14L30 -26M2 18L36 -16'))+zR(42,72,16,18),
+ 生ゴミ:zP('M26 40h48l-5 50h-38z M22 40h56M42 32h16v8')+zP('M40 40l4 -14h6M52 40q2 -8 10 -8','thin')+zP('M60 22q2 -4 6 0M70 16q2 -4 6 0','thin')
+});
+/* 카페 */
+function cup(steam){return zP('M28 40h40v22a16 16 0 0 1 -16 16h-8a16 16 0 0 1 -16 -16z')+zP('M68 46h6a8 8 0 0 1 0 16h-7')+zL(20,84,76,84)+(steam?zP('M40 30q-5 -6 0 -12M52 30q-5 -6 0 -12','thin'):'')}
+function glass(){return zP('M30 28h40l-6 60h-28z')+zL(31,40,69,40,'thin')+zR(38,48,11,11)+zR(51,58,11,11)+zP('M58 12l-4 4v52','thin')+zP('M62 12l-4 4','thin')}
+function cubes(x,y,s){var c='M0 0l12 -6l12 6l-12 6z M0 0v14l12 6v-14M24 0v14l-12 6';return zG('translate('+x+' '+y+') scale('+s+')',zP(c))}
+Object.assign(IC,{
+ コーヒー:cup(1),アイスコーヒー:glass(),
+ ケーキ:zE(50,46,30,9)+zP('M20 46v24a30 9 0 0 0 60 0v-24')+zP('M20 56q8 6 15 0t15 0t15 0t15 0','thin')+zL(50,22,50,37)+zP('M50 14q4 4 0 8q-4 -4 0 -8'),
+ パン:zP('M14 66q0 -30 36 -30t36 30v10h-72z')+zP('M34 46l8 12M50 42l8 12M66 46l6 10','thin'),
+ 牛乳:zP('M34 34l8 -12h16l8 12v56h-32z M34 34h32M42 22v-6h16v6')+zT(50,70,'牛乳',13,'tx'),
+ 砂糖:zP('M18 54h64q-2 26 -32 26t-32 -26z')+cubes(28,44,1)+cubes(52,42,1),
+ 氷:cubes(16,46,1.4)+cubes(46,40,1.4)+cubes(32,66,1.2)+zP('M82 22l4 -6M86 30h8M80 14v-8','thin'),
+ ストロー:zP('M44 92V40l12 -16h18')+zP('M52 92V44l8 -12h14')+zL(44,92,52,92),
+ ふた:zE(50,58,32,8)+zP('M18 58v-6q32 -16 64 0v6')+zR(54,40,10,4,2),
+ ナプキン:zR(20,52,60,32,3)+zP('M38 52q2 -22 12 -12q8 -12 12 12','thin'),
+ メニュー:zP('M28 18h44v56h-44z M34 74l-6 18M66 74l6 18')+zL(36,30,64,30)+zL(36,42,58,42,'thin')+zL(36,52,62,52,'thin')+zL(36,62,56,62,'thin'),
+ 持ち帰り:zP('M26 38h48l5 52h-58z M40 38v-6a10 10 0 0 1 20 0v6')+zG('translate(30 48) scale(.42)',cup(0)),
+ スプーン:zE(50,28,10,14)+zL(50,42,50,90),フォーク:zP('M40 14v18a10 10 0 0 0 20 0v-18M50 14v22M50 42v48'),箸:zL(38,10,50,92)+zL(58,10,56,92)
+});
+/* 계산 */
+function bill(x,y,s){return zG('translate('+x+' '+y+') scale('+s+')',zR(0,0,68,36,3)+zC(34,18,9)+zT(12,13,'¥',9,'tx')+zT(56,31,'1000',7,'tx'))}
+function coin(x,y,r,hole){return zC(x,y,r)+zC(x,y,r-4,'thin')+(hole?zC(x,y,3):'')}
+Object.assign(IC,{
+ お札:bill(16,24,1)+bill(22,46,1),硬貨:coin(38,58,17)+coin(64,46,14,1)+coin(66,74,10),
+ 財布:zR(16,34,68,42,7)+zP('M16 50h68')+zC(70,57,3)+zL(16,62,60,62,'thin'),
+ レシート:zP('M30 12h40v74l-5 -4-5 4-5 -4-5 4-5 -4-5 4-5 -4-5 4z')+zL(36,24,64,24,'thin')+zL(36,34,58,34,'thin')+zL(36,44,62,44,'thin')+zL(36,60,64,60)+zT(42,74,'¥',10,'tx'),
+ レジ:zR(12,68,76,18,2)+zR(20,36,34,24,2)+zL(37,60,37,68)+zR(60,50,22,18,2)+zC(65,56,1.5,'f')+zC(71,56,1.5,'f')+zC(77,56,1.5,'f')+zC(65,62,1.5,'f')+zC(71,62,1.5,'f')+zC(77,62,1.5,'f')+zT(37,53,'¥',12,'tx'),
+ カード:zR(16,28,68,44,6)+zR(16,38,68,8,0,'f')+zR(24,54,14,10,2),
+ おつり:zP('M8 70h30q10 0 18 -6l16 -8q8 -3 8 4q0 4 -6 8l-18 14q-8 6 -20 6h-28')+coin(52,46,8)+coin(68,38,7),
+ 袋:zP('M24 40h52l-5 50h-42z M34 40q0 -18 8 -18t8 18M50 40q0 -18 8 -18t8 18')
+});
+/* 먹거리 */
+function nig(top){return zE(50,66,32,12)+(top||zP('M16 58q2 -16 34 -18q32 2 34 16q-32 10 -68 2z'))}
+Object.assign(IC,{
+ おにぎり:zP('M50 16q8 0 32 46q5 16 -12 16h-40q-17 0 -12 -16q24 -46 32 -46z')+zR(36,58,28,20,0),
+ 弁当:zR(14,30,72,48,4)+zL(50,30,50,78)+zL(50,54,86,54)+zC(32,54,5,'f')+zC(64,42,6)+zP('M58 64h20v8h-20z','thin')+zC(72,44,4,'thin'),
+ ラーメン:zP('M12 50h76q-2 30 -38 30t-38 -30z')+zP('M22 50q6 -8 12 0t12 0t12 0t12 0','thin')+zL(56,18,78,48)+zL(64,16,84,44)+zL(30,84,70,84),
+ おでん:zL(50,8,50,94)+zP('M36 20h28l-14 20z')+zC(50,52,9)+zR(41,66,18,16,3),
+ メロンパン:zP('M14 70q0 -40 36 -40t36 40z')+zP('M30 40l30 30M48 32l30 30M24 54l18 16M70 36l-40 34M54 32l-36 32M82 54l-16 16','thin'),
+ プリン:zP('M30 38h40l8 40h-56z')+zP('M30 38q20 -10 40 0','thin')+zL(12,80,88,80),
+ どら焼き:zE(50,40,34,11)+zP('M16 40v8q34 16 68 0v-8')+zP('M16 52q34 10 68 0','thin')+zE(50,62,34,10)+zP('M16 62v6q34 14 68 0v-6'),
+ りんご:zP('M50 34q-14 -10 -26 2q-10 14 -2 34q8 18 28 14q20 4 28 -14q8 -20 -2 -34q-12 -12 -26 -2z')+zL(50,34,54,18)+zP('M54 24q10 -10 18 -4q-8 10 -18 4','thin'),
+ バナナ:zP('M20 28q-4 42 32 52q26 4 40 -14q-26 10 -46 -6q-14 -14 -18 -34z')+zL(20,28,18,20),
+ 卵:zE(50,54,22,30),
+ しいたけ:zP('M14 54q4 -32 36 -32t36 32q-36 8 -72 0z')+zP('M42 58l-2 30h20l-2 -30')+zP('M40 36l20 10M60 34l-18 12','thin'),
+ えのき:zP('M30 90l8 -60M42 90l4 -64M54 90l0 -66M66 90l-4 -62M76 90l-8 -58')+zE(38,28,5,3)+zE(46,24,5,3)+zE(54,22,5,3)+zE(62,26,5,3)+zE(68,30,5,3)+zR(26,80,54,10,3),
+ まぐろ:nig(),サーモン:nig(zP('M16 58q2 -16 34 -18q32 2 34 16q-32 10 -68 2z')+zP('M28 46l8 14M44 42l8 16M60 42l8 16','thin')),
+ えび:nig(zP('M18 56q4 -14 30 -14h22q8 0 12 -8l6 6q-6 4 -6 12q-30 10 -64 4z')+zP('M34 44v12M46 42v14M58 42v14','thin')),
+ いか:nig(zP('M16 58q2 -14 34 -16q32 2 34 14q-32 10 -68 2z')+zP('M30 50l40 0M34 54l32 0','thin')),
+ たこ:nig(zP('M16 58q2 -14 34 -16q32 2 34 14q-32 10 -68 2z')+zC(34,50,3,'thin')+zC(48,48,3,'thin')+zC(62,49,3,'thin')+zC(74,52,2.5,'thin')),
+ いくら:zR(20,46,60,32,10)+zL(20,56,80,56,'thin')+zC(32,42,5)+zC(44,38,5)+zC(56,38,5)+zC(68,42,5)+zC(50,30,5)+zC(38,32,4)+zC(62,32,4),
+ 玉子:zE(50,70,32,10)+zR(18,40,64,22,3)+zR(42,40,16,32,0,'thin')
+});
+/* 새 */
+Object.assign(IC,{
+ すずめ:zE(48,58,24,18)+zC(70,42,12)+zP('M81 40l9 3-9 3')+zC(73,40,2,'f')+zC(69,48,2.5,'f')+zP('M26 58l-16 8 4 -14')+zP('M46 76v10M54 76v10M42 86h8M50 86h8','thin')+zP('M36 52q10 -6 22 2','thin'),
+ からす:zP('M18 64q10 -24 40 -22q16 0 22 -12q8 -6 12 2l-6 4q-2 18 -20 30q-20 12 -48 -2z')+zP('M92 34l6 4-8 4')+zC(84,34,2,'f')+zP('M18 64l-12 6M40 72l-2 16M52 70l2 16','thin')+zP('M32 56q14 -8 28 0','thin'),
+ はと:zP('M22 66q2 -24 32 -24q10 0 14 -12q2 -8 10 -8q10 0 10 10q0 6 -6 8q-2 14 -8 22q-10 14 -30 12q-14 -2 -22 -8z')+zP('M88 28l6 2-6 3')+zC(82,26,2,'f')+zP('M22 66l-14 2 6 -8','thin')+zP('M50 76v12M58 74v12','thin')+zP('M64 40q6 6 4 14','thin'),
+ ふくろう:zE(50,58,24,30)+zP('M30 34l2 -16 10 10M70 34l-2 -16 -10 10')+zC(41,46,8)+zC(59,46,8)+zC(41,46,2.5,'f')+zC(59,46,2.5,'f')+zP('M47 54l3 6 3 -6z')+zP('M30 62q6 16 14 22M70 62q-6 16 -14 22','thin')+zP('M40 88h6M54 88h6','thin'),
+ ペンギン:zE(50,56,22,34)+zE(50,64,13,24)+zC(43,34,2,'f')+zC(57,34,2,'f')+zP('M46 40l4 4 4 -4z')+zP('M28 52l-8 18M72 52l8 18')+zP('M38 90h10M52 90h10'),
+ にわとり:zP('M56 20q2 -8 6 -2q2 -8 6 0q4 -6 6 2')+zC(66,32,10)+zP('M76 30l8 3-8 3')+zC(68,30,2,'f')+zP('M72 42q2 6 -2 8','hl0')+zP('M58 40q-6 18 -26 18q-10 0 -12 -12q-6 -14 4 -18q6 8 10 4q10 -4 24 8z')+zP('M30 58q6 10 22 10q12 0 16 -16','thin')+zP('M42 68v16M52 68v16M38 84h8M48 84h8','thin'),
+ あひる:zP('M16 60q30 12 60 0q4 18 -26 22q-30 0 -34 -22z')+zC(66,40,11)+zP('M76 40q10 -2 14 2q-6 6 -14 2')+zC(68,37,2,'f')+zP('M58 48q4 8 2 14','thin')+zP('M28 60q10 6 24 4','thin'),
+ つばめ:zP('M14 30q24 10 36 22q10 -10 38 -20q-14 18 -32 26q4 12 -6 24l-6 -10l-8 18q0 -16 6 -24q-18 -8 -28 -36z')+zC(56,58,2,'f')
+});
+/* 집 · 물건 */
+function door(open,knob){return (open?zP('M30 12h40v80h-40z M30 12l24 10v80l-24 -10','thin')+zP('M54 22l0 80','thin'):zR(30,12,40,80)+zC(62,54,3))+zL(14,92,86,92)}
+function bulb(on){return zP('M50 18a20 20 0 0 0 -12 36v10h24v-10a20 20 0 0 0 -12 -36z')+zL(40,70,60,70)+zL(42,76,58,76)+(on?zP('M50 8V2M26 18l-5 -5M74 18l5 -5M18 38h-7M82 38h7','hl0'):'')}
+function phone(x,y,s,r){return zG('translate('+x+' '+y+') rotate('+(r||0)+') scale('+(s||1)+')',zR(-12,-22,24,44,4)+zL(-4,-16,4,-16,'thin')+zC(0,16,2))}
+Object.assign(IC,{
+ 家:zP('M16 50L50 20l34 30M26 42v44h48v-44M44 86v-22h12v22')+zR(56,52,10,10),
+ ドア:door(0),窓:zR(22,20,56,54)+zL(50,20,50,74)+zL(22,46,78,46)+zP('M18 20h64','thin'),
+ 鍵:zC(30,50,13)+zC(30,50,4)+zP('M43 50h42v12M74 50v9'),
+ 机:zP('M12 40h76M18 40v46M82 40v46M18 54h28v32M18 66h28','thin')+zL(12,40,88,40),
+ 椅子:zP('M34 14v74M34 54h34v34M30 54h40'),
+ ベッド:zP('M10 78V36M10 62h80v16M90 62v-12')+zR(16,48,24,12,4)+zP('M44 62v-10h46','thin'),
+ 時計:zC(50,50,34)+zL(50,50,50,28)+zL(50,50,66,56)+zC(50,50,2,'f')+zL(50,18,50,22,'thin')+zL(82,50,78,50,'thin')+zL(50,82,50,78,'thin')+zL(18,50,22,50,'thin'),
+ テレビ:zR(12,22,76,50,4)+zP('M40 72l-6 14h32l-6 -14'),
+ 電話:zP('M18 54h64l6 30h-76z')+zP('M16 42q34 -26 68 0v8h-14v-6q-20 -8 -40 0v6h-14z')+zC(50,68,8)+zC(50,68,2,'f'),
+ 携帯:phone(50,50,1.6),
+ 電車:zR(24,16,52,62,10)+zR(32,26,36,22,3)+zC(36,64,4)+zC(64,64,4)+zP('M32 78l-8 14M68 78l8 14M20 92h60','thin')+zP('M40 16l10 -10 10 10','thin'),
+ 電池:zR(16,36,60,28,4)+zR(76,44,7,12,2)+zT(34,56,'+',16,'tx')+zL(58,46,58,54),
+ 電球:bulb(1),電気:bulb(1),
+ 冷蔵庫:zR(26,8,48,86,4)+zL(26,40,74,40)+zL(34,20,34,32)+zL(34,48,34,64),
+ トイレ:zR(24,14,24,32,3)+zP('M20 50h56q0 20 -24 24l3 16h-24l3 -16q-14 -4 -14 -24z'),
+ 蛇口:zP('M8 26h48q14 0 14 14v8M8 38h40q8 0 10 8v2M56 48h18')+zP('M30 26v-8M22 18h16')+drops([[64,60],[64,74],[64,86]]),
+ 傘:zP('M12 48q4 -32 38 -32t38 32q-6 -6 -12 0q-7 -6 -13 0q-6 -6 -13 0q-6 -6 -13 0q-7 -6 -13 0q-6 -6 -12 0z')+zP('M50 48v32q0 8 -8 8t-8 -8')+zL(50,16,50,10),
+ かばん:zR(16,36,68,46,6)+zP('M38 36v-8q0 -6 6 -6h12q6 0 6 6v8')+zL(16,52,84,52),
+ 靴:zP('M12 72v-26h18q4 12 18 12h22q14 0 18 14z')+zL(12,72,88,72)+zP('M34 52l4 6M40 50l4 6','thin'),
+ 服:zP('M36 18l-22 12 8 16 10 -5v43h36v-43l10 5 8 -16 -22 -12q-6 8 -14 8t-14 -8z'),
+ タオル:zL(12,22,88,22)+zP('M24 22v60h52v-60')+zL(24,70,76,70,'thin')+zL(24,74,76,74,'thin'),
+ はさみ:zC(28,72,10)+zC(52,80,10)+zP('M35 64L84 18M48 70L88 32')+zC(56,48,2,'f'),
+ 紙:zP('M26 14h36l14 14v60h-50z M62 14v14h14'),
+ 本:zP('M50 28q-18 -8 -38 -2v54q20 -6 38 2q18 -8 38 -2v-54q-20 -6 -38 2z M50 28v54'),
+ ボール:zC(50,52,20)+zP('M32 44q18 8 36 0M32 60q18 -8 36 0','thin'),
+ 箱:zP('M18 40l32 -12 32 12v40l-32 12 -32 -12z M18 40l32 12 32 -12M50 52v40'),
+ 車:zP('M10 64v-12l12 -4 10 -16h34l12 16 12 4v12z')+zC(30,66,8)+zC(70,66,8)+zP('M36 36h12v12h-20zM54 36h10l8 12h-18z','thin'),
+ ロープ:zP('M6 50q11 -6 22 0t22 0t22 0t22 0','')+zP('M6 56q11 -6 22 0t22 0t22 0t22 0','thin'),
+ 缶:zR(34,20,32,60,4)+zE(50,20,16,4,'thin')+zL(34,40,66,40,'thin'),
+ ボタン:zR(24,62,52,16,3)+zE(50,60,16,8)
+});
+/* ---------- 동작 (동사) ---------- */
+function stick(x,y,s,d){return zG('translate('+x+' '+y+') scale('+(s||1)+')',d)}
+var POSE={
+ stand:zC(0,-30,8)+zP('M0 -22v26M0 -14l-12 12M0 -14l12 12M0 4l-8 22M0 4l8 22'),
+ walk:zC(2,-30,8)+zP('M2 -22l-2 26M1 -14l-12 10M1 -14l10 12M0 4l-12 20M0 4l10 22'),
+ run:zC(8,-30,8)+zP('M6 -22l-6 24M4 -14l-14 4M4 -14l12 -8M0 2l-16 12l-4 12M0 2l14 10l10 -4'),
+ sit:zC(-4,-34,8)+zP('M-4 -26v24M-4 -18l12 8M-4 -2h20v24')
+};
+Object.assign(IC,{
+ 食べる:face({e:'closed',m:'open'})+zG('translate(52 74) scale(.34)',zP('M50 16q8 0 32 46q5 16 -12 16h-40q-17 0 -12 -16q24 -46 32 -46z')),
+ 飲む:zG('translate(-12 0)',face({e:'closed',m:'o'}))+zG('translate(54 46) rotate(-25) scale(.42)',cup(0)),
+ 見る:zE(50,50,34,20)+zC(50,50,12)+zC(50,50,4,'f')+zP('M16 50q34 -40 68 0','thin'),
+ 聞く:zP('M44 18q26 -6 32 22q4 18 -12 28q-8 6 -8 16q0 10 -12 10q-10 0 -12 -10')+zP('M52 36q10 -2 12 10q0 8 -8 10','thin')+zP('M18 40q-6 10 0 20M10 34q-10 16 0 32','hl0'),
+ 読む:IC_book()+zE(38,14,6,4)+zE(62,14,6,4)+zC(38,14,1.6,'f')+zC(62,14,1.6,'f'),
+ 書く:zR(18,20,46,64)+zL(26,34,56,34,'thin')+zL(26,44,50,44,'thin')+zG('rotate(35 70 56)',zR(64,20,10,52,2)+zP('M64 72l5 10 5 -10','thin'))+zP('M26 58q6 -6 10 0t10 0','thin'),
+ 寝る:zP('M8 80V44M8 64h84v16M92 64v-8')+zC(26,52,8)+zP('M36 58h56v-8q-20 -6 -56 0','thin')+zT(60,30,'z',14,'tx')+zT(74,20,'z',10,'tx'),
+ 歩く:stick(50,50,1.2,POSE.walk)+zL(20,84,80,84,'thin'),
+ 走る:stick(46,52,1.2,POSE.run)+motion(10,40,3,12)+zL(20,86,80,86,'thin'),
+ 泳ぐ:zC(30,44,7)+zP('M37 46l30 4M44 46l-12 -12M60 49l14 -10')+zP('M8 58q8 -6 16 0t16 0t16 0t16 0t16 0','thin')+zP('M8 68q8 -6 16 0t16 0t16 0t16 0t16 0','thin'),
+ 買う:hand(36,58,-10,0.8,'grip')+bill(44,28,0.45)+zP('M60 48h28l-3 40h-22z M68 48q0 -10 6 -10t6 10'),
+ 話す:zC(26,56,12)+zC(74,56,12)+zP('M10 92q16 -22 32 0M58 92q16 -22 32 0')+zP('M18 16h30v16h-18l-6 6v-6h-6z')+zP('M54 22h30v16h-6v6l-6 -6h-18z','thin'),
+ 待つ:stick(30,52,1.1,POSE.stand)+zC(72,34,16)+zL(72,34,72,24)+zL(72,34,80,38),
+ 洗う:zP('M8 18h40q12 0 12 12v6M54 36h12')+drops([[58,44]])+hand(46,68,-20,0.75,'open')+hand(66,74,200,0.75,'open')+zC(30,58,4,'thin')+zC(80,56,3,'thin')+zC(72,46,3,'thin'),
+ 持つ:hand(40,30,90,0.9,'grip')+zR(22,50,44,36,6)+zP('M34 50v-6a10 6 0 0 1 20 0v6'),
+ 投げる:stick(32,50,1.15,zC(0,-30,8)+zP('M0 -22l2 26M1 -14l-12 8M1 -14l12 -14M2 4l-10 22M2 4l12 20'))+zC(66,22,6)+zP('M54 26q4 -6 8 -6','thin')+motion(74,20,2,10),
+ 座る:stick(40,60,1.2,POSE.sit)+zP('M60 60v30M30 60h34','thin'),
+ 立つ:stick(50,52,1.25,POSE.stand)+zL(20,86,80,86,'thin'),
+ 行く:stick(36,50,1.15,POSE.walk)+arrow(60,50,92,50),
+ 来る:stick(64,50,1.15,zG('scale(-1 1)',POSE.walk))+arrow(40,50,8,50),
+ 帰る:stick(28,52,1.1,POSE.walk)+zP('M56 52L76 34l20 18M62 46v34h28v-34')+arrow(42,40,56,40),
+ 勉強する:zC(50,24,11)+zP('M30 56q20 -22 40 0')+zR(8,58,84,6)+zP('M24 56v-8q14 -4 26 2q12 -6 26 -2v8M50 50v6','thin')+zG('rotate(30 72 40)',zR(70,22,6,30,2)+zP('M70 52l3 6 3 -6','thin')),
+ 押す:zR(18,70,46,14,3)+zE(41,68,14,7)+hand(64,38,135,0.85,'point'),
+ 引く:IC.ロープ+hand(66,53,180,0.6,'grip')+arrow(60,30,90,30),
+ 絞る:zP('M24 40q26 12 52 0v18q-26 12 -52 0z')+zP('M36 44l8 12M48 46l8 12M60 44l8 12','thin')+hand(26,50,0,0.6,'grip')+hand(74,50,180,0.6,'grip')+drops([[46,72],[54,82],[50,90]]),
+ 潰す:zP('M34 76v-16l8 -6-8 -6 8 -6-8 -6v-6h32v6l-8 6 8 6-8 6 8 6v16z')+zE(50,76,16,4,'thin')+hand(52,22,90,0.8,'open')+zP('M20 40l6 4M80 40l-6 4','thin'),
+ 混ぜる:cup(0)+zL(48,52,66,16)+zP('M20 32a30 12 0 0 1 20 -14','hl0')+zP('M40 18l-4 -4M40 18l-6 2','hl0'),
+ こぼす:zG('rotate(80 42 54)',zP('M28 40h32v22a14 14 0 0 1 -14 14h-4a14 14 0 0 1 -14 -14z'))+zP('M24 72q-6 8 10 12q20 4 50 0q8 -6 -4 -10q-20 -4 -40 -2','thin')+hand(80,42,180,0.5,'open')+motion(62,30,2,8),
+ 注ぐ:zG('rotate(-30 40 40)',zP('M22 24h30v44h-30z M52 32h8q6 0 6 8v14q0 6 -6 6h-8M22 24l-6 -4'))+zP('M18 46q2 10 4 20','thin')+zP('M60 52h28l-4 36h-20z')+zL(62,70,86,70,'thin'),
+ 拭く:zR(10,70,80,8)+zP('M32 58h34l-4 12h-34z','thin')+hand(52,52,10,0.7,'open')+motion(72,52,2,12),
+ 畳む:zP('M24 76h52v-14h-52z M24 62h52v-12h-52z')+zP('M30 50l8 -10h24l8 10','thin')+hand(64,30,150,0.7,'open'),
+ 切る:zR(14,30,42,50)+zP('M56 50l8 -2','thin')+zG('translate(58 52) scale(.6) rotate(10)',zC(-18,22,10)+zC(10,26,10)+zP('M-12 14L36 -30M2 18L40 -18')),
+ 落とす:hand(42,20,0,0.6,'open')+phone(56,62,1,25)+motion(40,30,3,6)+zP('M44 90l6 -6M58 92l2 -8M70 90l-4 -6','thin'),
+ 開ける:door(1)+hand(72,56,180,0.6,'grip'),
+ 閉める:zR(30,12,40,80)+zC(62,54,3)+zL(14,92,86,92)+hand(82,48,200,0.5,'open')+arrow(94,26,76,26),
+ ひねる:zR(36,40,28,48,6)+zR(40,24,20,16,3)+hand(50,14,90,0.6,'grip')+zP('M30 30a22 10 0 0 0 40 0','hl0')+zP('M70 30l-6 -4M70 30l-2 -7','hl0'),
+ むく:IC_apple(0,8)+zP('M70 60q12 10 4 22q-8 10 -18 4','thin')+zL(66,30,86,10),
+ 割る:zP('M30 44q4 -26 20 -26t20 26')+zP('M30 44l6 -6 6 6 6 -6 6 6 6 -6 6 6 4 -4')+hand(16,36,0,0.5,'grip')+hand(84,36,180,0.5,'grip')+drops([[48,58]])+zP('M20 74h60q0 14 -30 14t-30 -14zM80 76h14','thin'),
+ 伸ばす:zE(50,72,38,8)+zR(22,52,56,10,5)+zL(10,57,22,57)+zL(78,57,90,57)+hand(16,48,0,0.5,'grip')+hand(84,48,180,0.5,'grip')+arrow(30,90,10,90,'thin')+arrow(70,90,90,90,'thin'),
+ 巻く:zP('M6 40h56q10 0 10 10t-10 10h-56')+zP('M24 40l10 20M34 40l10 20','thin')+zR(66,58,14,20,7)+zP('M44 40q14 4 28 20','thin'),
+ 打つ:zR(14,74,72,14)+zL(56,74,56,52)+zL(50,52,62,52)+zG('rotate(-40 40 34)',zR(20,28,28,14,2)+zR(32,42,6,40,2))+zP('M62 46l6 -4M64 54l8 0','thin'),
+ くずす:zR(30,70,16,16)+zR(46,70,16,16)+zG('rotate(20 52 52)',zR(40,44,16,16))+zG('rotate(35 66 30)',zR(56,22,16,16))+hand(20,64,0,0.5,'open')+motion(84,30,2,8),
+ 消す:bulb(0)+zR(70,74,16,20,2)+zL(78,78,78,86)+hand(85,64,120,0.5,'point'),
+ つける:bulb(1)+zR(70,74,16,20,2)+zL(78,90,78,82)+hand(85,64,120,0.5,'point'),
+ 入れる:zP('M24 60h52v30h-52z M24 60l-10 -10M76 60l10 -10')+zC(50,38,10)+hand(64,22,120,0.6,'open')+arrow(50,50,50,58,'thin'),
+ 止める:IC.車+hand(82,30,-90,0.5,'open')+zT(54,18,'STOP',10,'tx'),
+ /* 자동사 그림 (손이 없음) */
+ 開く:door(1)+zP('M76 30q8 10 0 20M84 26q10 14 0 28','thin'),
+ 閉まる:zR(30,12,40,80)+zC(62,54,3)+zL(14,92,86,92)+zP('M76 40q6 8 0 16','thin'),
+ 落ちる:phone(52,60,1,25)+motion(36,22,3,6)+zP('M42 90l6 -6M56 92l2 -8M68 90l-4 -6','thin')+zP('M30 12q10 4 20 0','thin'),
+ こぼれる:zG('rotate(80 42 54)',zP('M28 40h32v22a14 14 0 0 1 -14 14h-4a14 14 0 0 1 -14 -14z'))+zP('M24 72q-6 8 10 12q20 4 50 0q8 -6 -4 -10q-20 -4 -40 -2','thin'),
+ 消える:bulb(0),つく:bulb(1),
+ 割れる:zP('M28 50q4 -28 22 -28t22 28')+zP('M28 50l7 -6 7 6 7 -6 7 6 7 -6 7 6')+zP('M30 64q4 12 20 12t20 -12l-6 -4-7 4-7-4-7 4-7-4z')+zP('M50 80l-6 8M58 82l4 6','thin'),
+ 入る:zP('M24 60h52v30h-52z M24 60l-10 -10M76 60l10 -10')+zC(50,66,10)+zP('M50 40v10M44 44l6 6 6 -6','thin'),
+ 止まる:IC.車+zL(10,82,90,82,'hl0')+zR(80,20,14,14,2)+zL(87,34,87,82,'thin'),
+ 崩れる:zR(26,74,16,16)+zG('rotate(25 50 64)',zR(42,56,16,16))+zG('rotate(-30 70 40)',zR(62,32,16,16))+zG('rotate(15 40 30)',zR(32,20,16,16))+motion(78,62,2,8)
+});
+function IC_book(){return zP('M50 32q-18 -8 -38 -2v54q20 -6 38 2q18 -8 38 -2v-54q-20 -6 -38 2z M50 32v54')+zL(20,44,42,44,'thin')+zL(58,44,80,44,'thin')+zL(20,54,42,54,'thin')+zL(58,54,80,54,'thin')}
+function IC_book2(){return zP('M50 58q-14 -6 -28 -2v6M50 58q14 -6 28 -2v6M50 58v4','thin')}
+function IC_apple(dx,dy){return zG('translate('+dx+' '+dy+')',zP('M46 34q-14 -10 -26 2q-10 14 -2 34q8 18 28 14q20 4 28 -14q8 -20 -2 -34q-12 -12 -26 -2z')+zL(46,34,50,20))}
+/* 그리기 */
+function pic(name,cls){var b=IC[name];if(!b)return '';return '<svg class="pico'+(cls?' '+cls:'')+'" viewBox="0 0 100 100" aria-hidden="true">'+b+'</svg>'}
+function clock(h,m){var s=zC(50,50,40)+zC(50,50,2,'f');for(var i=0;i<12;i++){var a=i*Math.PI/6;s+=zL((50+34*Math.sin(a)).toFixed(1),(50-34*Math.cos(a)).toFixed(1),(50+38*Math.sin(a)).toFixed(1),(50-38*Math.cos(a)).toFixed(1),i%3?'thin':'')}
+  var am=m/60*2*Math.PI,ah=((h%12)+m/60)/12*2*Math.PI;s+=zL(50,50,(50+22*Math.sin(ah)).toFixed(1),(50-22*Math.cos(ah)).toFixed(1))+zL(50,50,(50+32*Math.sin(am)).toFixed(1),(50-32*Math.cos(am)).toFixed(1),'thin');
+  return '<svg class="pico" viewBox="0 0 100 100" aria-hidden="true">'+s+'</svg>'}
+
+/* ---------- 그림 · 이야기 자료 ---------- */
+/* 주제별 낱말: [표기, 읽기, 뜻, 그림(없으면 표기)] */
+var PT=[
+ {id:'body',n:'몸',ic:'手',w:[['頭','あたま','머리'],['目','め','눈'],['耳','みみ','귀'],['鼻','はな','코'],['口','くち','입'],['歯','は','이, 치아'],['首','くび','목'],['肩','かた','어깨'],['手','て','손'],['肘','ひじ','팔꿈치'],['お腹','おなか','배'],['背中','せなか','등'],['足','あし','발, 다리'],['膝','ひざ','무릎'],['足首','あしくび','발목']]},
+ {id:'feel',n:'감정',ic:'嬉しい',w:[['嬉しい','うれしい','기쁘다'],['楽しい','たのしい','즐겁다'],['悲しい','かなしい','슬프다'],['怒る','おこる','화내다'],['怖い','こわい','무섭다'],['寂しい','さびしい','외롭다, 쓸쓸하다'],['恥ずかしい','はずかしい','부끄럽다'],['心配','しんぱい','걱정'],['安心','あんしん','안심'],['驚く','おどろく','놀라다'],['疲れる','つかれる','지치다, 피곤하다'],['眠い','ねむい','졸리다'],['痛い','いたい','아프다']]},
+ {id:'people',n:'사람',ic:'家族',w:[['人','ひと','사람'],['男の人','おとこのひと','남자'],['女の人','おんなのひと','여자'],['男の子','おとこのこ','남자아이'],['女の子','おんなのこ','여자아이'],['大人','おとな','어른'],['子ども','こども','아이'],['友だち','ともだち','친구'],['家族','かぞく','가족'],['赤ちゃん','あかちゃん','아기'],['おじいさん','おじいさん','할아버지'],['おばあさん','おばあさん','할머니'],['お客さん','おきゃくさん','손님'],['先生','せんせい','선생님']]},
+ {id:'health',n:'몸 상태 · 병원',ic:'薬',w:[['熱','ねつ','열'],['薬','くすり','약'],['絆創膏','ばんそうこう','반창고'],['包帯','ほうたい','붕대'],['マスク','マスク','마스크'],['虫刺され','むしさされ','벌레 물림'],['歯ブラシ','はブラシ','칫솔'],['車椅子','くるまいす','휠체어'],['杖','つえ','지팡이'],['松葉杖','まつばづえ','목발'],['病院','びょういん','병원'],['美容院','びよういん','미용실'],['生ゴミ','なまゴミ','음식물 쓰레기']]},
+ {id:'cafe',n:'카페',ic:'コーヒー',w:[['コーヒー','コーヒー','커피'],['アイスコーヒー','アイスコーヒー','아이스커피'],['ケーキ','ケーキ','케이크'],['パン','パン','빵'],['牛乳','ぎゅうにゅう','우유'],['砂糖','さとう','설탕'],['氷','こおり','얼음'],['ストロー','ストロー','빨대'],['ふた','ふた','(컵) 뚜껑'],['ナプキン','ナプキン','냅킨'],['メニュー','メニュー','메뉴판'],['持ち帰り','もちかえり','포장(테이크아웃)'],['スプーン','スプーン','숟가락'],['フォーク','フォーク','포크'],['箸','はし','젓가락']]},
+ {id:'money',n:'계산 · 돈',ic:'財布',w:[['お札','おさつ','지폐'],['硬貨','こうか','동전'],['財布','さいふ','지갑'],['レシート','レシート','영수증'],['レジ','レジ','계산대'],['カード','カード','카드'],['おつり','おつり','거스름돈'],['袋','ふくろ','봉투']]},
+ {id:'food',n:'먹거리',ic:'おにぎり',w:[['おにぎり','おにぎり','주먹밥'],['弁当','べんとう','도시락'],['ラーメン','ラーメン','라멘'],['おでん','おでん','어묵탕'],['メロンパン','メロンパン','멜론빵'],['プリン','プリン','푸딩'],['どら焼き','どらやき','도라야키'],['りんご','りんご','사과'],['バナナ','バナナ','바나나'],['卵','たまご','달걀'],['しいたけ','しいたけ','표고버섯'],['えのき','えのき','팽이버섯']]},
+ {id:'sushi',n:'스시',ic:'まぐろ',w:[['まぐろ','まぐろ','참치'],['サーモン','サーモン','연어'],['えび','えび','새우'],['いか','いか','오징어'],['たこ','たこ','문어'],['いくら','いくら','연어알'],['玉子','たまご','달걀(계란말이) 초밥']]},
+ {id:'bird',n:'새',ic:'ふくろう',w:[['すずめ','すずめ','참새'],['からす','からす','까마귀'],['はと','はと','비둘기'],['ふくろう','ふくろう','부엉이, 올빼미'],['ペンギン','ペンギン','펭귄'],['にわとり','にわとり','닭'],['あひる','あひる','오리'],['つばめ','つばめ','제비']]},
+ {id:'home',n:'집 · 물건',ic:'家',w:[['家','いえ','집'],['ドア','ドア','문'],['窓','まど','창문'],['鍵','かぎ','열쇠'],['机','つくえ','책상'],['椅子','いす','의자'],['ベッド','ベッド','침대'],['時計','とけい','시계'],['テレビ','テレビ','텔레비전'],['電話','でんわ','전화'],['携帯','けいたい','휴대폰','携帯'],['電車','でんしゃ','전철'],['電池','でんち','건전지'],['電球','でんきゅう','전구'],['冷蔵庫','れいぞうこ','냉장고'],['トイレ','トイレ','화장실'],['蛇口','じゃぐち','수도꼭지'],['傘','かさ','우산'],['かばん','かばん','가방'],['靴','くつ','신발'],['服','ふく','옷'],['タオル','タオル','수건'],['はさみ','はさみ','가위'],['本','ほん','책']]}
+];
+/* 동사: [사전형, 읽기, 그룹(1·2·3), 뜻, 그림] */
+var PV=[
+ ['食べる','たべる',2,'먹다'],['飲む','のむ',1,'마시다'],['見る','みる',2,'보다'],['聞く','きく',1,'듣다'],['読む','よむ',1,'읽다'],['書く','かく',1,'쓰다'],['寝る','ねる',2,'자다'],
+ ['歩く','あるく',1,'걷다'],['走る','はしる',1,'달리다'],['泳ぐ','およぐ',1,'헤엄치다'],['買う','かう',1,'사다'],['話す','はなす',1,'말하다'],['待つ','まつ',1,'기다리다'],['洗う','あらう',1,'씻다'],
+ ['持つ','もつ',1,'들다, 가지다'],['投げる','なげる',2,'던지다'],['座る','すわる',1,'앉다'],['立つ','たつ',1,'서다'],['行く','いく',1,'가다'],['来る','くる',3,'오다'],['帰る','かえる',1,'돌아가다'],
+ ['勉強する','べんきょうする',3,'공부하다'],['押す','おす',1,'누르다'],['引く','ひく',1,'당기다'],['絞る','しぼる',1,'짜다'],['潰す','つぶす',1,'찌그러뜨리다, 으깨다'],['混ぜる','まぜる',2,'섞다, 젓다'],
+ ['こぼす','こぼす',1,'흘리다, 쏟다'],['注ぐ','そそぐ',1,'붓다, 따르다'],['拭く','ふく',1,'닦다'],['畳む','たたむ',1,'개다, 접다'],['切る','きる',1,'자르다'],['落とす','おとす',1,'떨어뜨리다'],
+ ['開ける','あける',2,'열다'],['閉める','しめる',2,'닫다'],['ひねる','ひねる',1,'비틀다'],['むく','むく',1,'(껍질을) 벗기다'],['割る','わる',1,'깨다'],['伸ばす','のばす',1,'늘이다, 밀다'],
+ ['巻く','まく',1,'감다'],['打つ','うつ',1,'치다, 박다'],['崩す','くずす',1,'무너뜨리다','くずす'],['消す','けす',1,'끄다'],['つける','つける',2,'켜다'],['入れる','いれる',2,'넣다'],['止める','とめる',2,'세우다']
+];
+/* 짝 동사: 타동사(を, 누가 함) / 자동사(が, 저절로) */
+var PP=[
+ {t:['開ける','あける'],i:['開く','あく'],ts:'ドアを{開|あ}ける',is:'ドアが{開|あ}く',tk:'문을 열다',ik:'문이 열리다'},
+ {t:['閉める','しめる'],i:['閉まる','しまる'],ts:'ドアを{閉|し}める',is:'ドアが{閉|し}まる',tk:'문을 닫다',ik:'문이 닫히다'},
+ {t:['落とす','おとす'],i:['落ちる','おちる'],ts:'スマホを{落|お}とす',is:'スマホが{落|お}ちる',tk:'스마트폰을 떨어뜨리다',ik:'스마트폰이 떨어지다'},
+ {t:['こぼす','こぼす'],i:['こぼれる','こぼれる'],ts:'ジュースをこぼす',is:'ジュースがこぼれる',tk:'주스를 쏟다',ik:'주스가 쏟아지다'},
+ {t:['消す','けす'],i:['消える','きえる'],ts:'{電気|でんき}を{消|け}す',is:'{電気|でんき}が{消|き}える',tk:'불을 끄다',ik:'불이 꺼지다'},
+ {t:['つける','つける'],i:['つく','つく'],ts:'{電気|でんき}をつける',is:'{電気|でんき}がつく',tk:'불을 켜다',ik:'불이 켜지다'},
+ {t:['割る','わる'],i:['割れる','われる'],ts:'{卵|たまご}を{割|わ}る',is:'{卵|たまご}が{割|わ}れる',tk:'달걀을 깨다',ik:'달걀이 깨지다'},
+ {t:['入れる','いれる'],i:['入る','はいる'],ts:'ボールを{箱|はこ}に{入|い}れる',is:'ボールが{箱|はこ}に{入|はい}る',tk:'공을 상자에 넣다',ik:'공이 상자에 들어가다'},
+ {t:['止める','とめる'],i:['止まる','とまる'],ts:'{車|くるま}を{止|と}める',is:'{車|くるま}が{止|と}まる',tk:'차를 세우다',ik:'차가 멈추다'},
+ {t:['崩す','くずす'],i:['崩れる','くずれる'],ts:'{積|つ}み{木|き}を{崩|くず}す',is:'{積|つ}み{木|き}が{崩|くず}れる',tk:'쌓기 나무를 무너뜨리다',ik:'쌓기 나무가 무너지다'}
+];
+/* 목적어 + 동사 잇기 */
+var PK=[
+ ['{卵|たまご}','{割|わ}る','달걀을 깨다','割る'],['{釘|くぎ}','{打|う}つ','못을 박다','打つ'],['ボタン','{押|お}す','단추를 누르다','押す'],['{水|みず}','{注|そそ}ぐ','물을 붓다','注ぐ'],
+ ['タオル','{絞|しぼ}る','수건을 짜다','絞る'],['{服|ふく}','たたむ','옷을 개다','畳む'],['{紙|かみ}','{切|き}る','종이를 자르다','切る'],['{包帯|ほうたい}','{巻|ま}く','붕대를 감다','巻く'],
+ ['ドア','{開|あ}ける','문을 열다','開ける'],['{電気|でんき}','{消|け}す','불을 끄다','消す'],['{電気|でんき}','つける','불을 켜다','つける'],['{手|て}','{洗|あら}う','손을 씻다','洗う'],
+ ['{本|ほん}','{読|よ}む','책을 읽다','読む'],['コーヒー','{飲|の}む','커피를 마시다','飲む'],['{皮|かわ}','むく','껍질을 벗기다','むく'],['{缶|かん}','つぶす','캔을 찌그러뜨리다','潰す'],
+ ['ロープ','{引|ひ}く','밧줄을 당기다','引く'],['テーブル','{拭|ふ}く','테이블을 닦다','拭く'],['コーヒー','{混|ま}ぜる','커피를 젓다','混ぜる'],['{生地|きじ}','{伸|の}ばす','반죽을 밀다','伸ばす'],
+ ['{字|じ}','{書|か}く','글자를 쓰다','書く'],['ボール','{投|な}げる','공을 던지다','投げる'],['かばん','{持|も}つ','가방을 들다','持つ'],['ふた','ひねる','뚜껑을 돌리다','ひねる']
+];
+/* 연재 이야기: 이찌네 가족 일본 여행 — [문장, 해석, 그림] */
+var PS_=[
+ {t:'{旅行|りょこう}の{準備|じゅんび}',k:'여행 준비',ic:'かばん',
+  n5:[['{来月|らいげつ}、{家族|かぞく}で{大阪|おおさか}へ{行|い}きます。','다음 달에 가족과 함께 오사카에 갑니다.','家族'],['{家族|かぞく}は{四人|よにん}です。{息子|むすこ}のジュンと{娘|むすめ}のハナがいます。','가족은 네 명입니다. 아들 준과 딸 하나가 있습니다.','子ども'],['{今日|きょう}、かばんに{服|ふく}を{入|い}れました。','오늘 가방에 옷을 넣었습니다.','服'],['{傘|かさ}と{薬|くすり}も{入|い}れました。','우산과 약도 넣었습니다.','傘'],['ジュンは「{早|はや}く{行|い}きたい！」と{言|い}いました。','준은 "빨리 가고 싶어!"라고 말했습니다.','嬉しい']],
+  q5:[['가족은 어디에 갑니까?',['도쿄','오사카','교토'],1],['가방에 넣지 않은 것은?',['옷','우산','카메라'],2]],
+  n4:[['{来月|らいげつ}の{連休|れんきゅう}に、{家族|かぞく}で{大阪|おおさか}を{旅行|りょこう}する{予定|よてい}です。','다음 달 연휴에 가족과 오사카를 여행할 예정입니다.','家族'],['{夫|おっと}がホテルを{予約|よやく}して、わたしは{電車|でんしゃ}の{乗|の}り{方|かた}を{調|しら}べました。','남편이 호텔을 예약하고, 저는 전철 타는 법을 알아봤습니다.','電車'],['{子|こ}どもが{退屈|たいくつ}しないように、{絵本|えほん}も{入|い}れておきました。','아이들이 심심하지 않도록 그림책도 넣어 두었습니다.','本'],['{天気予報|てんきよほう}によると、{大阪|おおさか}は{雨|あめ}が{降|ふ}るそうです。','일기예보에 따르면 오사카는 비가 온다고 합니다.','傘'],['それで、{傘|かさ}も{持|も}っていくことにしました。','그래서 우산도 가져가기로 했습니다.','かばん']],
+  q4:[['호텔을 예약한 사람은?',['나','남편','아들'],1],['우산을 가져가는 이유는?',['햇빛이 강해서','비가 온다고 해서','아이가 원해서'],1]],
+  pat:[['〜予定です','~할 예정입니다'],['〜ないように','~하지 않도록'],['〜ておく','~해 두다'],['〜そうです','~라고 합니다 (들은 말)'],['〜ことにする','~하기로 하다']]},
+ {t:'{空港|くうこう}で',k:'공항에서',ic:'かばん',
+  n5:[['{飛行機|ひこうき}で{関西空港|かんさいくうこう}に{着|つ}きました。','비행기로 간사이 공항에 도착했습니다.','かばん'],['{係|かかり}の{人|ひと}が「{観光|かんこう}ですか」と{聞|き}きました。','담당자가 "관광입니까?"라고 물었습니다.','話す'],['「はい、{観光|かんこう}です。{三日|みっか}います」と{答|こた}えました。','"네, 관광입니다. 사흘 있습니다"라고 대답했습니다.','人'],['カメラで{顔|かお}の{写真|しゃしん}を{撮|と}りました。','카메라로 얼굴 사진을 찍었습니다.','見る'],['それから、{荷物|にもつ}をもらいました。','그리고 짐을 받았습니다.','持つ']],
+  q5:[['일본에 온 목적은?',['출장','관광','공부'],1],['며칠 있습니까?',['이틀','사흘','나흘'],1]],
+  n4:[['{飛行機|ひこうき}は{予定|よてい}より{少|すこ}し{早|はや}く{関西空港|かんさいくうこう}に{着|つ}きました。','비행기는 예정보다 조금 일찍 간사이 공항에 도착했습니다.','かばん'],['{入国審査|にゅうこくしんさ}では、{旅行|りょこう}の{目的|もくてき}と{泊|と}まる{所|ところ}を{聞|き}かれました。','입국 심사에서는 여행 목적과 묵을 곳을 질문받았습니다.','話す'],['{緊張|きんちょう}しましたが、{練習|れんしゅう}したとおりに{答|こた}えることができました。','긴장했지만 연습한 대로 대답할 수 있었습니다.','安心'],['{指|ゆび}の{登録|とうろく}をしたあとで、{荷物|にもつ}を{取|と}りに{行|い}きました。','지문 등록을 한 뒤에 짐을 찾으러 갔습니다.','手'],['ハナのかばんがなかなか{出|で}てこなくて、{少|すこ}し{心配|しんぱい}しました。','하나의 가방이 좀처럼 나오지 않아서 조금 걱정했습니다.','心配']],
+  q4:[['입국 심사에서 질문받은 것은?',['여행 목적과 묵을 곳','가족 수','돌아가는 날'],0],['무엇 때문에 걱정했습니까?',['비행기가 늦어서','하나의 가방이 늦게 나와서','지문 등록이 어려워서'],1]],
+  pat:[['〜より','~보다'],['〜(ら)れる (수동)','~받다, ~당하다'],['〜たとおりに','~한 대로'],['〜ことができる','~할 수 있다'],['〜たあとで','~한 뒤에']]},
+ {t:'{電車|でんしゃ}で',k:'전철에서',ic:'電車',
+  n5:[['{空港|くうこう}から{電車|でんしゃ}に{乗|の}りました。','공항에서 전철을 탔습니다.','電車'],['{駅|えき}で{切符|きっぷ}を{四枚|よんまい}{買|か}いました。','역에서 표를 네 장 샀습니다.','紙'],['{電車|でんしゃ}の{中|なか}はとても{静|しず}かでした。','전철 안은 아주 조용했습니다.','座る'],['ジュンは{窓|まど}から{海|うみ}を{見|み}ました。','준은 창문으로 바다를 봤습니다.','窓'],['{一時間|いちじかん}ぐらいで{難波|なんば}に{着|つ}きました。','한 시간쯤 걸려 난바에 도착했습니다.','時計']],
+  q5:[['표를 몇 장 샀습니까?',['두 장','세 장','네 장'],2],['준은 창문으로 무엇을 봤습니까?',['산','바다','공항'],1]],
+  n4:[['ICカードを{買|か}おうと{思|おも}いましたが、{機械|きかい}の{使|つか}い{方|かた}がわかりませんでした。','교통카드를 사려고 했지만 기계 사용법을 몰랐습니다.','カード'],['{駅員|えきいん}さんに{聞|き}くと、{親切|しんせつ}に{教|おし}えてくれました。','역무원에게 물어보니 친절하게 가르쳐 주었습니다.','話す'],['{電車|でんしゃ}の{中|なか}では、{電話|でんわ}で{話|はな}さないほうがいいそうです。','전철 안에서는 전화로 통화하지 않는 편이 좋다고 합니다.','携帯'],['それで、{子|こ}どもたちにも{小|ちい}さい{声|こえ}で{話|はな}すように{言|い}いました。','그래서 아이들에게도 작은 목소리로 말하라고 했습니다.','口'],['{乗|の}り{換|か}えが{一回|いっかい}だけだったので、{思|おも}ったより{簡単|かんたん}でした。','갈아타기가 한 번뿐이어서 생각보다 쉬웠습니다.','安心']],
+  q4:[['교통카드를 바로 사지 못한 이유는?',['돈이 없어서','기계 사용법을 몰라서','역이 닫혀서'],1],['전철 안에서 하지 않는 편이 좋은 것은?',['전화 통화','음료 마시기','자리에 앉기'],0]],
+  pat:[['〜(よ)うと思う','~하려고 하다'],['〜と','~하니 (그러자)'],['〜てくれる','(남이 나에게) ~해 주다'],['〜ほうがいい','~하는 편이 좋다'],['〜ように言う','~하라고 말하다']]},
+ {t:'コンビニで',k:'편의점에서',ic:'おにぎり',
+  n5:[['ホテルの{近|ちか}くにコンビニがありました。','호텔 근처에 편의점이 있었습니다.','家'],['わたしはおにぎりとお{茶|ちゃ}を{買|か}いました。','저는 주먹밥과 차를 샀습니다.','おにぎり'],['ハナはプリンがほしいと{言|い}いました。','하나는 푸딩을 갖고 싶다고 했습니다.','プリン'],['{店員|てんいん}さんが「{袋|ふくろ}はいりますか」と{聞|き}きました。','점원이 "봉투 필요하세요?"라고 물었습니다.','袋'],['「いいえ、{大丈夫|だいじょうぶ}です」と{言|い}って、カードで{払|はら}いました。','"아니요, 괜찮습니다"라고 하고 카드로 냈습니다.','カード']],
+  q5:[['하나가 갖고 싶어 한 것은?',['주먹밥','푸딩','차'],1],['무엇으로 냈습니까?',['현금','카드','동전'],1]],
+  n4:[['{夜|よる}{遅|おそ}くなったので、ホテルの{近|ちか}くのコンビニに{寄|よ}りました。','밤늦게 되어서 호텔 근처 편의점에 들렀습니다.','家'],['{日本|にほん}のコンビニはお{弁当|べんとう}の{種類|しゅるい}が{多|おお}くて、なかなか{決|き}められませんでした。','일본 편의점은 도시락 종류가 많아서 좀처럼 고르지 못했습니다.','弁当'],['{店員|てんいん}さんにお{弁当|べんとう}を{温|あたた}めてもらいました。','점원이 도시락을 데워 주었습니다.','レジ'],['おつりをもらうとき、レシートも{一緒|いっしょ}にもらいました。','거스름돈을 받을 때 영수증도 함께 받았습니다.','おつり'],['{安|やす}くておいしかったので、{明日|あした}の{朝|あさ}もここで{買|か}うつもりです。','싸고 맛있어서 내일 아침에도 여기서 살 생각입니다.','嬉しい']],
+  q4:[['점원이 해 준 일은?',['도시락을 데워 줌','봉투를 줌','길을 알려 줌'],0],['내일 아침 계획은?',['식당에 간다','이 편의점에서 산다','호텔에서 먹는다'],1]],
+  pat:[['〜ので','~해서, ~이기 때문에'],['〜られる (가능)','~할 수 있다'],['〜てもらう','(남에게) ~해 받다'],['〜とき','~할 때'],['〜つもりです','~할 생각입니다']]},
+ {t:'{回転|かいてん}ずし',k:'회전초밥',ic:'まぐろ',
+  n5:[['{昼|ひる}ごはんに{回転|かいてん}ずしへ{行|い}きました。','점심으로 회전초밥집에 갔습니다.','まぐろ'],['{夫|おっと}はまぐろを{三皿|さんさら}{食|た}べました。','남편은 참치를 세 접시 먹었습니다.','食べる'],['ジュンはえびが{大好|だいす}きです。','준은 새우를 아주 좋아합니다.','えび'],['わさびは{辛|から}いですから、{子|こ}どもはわさびなしにしました。','와사비는 매우니까 아이들은 와사비를 빼기로 했습니다.','子ども'],['{全部|ぜんぶ}で{十二皿|じゅうにさら}でした。','모두 열두 접시였습니다.','いくら']],
+  q5:[['남편은 참치를 몇 접시 먹었습니까?',['두 접시','세 접시','열두 접시'],1],['준이 아주 좋아하는 것은?',['참치','새우','오징어'],1]],
+  n4:[['{回転|かいてん}ずしでは、タブレットで{注文|ちゅうもん}することができます。','회전초밥집에서는 태블릿으로 주문할 수 있습니다.','押す'],['{日本語|にほんご}が{読|よ}めなくても、{写真|しゃしん}があるので{大丈夫|だいじょうぶ}です。','일본어를 못 읽어도 사진이 있어서 괜찮습니다.','見る'],['ハナのために、わさび{抜|ぬ}きを{頼|たの}んであげました。','하나를 위해 와사비를 뺀 것을 주문해 주었습니다.','女の子'],['{夫|おっと}は{初|はじ}めて{大|おお}トロを{食|た}べてみて、とても{喜|よろこ}んでいました。','남편은 처음으로 오토로를 먹어 보고 아주 기뻐했습니다.','まぐろ'],['お{皿|さら}の{数|かず}で{値段|ねだん}が{決|き}まるので、{計算|けいさん}が{簡単|かんたん}です。','접시 수로 가격이 정해져서 계산이 쉽습니다.','レシート']],
+  q4:[['주문은 무엇으로 합니까?',['종이','태블릿','점원에게 말로'],1],['가격은 무엇으로 정해집니까?',['접시 수','먹은 시간','사람 수'],0]],
+  pat:[['〜ことができる','~할 수 있다'],['〜ても','~해도'],['〜のために','~를 위해'],['〜てあげる','(내가 남에게) ~해 주다'],['〜てみる','~해 보다']]},
+ {t:'カフェで',k:'카페에서',ic:'コーヒー',
+  n5:[['{午後|ごご}、カフェで{休|やす}みました。','오후에 카페에서 쉬었습니다.','座る'],['わたしはアイスコーヒーを{頼|たの}みました。','저는 아이스커피를 주문했습니다.','アイスコーヒー'],['「{氷|こおり}は{少|すく}なめでお{願|ねが}いします」と{言|い}いました。','"얼음은 적게 부탁합니다"라고 말했습니다.','氷'],['{子|こ}どもたちはケーキを{食|た}べました。','아이들은 케이크를 먹었습니다.','ケーキ'],['{店|みせ}の{人|ひと}はとても{親切|しんせつ}でした。','가게 사람은 아주 친절했습니다.','嬉しい']],
+  q5:[['나는 무엇을 주문했습니까?',['라테','아이스커피','주스'],1],['얼음은 어떻게 해 달라고 했습니까?',['많이','적게','없이'],1]],
+  n4:[['たくさん{歩|ある}いて{足|あし}が{痛|いた}くなったので、カフェに{入|はい}りました。','많이 걸어서 다리가 아파서 카페에 들어갔습니다.','足'],['わたしはタピオカミルクティーを{甘|あま}さ{半分|はんぶん}で{注文|ちゅうもん}しました。','저는 버블티를 당도 절반으로 주문했습니다.','ストロー'],['{甘|あま}いものが{苦手|にがて}な{夫|おっと}は、ホットコーヒーにしました。','단 것을 잘 못 먹는 남편은 따뜻한 커피로 했습니다.','コーヒー'],['ジュンがジュースをこぼしてしまいましたが、{店員|てんいん}さんがすぐ{拭|ふ}いてくれました。','준이 주스를 쏟고 말았지만 점원이 바로 닦아 주었습니다.','こぼす'],['{少|すこ}し{休|やす}んだら、また{元気|げんき}が{出|で}てきました。','조금 쉬었더니 다시 힘이 났습니다.','楽しい']],
+  q4:[['남편이 고른 음료는?',['버블티','따뜻한 커피','주스'],1],['주스를 쏟은 사람은?',['하나','준','남편'],1]],
+  pat:[['〜くなる','~해지다'],['〜にする','~로 하다 (고르기)'],['〜てしまう','~하고 말다'],['〜てくれる','(남이 나에게) ~해 주다'],['〜たら','~했더니']]},
+ {t:'{薬局|やっきょく}で',k:'약국에서',ic:'薬',
+  n5:[['{朝|あさ}、ハナは{熱|ねつ}がありました。','아침에 하나는 열이 있었습니다.','熱'],['わたしたちは{薬局|やっきょく}へ{行|い}きました。','우리는 약국에 갔습니다.','歩く'],['「{子|こ}どもの{薬|くすり}はありますか」と{聞|き}きました。','"아이용 약 있습니까?"라고 물었습니다.','薬'],['ハナは{薬|くすり}を{飲|の}んで、{寝|ね}ました。','하나는 약을 먹고 잤습니다.','寝る'],['{午後|ごご}、ハナは{元気|げんき}になりました。','오후에 하나는 건강해졌습니다.','嬉しい']],
+  q5:[['아침에 하나는 어땠습니까?',['배가 아팠다','열이 있었다','기침을 했다'],1],['오후에 하나는 어떻게 되었습니까?',['병원에 갔다','건강해졌다','계속 잤다'],1]],
+  n4:[['{朝|あさ}{起|お}きると、ハナの{顔|かお}が{赤|あか}くて、{熱|ねつ}があるようでした。','아침에 일어나 보니 하나의 얼굴이 빨갛고 열이 있는 것 같았습니다.','熱'],['{近|ちか}くの{薬局|やっきょく}で、{症状|しょうじょう}をメモに{書|か}いて{見|み}せました。','근처 약국에서 증상을 메모에 써서 보여 주었습니다.','書く'],['{薬剤師|やくざいし}さんが{子|こ}ども{用|よう}の{薬|くすり}を{選|えら}んでくれました。','약사가 어린이용 약을 골라 주었습니다.','薬'],['「{食|た}べたあとで{飲|の}んでください」と{言|い}われました。','"식사 후에 드세요"라는 말을 들었습니다.','話す'],['{薬|くすり}を{飲|の}んで{寝|ね}たら、{夕方|ゆうがた}には{熱|ねつ}が{下|さ}がりました。','약을 먹고 잤더니 저녁에는 열이 내렸습니다.','寝る']],
+  q4:[['약국에서 증상을 어떻게 알렸습니까?',['말로 설명했다','메모에 써서 보여 주었다','사진을 보여 주었다'],1],['저녁에는 어떻게 되었습니까?',['열이 내렸다','병원에 갔다','열이 올랐다'],0]],
+  pat:[['〜と (발견)','~하니, ~해 보니'],['〜ようだ','~인 것 같다'],['〜てくれる','(남이 나에게) ~해 주다'],['〜(ら)れる (수동)','~라는 말을 듣다'],['〜たら','~했더니']]},
+ {t:'{帰国|きこく}の{日|ひ}',k:'돌아가는 날',ic:'行く',
+  n5:[['{今日|きょう}は{旅行|りょこう}の{最後|さいご}の{日|ひ}です。','오늘은 여행 마지막 날입니다.','時計'],['お{土産|みやげ}をたくさん{買|か}いました。','선물을 많이 샀습니다.','袋'],['{空港|くうこう}で{家族|かぞく}の{写真|しゃしん}を{撮|と}りました。','공항에서 가족사진을 찍었습니다.','家族'],['ジュンは「また{来|き}たい」と{言|い}いました。','준은 "또 오고 싶어"라고 말했습니다.','来る'],['とても{楽|たの}しい{旅行|りょこう}でした。','아주 즐거운 여행이었습니다.','楽しい']],
+  q5:[['오늘은 무슨 날입니까?',['여행 첫날','여행 마지막 날','생일'],1],['준은 뭐라고 말했습니까?',['빨리 집에 가고 싶다','또 오고 싶다','배가 고프다'],1]],
+  n4:[['{帰|かえ}る{前|まえ}に、{会社|かいしゃ}の{人|ひと}にあげるお{土産|みやげ}を{買|か}いました。','돌아가기 전에 회사 사람들에게 줄 선물을 샀습니다.','袋'],['{荷物|にもつ}が{多|おお}くなったので、かばんをもう{一|ひと}つ{買|か}わなければなりませんでした。','짐이 많아져서 가방을 하나 더 사야 했습니다.','かばん'],['{子|こ}どもたちは、{日本語|にほんご}で「ありがとう」と{言|い}えるようになりました。','아이들은 일본어로 "고마워요"라고 말할 수 있게 되었습니다.','子ども'],['{旅行|りょこう}の{前|まえ}に、もっと{日本語|にほんご}を{勉強|べんきょう}すればよかったと{思|おも}いました。','여행 전에 일본어를 더 공부했으면 좋았겠다고 생각했습니다.','勉強する'],['{次|つぎ}は{冬|ふゆ}に{北海道|ほっかいどう}へ{行|い}ってみたいです。','다음에는 겨울에 홋카이도에 가 보고 싶습니다.','行く']],
+  q4:[['가방을 하나 더 산 이유는?',['가방이 망가져서','짐이 많아져서','선물로 주려고'],1],['다음에 가 보고 싶은 곳은?',['오사카','교토','홋카이도'],2]],
+  pat:[['〜前に','~하기 전에'],['〜なければならない','~해야 한다'],['〜ようになる','~하게 되다'],['〜ばよかった','~했으면 좋았을 텐데'],['〜てみたい','~해 보고 싶다']]}
+];
+/* 질문 듣고 답하기: [질문, 질문 해석, 정답, 정답 해석] */
+var PQ=[
+ {n:'입국 심사',ic:'かばん',q:[['{何|なに}をしに{来|き}ましたか。','무엇을 하러 왔습니까?','{観光|かんこう}です。','관광입니다.'],['{何日|なんにち}{滞在|たいざい}しますか。','며칠 머무릅니까?','{三日|みっか}です。','사흘입니다.'],['どこに{泊|と}まりますか。','어디에 묵습니까?','{難波|なんば}のホテルです。','난바의 호텔입니다.'],['{誰|だれ}と{来|き}ましたか。','누구와 왔습니까?','{家族|かぞく}と{来|き}ました。','가족과 왔습니다.'],['{帰|かえ}りの{航空券|こうくうけん}はありますか。','돌아가는 항공권이 있습니까?','はい、あります。','네, 있습니다.'],['{眼鏡|めがね}を{外|はず}してください。','안경을 벗어 주세요.','はい、わかりました。','네, 알겠습니다.']]},
+ {n:'택시',ic:'車',q:[['どちらまでですか。','어디까지 가십니까?','このホテルまでお{願|ねが}いします。','이 호텔까지 부탁합니다.'],['{高速道路|こうそくどうろ}を{使|つか}いますか。','고속도로를 이용할까요?','いいえ、{下|した}の{道|みち}でお{願|ねが}いします。','아니요, 일반 도로로 부탁합니다.'],['ここでいいですか。','여기서 내리시면 됩니까?','はい、ここで{止|と}めてください。','네, 여기서 세워 주세요.'],['お{支払|しはら}いはどうしますか。','계산은 어떻게 하시겠습니까?','カードでお{願|ねが}いします。','카드로 부탁합니다.'],['トランクを{開|あ}けましょうか。','트렁크를 열어 드릴까요?','はい、お{願|ねが}いします。','네, 부탁합니다.']]},
+ {n:'식당',ic:'箸',q:[['{何名様|なんめいさま}ですか。','몇 분이십니까?','{四人|よにん}です。','네 명입니다.'],['ご{注文|ちゅうもん}はお{決|き}まりですか。','주문하시겠습니까?','これを{二|ふた}つください。','이것을 두 개 주세요.'],['お{飲|の}み{物|もの}はいかがですか。','음료는 어떻게 하시겠습니까?','お{水|みず}をください。','물 주세요.'],['{辛|から}いですが、{大丈夫|だいじょうぶ}ですか。','매운데 괜찮으세요?','{辛|から}くないのはありますか。','안 매운 것도 있습니까?'],['お{会計|かいけい}はご{一緒|いっしょ}ですか。','계산은 같이 하십니까?','{一緒|いっしょ}でお{願|ねが}いします。','같이 부탁합니다.']]},
+ {n:'편의점',ic:'レジ',q:[['{温|あたた}めますか。','데워 드릴까요?','はい、お{願|ねが}いします。','네, 부탁합니다.'],['{袋|ふくろ}はいりますか。','봉투 필요하세요?','いいえ、{大丈夫|だいじょうぶ}です。','아니요, 괜찮습니다.'],['お{箸|はし}はおつけしますか。','젓가락 넣어 드릴까요?','{二膳|にぜん}お{願|ねが}いします。','두 벌 부탁합니다.'],['ポイントカードはお{持|も}ちですか。','포인트 카드 있으세요?','いいえ、ありません。','아니요, 없습니다.'],['お{支払|しはら}いは{何|なん}でしますか。','무엇으로 계산하시겠습니까?','{現金|げんきん}で{払|はら}います。','현금으로 내겠습니다.']]},
+ {n:'호텔',ic:'ベッド',q:[['お{名前|なまえ}をお{願|ねが}いします。','성함을 알려 주세요.','キムです。{予約|よやく}してあります。','김입니다. 예약해 두었습니다.'],['パスポートを{見|み}せていただけますか。','여권을 보여 주시겠습니까?','はい、どうぞ。','네, 여기 있습니다.'],['{何泊|なんぱく}されますか。','몇 박 하십니까?','{三泊|さんぱく}です。','3박입니다.'],['{朝食|ちょうしょく}はおつけしますか。','조식을 추가하시겠습니까?','はい、{四人分|よにんぶん}お{願|ねが}いします。','네, 4인분 부탁합니다.'],['お{荷物|にもつ}をお{預|あず}かりしましょうか。','짐을 맡아 드릴까요?','はい、{夕方|ゆうがた}まで{お願|ねが}いします。','네, 저녁까지 부탁합니다.']]}
+];
+/* 조수사: 1~10 읽기 */
+var PC=[
+ {c:'つ',n:'~개 (물건 일반)',ic:'りんご',r:['ひとつ','ふたつ','みっつ','よっつ','いつつ','むっつ','ななつ','やっつ','ここのつ','とお'],b:null},
+ {c:'人',n:'~명',ic:'人',r:['ひとり','ふたり','さんにん','よにん','ごにん','ろくにん','ななにん','はちにん','きゅうにん','じゅうにん'],b:'にん'},
+ {c:'個',n:'~개 (작은 물건)',ic:'卵',r:['いっこ','にこ','さんこ','よんこ','ごこ','ろっこ','ななこ','はっこ','きゅうこ','じゅっこ'],b:'こ'},
+ {c:'杯',n:'~잔',ic:'コーヒー',r:['いっぱい','にはい','さんばい','よんはい','ごはい','ろっぱい','ななはい','はっぱい','きゅうはい','じゅっぱい'],b:'はい'},
+ {c:'本',n:'~자루, ~병 (긴 물건)',ic:'傘',r:['いっぽん','にほん','さんぼん','よんほん','ごほん','ろっぽん','ななほん','はっぽん','きゅうほん','じゅっぽん'],b:'ほん'},
+ {c:'枚',n:'~장',ic:'紙',r:['いちまい','にまい','さんまい','よんまい','ごまい','ろくまい','ななまい','はちまい','きゅうまい','じゅうまい'],b:'まい'},
+ {c:'階',n:'~층',ic:'病院',r:['いっかい','にかい','さんがい','よんかい','ごかい','ろっかい','ななかい','はっかい','きゅうかい','じゅっかい'],b:'かい'},
+ {c:'分',n:'~분',ic:'時計',r:['いっぷん','にふん','さんぷん','よんぷん','ごふん','ろっぷん','ななふん','はっぷん','きゅうふん','じゅっぷん'],b:'ふん'},
+ {c:'日',n:'~일 (날짜)',ic:'時計',r:['ついたち','ふつか','みっか','よっか','いつか','むいか','なのか','ようか','ここのか','とおか'],b:null}
+];
+/* 장면 속 낱말 찾기: [표기, 읽기, 뜻, 그림, x, y, 크기] (장면 300 × 210) */
+var PSC=[
+ {n:'コンビニのレジ',k:'편의점 계산대',it:[['レジ','レジ','계산대','レジ',8,62,.95],['レシート','レシート','영수증','レシート',108,104,.55],['硬貨','こうか','동전','硬貨',160,122,.5],['お札','おさつ','지폐','お札',208,116,.55],['財布','さいふ','지갑','財布',236,46,.6],['カード','カード','카드','カード',178,58,.5],['袋','ふくろ','봉투','袋',104,30,.66],['おにぎり','おにぎり','주먹밥','おにぎり',20,6,.5],['弁当','べんとう','도시락','弁当',158,4,.55],['プリン','プリン','푸딩','プリン',70,4,.45]]},
+ {n:'カフェのテーブル',k:'카페 테이블',it:[['コーヒー','コーヒー','커피','コーヒー',20,70,.7],['アイスコーヒー','アイスコーヒー','아이스커피','アイスコーヒー',96,58,.75],['ケーキ','ケーキ','케이크','ケーキ',176,82,.62],['スプーン','スプーン','숟가락','スプーン',238,100,.55],['ナプキン','ナプキン','냅킨','ナプキン',240,40,.55],['メニュー','メニュー','메뉴판','メニュー',176,4,.62],['砂糖','さとう','설탕','砂糖',18,10,.55],['パン','パン','빵','パン',92,8,.55],['ふた','ふた','(컵) 뚜껑','ふた',36,140,.5]]},
+ {n:'わたしのへや',k:'내 방',it:[['ベッド','ベッド','침대','ベッド',4,104,1],['机','つくえ','책상','机',176,112,.95],['椅子','いす','의자','椅子',118,118,.8],['窓','まど','창문','窓',96,10,.8],['ドア','ドア','문','ドア',4,8,.95],['時計','とけい','시계','時計',190,10,.5],['テレビ','テレビ','텔레비전','テレビ',238,4,.6],['本','ほん','책','本',192,82,.4],['かばん','かばん','가방','かばん',112,170,.38],['電球','でんきゅう','전구','電球',244,96,.45]]}
+];
+/* 급수별 여행 회화 이야기: s=[문장, 해석, 말하는 사람], w=[낱말, 읽기, 뜻], q=[질문, 보기, 정답] */
+var GS={
+N5:[
+ {t:'{駅|えき}で{切符|きっぷ}を{買|か}う',k:'역에서 표 사기',ic:'電車',s:[
+  ['すみません、{京都|きょうと}までの{切符|きっぷ}はどこで{買|か}いますか。','실례합니다, 교토까지 가는 표는 어디서 삽니까?','나'],
+  ['あちらの{機械|きかい}で{買|か}ってください。','저쪽 기계에서 사세요.','역무원'],
+  ['いくらですか。','얼마입니까?','나'],
+  ['{大人|おとな}は{五百六十円|ごひゃくろくじゅうえん}です。','어른은 560엔입니다.','역무원'],
+  ['{何番線|なんばんせん}ですか。','몇 번 승강장입니까?','나'],
+  ['{三番線|さんばんせん}です。{次|つぎ}の{電車|でんしゃ}は{十時|じゅうじ}です。','3번 승강장입니다. 다음 전철은 10시입니다.','역무원'],
+  ['ありがとうございます。','감사합니다.','나']],
+  w:[['切符','きっぷ','표'],['機械','きかい','기계'],['いくら','いくら','얼마'],['大人','おとな','어른'],['何番線','なんばんせん','몇 번 승강장'],['次','つぎ','다음'],['電車','でんしゃ','전철']],
+  q:[['교토까지 표 값은?',['500엔','560엔','650엔'],1],['몇 번 승강장입니까?',['1번','3번','10번'],1]]},
+ {t:'レストランで',k:'식당에서',ic:'箸',s:[
+  ['いらっしゃいませ。{何名様|なんめいさま}ですか。','어서 오세요. 몇 분이세요?','점원'],
+  ['{二人|ふたり}です。','두 명입니다.','나'],
+  ['こちらへどうぞ。メニューです。','이쪽으로 오세요. 메뉴입니다.','점원'],
+  ['すみません、これは{何|なん}ですか。','저기요, 이건 뭐예요?','나'],
+  ['{天|てん}ぷらです。えびと{野菜|やさい}です。','튀김입니다. 새우와 채소예요.','점원'],
+  ['じゃ、これを{二|ふた}つと、お{水|みず}をください。','그럼 이걸 두 개랑 물 주세요.','나'],
+  ['はい、{少々|しょうしょう}お{待|ま}ちください。','네, 잠시만 기다려 주세요.','점원']],
+  w:[['何名様','なんめいさま','몇 분'],['二人','ふたり','두 사람'],['天ぷら','てんぷら','튀김'],['野菜','やさい','채소'],['〜ください','〜ください','~ 주세요'],['少々','しょうしょう','잠시, 조금']],
+  q:[['손님은 몇 명입니까?',['한 명','두 명','세 명'],1],['주문한 것은?',['튀김 두 개와 물','라멘과 맥주','초밥 두 개'],0]]},
+ {t:'バスに{乗|の}る',k:'버스 타기',ic:'車',s:[
+  ['すみません、このバスは{大阪城|おおさかじょう}へ{行|い}きますか。','실례합니다, 이 버스는 오사카성에 갑니까?','나'],
+  ['いいえ、{行|い}きません。{六番|ろくばん}のバスに{乗|の}ってください。','아니요, 안 갑니다. 6번 버스를 타세요.','기사'],
+  ['{六番|ろくばん}のバス{停|てい}はどこですか。','6번 버스 정류장은 어디입니까?','나'],
+  ['{道|みち}の{向|む}こうです。','길 건너편입니다.','기사'],
+  ['お{金|かね}はいつ{払|はら}いますか。','돈은 언제 냅니까?','나'],
+  ['{降|お}りるときに{払|はら}ってください。','내릴 때 내세요.','기사'],
+  ['わかりました。どうも。','알겠습니다. 고마워요.','나']],
+  w:[['乗る','のる','타다'],['バス停','バスてい','버스 정류장'],['道','みち','길'],['向こう','むこう','건너편'],['払う','はらう','내다, 지불하다'],['降りる','おりる','내리다']],
+  q:[['오사카성에 가려면 몇 번 버스?',['3번','6번','10번'],1],['요금은 언제 냅니까?',['탈 때','내릴 때','미리'],1]]}
+],
+N4:[
+ {t:'{空港|くうこう}のカウンターで',k:'공항 카운터에서',ic:'かばん',s:[
+  ['パスポートと{航空券|こうくうけん}をお{願|ねが}いします。','여권과 항공권 부탁합니다.','항공사 직원'],
+  ['はい、どうぞ。{窓側|まどがわ}の{席|せき}にしてもらえますか。','네, 여기요. 창가 자리로 해 주실 수 있나요?','나'],
+  ['{申|もう}し{訳|わけ}ありません。{窓側|まどがわ}はもういっぱいです。{通路側|つうろがわ}でもよろしいですか。','죄송합니다. 창가는 이미 다 찼습니다. 통로 쪽이라도 괜찮으세요?','항공사 직원'],
+  ['はい、{大丈夫|だいじょうぶ}です。{家族|かぞく}と{並|なら}んで{座|すわ}りたいんですが。','네, 괜찮습니다. 가족과 나란히 앉고 싶은데요.','나'],
+  ['{四人|よにん}{並|なら}びの{席|せき}をお{取|と}りしました。お{荷物|にもつ}はこちらに{置|お}いてください。','네 분 나란히 앉는 자리를 잡아 드렸습니다. 짐은 이쪽에 올려 주세요.','항공사 직원'],
+  ['{中|なか}に{電池|でんち}が{入|はい}っているんですが、{大丈夫|だいじょうぶ}ですか。','안에 배터리가 들어 있는데 괜찮나요?','나'],
+  ['{電池|でんち}は{手荷物|てにもつ}に{入|い}れてください。','배터리는 기내 수하물에 넣어 주세요.','항공사 직원']],
+  w:[['航空券','こうくうけん','항공권'],['窓側','まどがわ','창가 쪽'],['通路側','つうろがわ','통로 쪽'],['並ぶ','ならぶ','나란히 서다(앉다)'],['並び','ならび','나란히 있음'],['電池','でんち','배터리, 건전지'],['手荷物','てにもつ','기내 수하물'],['〜てもらえますか','〜てもらえますか','~해 주실 수 있나요']],
+  q:[['결국 어떤 자리가 되었습니까?',['창가 자리','통로 쪽 네 명 나란히','따로따로'],1],['배터리는 어떻게 하라고 했습니까?',['부치는 짐에 넣기','기내 수하물에 넣기','버리기'],1]]},
+ {t:'ホテルのフロントで',k:'호텔 프런트에서',ic:'ベッド',s:[
+  ['すみません、{予約|よやく}したキムです。{少|すこ}し{早|はや}いんですが、チェックインできますか。','실례합니다, 예약한 김입니다. 조금 이르지만 체크인 되나요?','나'],
+  ['{申|もう}し{訳|わけ}ございません。チェックインは{三時|さんじ}からです。','죄송합니다. 체크인은 3시부터입니다.','프런트'],
+  ['じゃあ、{荷物|にもつ}を{預|あず}かってもらえますか。','그럼 짐을 맡아 주실 수 있나요?','나'],
+  ['はい、こちらの{番号札|ばんごうふだ}をお{持|も}ちください。','네, 이 번호표를 가지고 계세요.','프런트'],
+  ['{近|ちか}くにおいしいお{好|この}み{焼|や}きの{店|みせ}はありますか。','근처에 맛있는 오코노미야키 가게가 있나요?','나'],
+  ['{駅|えき}の{方|ほう}へ{五分|ごふん}ぐらい{歩|ある}くと、{有名|ゆうめい}な{店|みせ}がありますよ。','역 쪽으로 5분쯤 걸으면 유명한 가게가 있어요.','프런트'],
+  ['{地図|ちず}を{描|か}いてもらえませんか。','지도를 그려 주실 수 있을까요?','나'],
+  ['はい、どうぞ。お{気|き}をつけて。','네, 여기 있습니다. 조심히 다녀오세요.','프런트']],
+  w:[['予約','よやく','예약'],['預かる','あずかる','맡다, 보관하다'],['番号札','ばんごうふだ','번호표'],['お好み焼き','おこのみやき','오코노미야키'],['〜と','〜と','~하면'],['地図','ちず','지도'],['描く','かく','그리다']],
+  q:[['체크인은 몇 시부터?',['1시','3시','5시'],1],['프런트에 부탁한 두 가지는?',['짐 맡기기와 지도 그리기','택시 부르기와 환전','방 바꾸기와 조식'],0]]},
+ {t:'{乗|の}り{換|か}え',k:'갈아타기',ic:'電車',s:[
+  ['すみません、{京都|きょうと}へ{行|い}きたいんですが、どう{行|い}けばいいですか。','실례합니다, 교토에 가고 싶은데 어떻게 가면 되나요?','나'],
+  ['{梅田|うめだ}で{阪急線|はんきゅうせん}に{乗|の}り{換|か}えてください。','우메다에서 한큐선으로 갈아타세요.','역무원'],
+  ['{乗|の}り{換|か}えは{難|むずか}しいですか。','갈아타기는 어렵나요?','나'],
+  ['{少|すこ}し{歩|ある}きますが、{案内|あんない}があるので{大丈夫|だいじょうぶ}ですよ。','조금 걷지만 안내판이 있어서 괜찮아요.','역무원'],
+  ['{急行|きゅうこう}と{普通|ふつう}、どちらが{早|はや}いですか。','급행과 보통 중 어느 쪽이 빠른가요?','나'],
+  ['{急行|きゅうこう}のほうが{二十分|にじゅっぷん}ぐらい{早|はや}いです。でも、{小|ちい}さい{駅|えき}には{止|と}まりませんから、{気|き}をつけてください。','급행이 20분쯤 빨라요. 하지만 작은 역에는 서지 않으니 조심하세요.','역무원'],
+  ['よくわかりました。{助|たす}かりました。','잘 알겠습니다. 덕분에 살았어요.','나']],
+  w:[['乗り換える','のりかえる','갈아타다'],['案内','あんない','안내'],['急行','きゅうこう','급행'],['普通','ふつう','보통(완행)'],['〜のほうが','〜のほうが','~ 쪽이 더'],['止まる','とまる','서다, 멈추다'],['助かる','たすかる','도움이 되다']],
+  q:[['어디서 갈아탑니까?',['교토','우메다','난바'],1],['급행을 탈 때 주의할 점은?',['요금이 비싸다','작은 역에는 서지 않는다','사람이 많다'],1]]}
+],
+N3:[
+ {t:'{新幹線|しんかんせん}の{席|せき}',k:'신칸센 좌석',ic:'電車',s:[
+  ['すみません、ここは{私|わたし}の{席|せき}だと{思|おも}うんですが…。','실례합니다, 여기는 제 자리인 것 같은데요….','나'],
+  ['え、{本当|ほんとう}ですか。{七号車|ななごうしゃ}の{十二|じゅうに}Ａですよね。','네? 정말요? 7호차 12A 맞죠?','승객'],
+  ['あ、{私|わたし}の{切符|きっぷ}は{八号車|はちごうしゃ}でした。{失礼|しつれい}しました。','아, 제 표는 8호차였네요. 실례했습니다.','나'],
+  ['お{客様|きゃくさま}、どうかなさいましたか。','손님, 무슨 일 있으신가요?','차장'],
+  ['{車両|しゃりょう}を{間違|まちが}えてしまって。{八号車|はちごうしゃ}はどちらですか。','차량을 착각해서요. 8호차는 어느 쪽인가요?','나'],
+  ['{進行方向|しんこうほうこう}に{向|む}かって、{一両|いちりょう}{前|まえ}です。お{荷物|にもつ}をお{持|も}ちしましょうか。','진행 방향으로 한 칸 앞입니다. 짐을 들어 드릴까요?','차장'],
+  ['いえ、{自分|じぶん}で{運|はこ}べますので。ありがとうございます。','아니요, 제가 옮길 수 있어요. 고맙습니다.','나']],
+  w:[['〜号車','〜ごうしゃ','~호차'],['失礼','しつれい','실례'],['車掌','しゃしょう','차장, 승무원'],['車両','しゃりょう','차량'],['進行方向','しんこうほうこう','진행 방향'],['一両','いちりょう','(열차) 한 칸'],['お持ちする','おもちする','들어 드리다 (겸양)'],['運ぶ','はこぶ','나르다']],
+  q:[['내 자리는 몇 호차였습니까?',['7호차','8호차','6호차'],1],['차장이 제안한 것은?',['짐을 들어 주겠다','표를 바꿔 주겠다','다른 칸으로 안내하겠다'],0]]},
+ {t:'レストランの{予約|よやく}',k:'식당 예약과 알레르기',ic:'箸',s:[
+  ['{予約|よやく}していたキムです。{実|じつ}は{子|こ}どもにえびとかにのアレルギーがあるんですが。','예약한 김입니다. 실은 아이가 새우와 게 알레르기가 있는데요.','나'],
+  ['かしこまりました。コースの{中|なか}にえびを{使|つか}った{料理|りょうり}が{二|ふた}つございますので、{別|べつ}の{料理|りょうり}に{変|か}えることができます。','알겠습니다. 코스 중에 새우를 쓴 요리가 두 가지 있어서 다른 요리로 바꿀 수 있습니다.','점원'],
+  ['{助|たす}かります。だしにも{入|はい}っていないか{確認|かくにん}してもらえますか。','다행이네요. 육수에도 들어 있지 않은지 확인해 주실 수 있나요?','나'],
+  ['{厨房|ちゅうぼう}に{聞|き}いてまいります。{少々|しょうしょう}お{待|ま}ちください。','주방에 물어보고 오겠습니다. 잠시만 기다려 주세요.','점원'],
+  ['お{待|ま}たせしました。だしは{昆布|こんぶ}だけですので、ご{安心|あんしん}ください。','기다리셨습니다. 육수는 다시마만 쓰니 안심하세요.','점원'],
+  ['ありがとうございます。それなら{安心|あんしん}して{食|た}べられます。','고맙습니다. 그렇다면 안심하고 먹을 수 있겠네요.','나']],
+  w:[['実は','じつは','실은'],['かしこまりました','かしこまりました','알겠습니다 (정중)'],['変える','かえる','바꾸다'],['だし','だし','육수'],['確認','かくにん','확인'],['厨房','ちゅうぼう','주방'],['〜てまいります','〜てまいります','~하고 오겠습니다 (겸양)'],['昆布','こんぶ','다시마']],
+  q:[['아이의 알레르기는?',['우유','새우와 게','달걀'],1],['육수는 무엇으로 만들었습니까?',['새우','다시마','닭고기'],1]]},
+ {t:'{電車|でんしゃ}の{忘|わす}れ{物|もの}',k:'전철 분실물',ic:'かばん',s:[
+  ['すみません、さっきの{電車|でんしゃ}にかばんを{忘|わす}れてしまったんですが。','실례합니다, 방금 전철에 가방을 두고 내렸는데요.','나'],
+  ['{何時|なんじ}ごろの、どちら{行|ゆ}きの{電車|でんしゃ}ですか。','몇 시쯤, 어느 방면 전철입니까?','역무원'],
+  ['{十時|じゅうじ}{十五分|じゅうごふん}{発|はつ}の{神戸|こうべ}{行|ゆ}きです。{前|まえ}から{三両目|さんりょうめ}に{乗|の}っていました。','10시 15분 출발 고베행입니다. 앞에서 세 번째 칸에 타고 있었어요.','나'],
+  ['どんなかばんですか。','어떤 가방입니까?','역무원'],
+  ['{黒|くろ}いリュックで、{中|なか}に{財布|さいふ}とカメラが{入|はい}っています。','검은 배낭이고 안에 지갑과 카메라가 들어 있습니다.','나'],
+  ['{終点|しゅうてん}の{駅|えき}に{連絡|れんらく}してみます。{見|み}つかったら、こちらの{番号|ばんごう}にお{電話|でんわ}します。','종점 역에 연락해 보겠습니다. 찾으면 이 번호로 전화 드리겠습니다.','역무원'],
+  ['よろしくお{願|ねが}いします。','잘 부탁드립니다.','나']],
+  w:[['忘れる','わすれる','두고 오다, 잊다'],['〜行き','〜ゆき','~행'],['〜発','〜はつ','~발 (출발)'],['〜両目','〜りょうめ','~번째 칸'],['終点','しゅうてん','종점'],['連絡','れんらく','연락'],['見つかる','みつかる','발견되다, 찾게 되다']],
+  q:[['가방 안에 든 것은?',['여권과 휴대폰','지갑과 카메라','책과 우산'],1],['역무원이 하겠다는 일은?',['종점 역에 연락','경찰에 신고','다음 전철 세우기'],0]]}
+],
+N2:[
+ {t:'{欠航|けっこう}のお{知|し}らせ',k:'항공편 결항',ic:'かばん',s:[
+  ['{台風|たいふう}の{影響|えいきょう}により、{本日|ほんじつ}の{便|びん}は{欠航|けっこう}となりました。','태풍의 영향으로 오늘 항공편은 결항되었습니다.','항공사 직원'],
+  ['{明日|あした}の{朝|あさ}から{仕事|しごと}があるんです。{何|なん}とか{今日中|きょうじゅう}に{帰|かえ}る{方法|ほうほう}はないでしょうか。','내일 아침부터 일이 있어요. 어떻게든 오늘 안에 돌아갈 방법은 없을까요?','나'],
+  ['{申|もう}し{訳|わけ}ございません。{本日|ほんじつ}の{便|びん}はすべて{満席|まんせき}でして、{最短|さいたん}で{明日|あした}の{午前|ごぜん}{十時|じゅうじ}の{便|びん}になります。','죄송합니다. 오늘 항공편은 모두 만석이라 가장 빠른 것이 내일 오전 10시 편입니다.','항공사 직원'],
+  ['では、それでお{願|ねが}いします。ホテル{代|だい}はどうなりますか。','그럼 그걸로 부탁합니다. 호텔비는 어떻게 되나요?','나'],
+  ['{天候|てんこう}による{欠航|けっこう}の{場合|ばあい}、{宿泊費|しゅくはくひ}は{補償|ほしょう}の{対象外|たいしょうがい}となっております。','날씨로 인한 결항의 경우 숙박비는 보상 대상이 아닙니다.','항공사 직원'],
+  ['そうですか。{近|ちか}くで{空|あ}いているホテルを{紹介|しょうかい}していただくことはできますか。','그렇군요. 근처에 빈방이 있는 호텔을 소개받을 수 있을까요?','나'],
+  ['{提携|ていけい}ホテルでしたら、{割引|わりびき}{料金|りょうきん}でご{案内|あんない}できます。','제휴 호텔이라면 할인 요금으로 안내해 드릴 수 있습니다.','항공사 직원']],
+  w:[['影響','えいきょう','영향'],['欠航','けっこう','결항'],['何とか','なんとか','어떻게든'],['満席','まんせき','만석'],['最短','さいたん','최단, 가장 빠름'],['宿泊費','しゅくはくひ','숙박비'],['補償','ほしょう','보상'],['対象外','たいしょうがい','대상 외'],['提携','ていけい','제휴']],
+  q:[['결항 이유는?',['기체 고장','태풍','승무원 부족'],1],['숙박비는 어떻게 됩니까?',['전액 보상','보상 대상이 아니다','절반 보상'],1]]},
+ {t:'{旅館|りょかん}で',k:'료칸에서',ic:'タオル',s:[
+  ['{夕食|ゆうしょく}の{時間|じかん}を{少|すこ}し{遅|おく}らせていただけますか。{観光|かんこう}が{長引|ながび}きそうなので。','저녁 식사 시간을 조금 늦춰 주실 수 있을까요? 관광이 길어질 것 같아서요.','나'],
+  ['かしこまりました。{何時|なんじ}ごろがよろしいでしょうか。','알겠습니다. 몇 시쯤이 좋으실까요?','객실 담당'],
+  ['{七時半|しちじはん}でお{願|ねが}いします。それから、{露天風呂|ろてんぶろ}は{何時|なんじ}まで{入|はい}れますか。','7시 반으로 부탁합니다. 그리고 노천탕은 몇 시까지 들어갈 수 있나요?','나'],
+  ['{夜|よる}は{十一時|じゅういちじ}まで、{朝|あさ}は{五時|ごじ}からご{利用|りよう}いただけます。ただし、タオルはお{部屋|へや}からお{持|も}ちください。','밤에는 11시까지, 아침에는 5시부터 이용하실 수 있습니다. 다만 수건은 방에서 가져가 주세요.','객실 담당'],
+  ['{子|こ}どもと{一緒|いっしょ}に{入|はい}っても{構|かま}いませんか。','아이와 함께 들어가도 괜찮을까요?','나'],
+  ['はい。ただ、{湯船|ゆぶね}にタオルを{入|い}れるのはご{遠慮|えんりょ}いただいております。','네. 다만 탕 안에 수건을 넣는 것은 삼가 주시기 바랍니다.','객실 담당'],
+  ['なるほど、{気|き}をつけます。','그렇군요, 조심하겠습니다.','나']],
+  w:[['遅らせる','おくらせる','늦추다'],['長引く','ながびく','길어지다'],['露天風呂','ろてんぶろ','노천탕'],['利用','りよう','이용'],['ただし','ただし','다만'],['構わない','かまわない','상관없다'],['湯船','ゆぶね','욕조, 탕'],['遠慮','えんりょ','삼감, 사양']],
+  q:[['저녁 식사를 몇 시로 바꿨습니까?',['6시','7시 반','8시'],1],['탕에서 하면 안 되는 것은?',['아이와 들어가기','탕 안에 수건 넣기','밤 10시에 들어가기'],1]]},
+ {t:'タクシーと{渋滞|じゅうたい}',k:'택시와 교통 정체',ic:'車',s:[
+  ['この{先|さき}、{事故|じこ}で{渋滞|じゅうたい}しているようですね。','이 앞이 사고로 막혀 있는 것 같네요.','기사'],
+  ['{十二時|じゅうにじ}の{新幹線|しんかんせん}に{乗|の}らなければならないんですが、{間|ま}に{合|あ}いそうですか。','12시 신칸센을 타야 하는데 시간에 맞출 수 있을까요?','나'],
+  ['このままだと{厳|きび}しいかもしれません。{少|すこ}し{遠回|とおまわ}りになりますが、{裏道|うらみち}を{通|とお}りましょうか。','이대로면 빠듯할지도 모릅니다. 조금 돌아가지만 뒷길로 갈까요?','기사'],
+  ['{料金|りょうきん}は{高|たか}くなりますか。','요금은 비싸지나요?','나'],
+  ['{数百円|すうひゃくえん}{程度|ていど}だと{思|おも}います。{渋滞|じゅうたい}の{中|なか}で{待|ま}つより、かえって{安|やす}く{済|す}むかもしれませんよ。','몇백 엔 정도일 거예요. 정체 속에서 기다리는 것보다 오히려 싸게 될지도 몰라요.','기사'],
+  ['では、それでお{願|ねが}いします。','그럼 그렇게 부탁합니다.','나'],
+  ['{十一時|じゅういちじ}{四十分|よんじゅっぷん}には{着|つ}けると{思|おも}います。','11시 40분에는 도착할 수 있을 것 같습니다.','기사']],
+  w:[['事故','じこ','사고'],['渋滞','じゅうたい','교통 정체'],['間に合う','まにあう','시간에 대다'],['厳しい','きびしい','어렵다, 빠듯하다'],['遠回り','とおまわり','돌아감'],['裏道','うらみち','뒷길'],['程度','ていど','정도'],['かえって','かえって','오히려'],['済む','すむ','끝나다, 해결되다']],
+  q:[['길이 막힌 이유는?',['공사','사고','축제'],1],['기사의 제안은?',['뒷길로 돌아가기','전철로 갈아타기','그냥 기다리기'],0]]}
+],
+N1:[
+ {t:'{届|とど}かないスーツケース',k:'오지 않는 여행 가방',ic:'かばん',s:[
+  ['{到着|とうちゃく}してから{一時間|いちじかん}{経|た}ちますが、スーツケースが{出|で}てこないんです。','도착하고 한 시간이 지났는데 여행 가방이 나오지 않아요.','나'],
+  ['ご{迷惑|めいわく}をおかけして{誠|まこと}に{申|もう}し{訳|わけ}ございません。お{手荷物|てにもつ}の{引換証|ひきかえしょう}を{拝見|はいけん}できますでしょうか。','불편을 끼쳐 드려 대단히 죄송합니다. 수하물표를 보여 주시겠습니까?','항공사 직원'],
+  ['{確認|かくにん}いたしましたところ、{乗|の}り{継|つ}ぎ{地|ち}での{積|つ}み{込|こ}みが{間|ま}に{合|あ}わなかったようでございます。','확인해 보니 환승지에서 짐을 싣는 것이 늦었던 것 같습니다.','항공사 직원'],
+  ['{明日|あした}の{会議|かいぎ}で{使|つか}う{資料|しりょう}が{入|はい}っているので、{困|こま}るんです。いつごろ{届|とど}くか、{目処|めど}は{立|た}っていますか。','내일 회의에 쓸 자료가 들어 있어서 곤란해요. 언제쯤 올지 전망은 서 있나요?','나'],
+  ['{次|つぎ}の{便|びん}で{本日|ほんじつ}の{夜|よる}に{到着|とうちゃく}する{見込|みこ}みです。{到着|とうちゃく}{次第|しだい}、ご{宿泊先|しゅくはくさき}までお{届|とど}けいたします。','다음 편으로 오늘 밤 도착할 예정입니다. 도착하는 대로 묵으시는 곳까지 보내 드리겠습니다.','항공사 직원'],
+  ['それまでの{着替|きが}えなどはどうすればいいでしょうか。','그때까지 갈아입을 옷 같은 건 어떻게 하면 될까요?','나'],
+  ['{当面|とうめん}の{日用品|にちようひん}の{購入|こうにゅう}{費用|ひよう}につきましては、{規定|きてい}の{範囲内|はんいない}で{負担|ふたん}させていただきます。','당장 필요한 생활용품 구입 비용은 규정 범위 안에서 저희가 부담하겠습니다.','항공사 직원']],
+  w:[['誠に','まことに','참으로, 대단히'],['引換証','ひきかえしょう','인환증, 수하물표'],['拝見','はいけん','봄 (겸양)'],['乗り継ぎ','のりつぎ','환승'],['積み込み','つみこみ','실음, 탑재'],['目処が立つ','めどがたつ','전망이 서다'],['見込み','みこみ','예상, 전망'],['〜次第','〜しだい','~하는 대로'],['当面','とうめん','당분간'],['規定','きてい','규정']],
+  q:[['가방이 오지 않은 이유는?',['다른 사람이 가져갔다','환승지에서 싣는 것이 늦었다','무게가 초과되었다'],1],['항공사가 약속한 것은?',['숙소로 배달과 생활용품 비용 부담','항공권 환불','호텔 무료 숙박'],0]]},
+ {t:'{観光案内所|かんこうあんないじょ}で',k:'관광 안내소에서',ic:'人',s:[
+  ['{紅葉|こうよう}の{名所|めいしょ}に{行|い}きたいのですが、どこも{混雑|こんざつ}しているようで…。','단풍 명소에 가고 싶은데 어디나 붐비는 것 같아서요….','나'],
+  ['この{時期|じき}は{週末|しゅうまつ}ともなると、{有名|ゆうめい}なお{寺|てら}は{入場|にゅうじょう}までに{一時間|いちじかん}{以上|いじょう}かかることも{珍|めずら}しくありません。','이 시기에 주말쯤 되면 유명한 절은 입장까지 한 시간 이상 걸리는 것도 드물지 않습니다.','안내원'],
+  ['{人混|ひとご}みを{避|さ}けつつ、{趣|おもむき}のある{景色|けしき}を{楽|たの}しめる{場所|ばしょ}はないでしょうか。','인파를 피하면서도 정취 있는 경치를 즐길 수 있는 곳은 없을까요?','나'],
+  ['でしたら、{北|きた}の{山|やま}あいにある{小|ちい}さなお{寺|てら}はいかがでしょう。{知名度|ちめいど}こそ{低|ひく}いものの、{地元|じもと}では{隠|かく}れた{名所|めいしょ}として{親|した}しまれております。','그렇다면 북쪽 산골에 있는 작은 절은 어떠세요? 지명도는 낮지만 이 지역에서는 숨은 명소로 사랑받고 있습니다.','안내원'],
+  ['{交通|こうつう}の{便|べん}はいかがですか。','교통편은 어떤가요?','나'],
+  ['バスが{一時間|いちじかん}に{一本|いっぽん}しかございませんので、{帰|かえ}りの{時刻|じこく}を{前|まえ}もってご{確認|かくにん}なさることをお{勧|すす}めします。','버스가 한 시간에 한 대밖에 없으니 돌아오는 시각을 미리 확인하시길 권합니다.','안내원']],
+  w:[['紅葉','こうよう','단풍'],['名所','めいしょ','명소'],['混雑','こんざつ','혼잡'],['〜ともなると','〜ともなると','~쯤 되면'],['人混み','ひとごみ','인파'],['〜つつ','〜つつ','~하면서'],['趣','おもむき','정취'],['知名度','ちめいど','지명도'],['〜こそ〜ものの','〜こそ〜ものの','~이기는 하지만'],['前もって','まえもって','미리']],
+  q:[['안내원이 추천한 곳은?',['가장 유명한 절','북쪽 산골의 작은 절','시내 공원'],1],['주의할 점은?',['입장료가 비싸다','버스가 한 시간에 한 대뿐이다','사진 촬영 금지'],1]]},
+ {t:'{予約|よやく}の{行|い}き{違|ちが}い',k:'예약 착오',ic:'ベッド',s:[
+  ['{確|たし}かに{禁煙|きんえん}のツインルームで{予約|よやく}したはずなのですが、{喫煙|きつえん}のダブルになっているようです。','분명 금연 트윈룸으로 예약했을 텐데 흡연 더블룸으로 되어 있는 것 같아요.','나'],
+  ['{大変|たいへん}{失礼|しつれい}いたしました。{予約|よやく}サイトとの{連携|れんけい}に{不備|ふび}があったようでございます。','대단히 실례했습니다. 예약 사이트와의 연동에 문제가 있었던 것 같습니다.','프런트'],
+  ['{子|こ}ども{連|づ}れなので、{喫煙|きつえん}の{部屋|へや}はどうしても{避|さ}けたいんです。','아이를 데리고 와서 흡연실은 꼭 피하고 싶어요.','나'],
+  ['あいにく{本日|ほんじつ}、{禁煙|きんえん}のツインは{満室|まんしつ}でございますが、{上|うえ}の{階|かい}の{和室|わしつ}でしたら、{追加料金|ついかりょうきん}なしでご{用意|ようい}できます。','공교롭게도 오늘 금연 트윈은 만실입니다만, 위층 다다미방이라면 추가 요금 없이 준비해 드릴 수 있습니다.','프런트'],
+  ['{和室|わしつ}ですか。むしろ{子|こ}どもたちは{喜|よろこ}ぶかもしれません。','다다미방이요? 오히려 아이들이 좋아할지도 모르겠네요.','나'],
+  ['お{詫|わ}びのしるしに、{明日|あした}の{朝食|ちょうしょく}もお{付|つ}けいたします。','사과의 표시로 내일 조식도 포함해 드리겠습니다.','프런트'],
+  ['ご{丁寧|ていねい}にありがとうございます。それでお{願|ねが}いします。','신경 써 주셔서 고맙습니다. 그렇게 부탁합니다.','나']],
+  w:[['〜はず','〜はず','(당연히) ~일 것'],['禁煙','きんえん','금연'],['喫煙','きつえん','흡연'],['連携','れんけい','연계, 연동'],['不備','ふび','미비, 문제'],['子ども連れ','こどもづれ','아이 동반'],['あいにく','あいにく','공교롭게도'],['満室','まんしつ','만실'],['和室','わしつ','다다미방'],['お詫び','おわび','사과']],
+  q:[['예약에 어떤 문제가 있었습니까?',['날짜가 틀렸다','흡연 더블룸으로 되어 있었다','이름이 틀렸다'],1],['호텔이 제안한 것은?',['다다미방과 조식 포함','요금 환불','다른 호텔 소개'],0]]}
+]};
+
+/* ---------- 그림 · 이야기 화면 ---------- */
+var PLV=['pic','verb','story','tool','scene','fam'];
+function isPlay(v){return PLV.indexOf(v)>=0}
+var PL={topic:null,pmode:'list',vtab:'list',stab:'grade',tlv:'N5',glv:'N5',st:null,ko:false,ttab:'cafe',cafe:{d:0,s:1,n:0,i:0,w:0,p:0},num:1280,clk:[7,15],cshow:false,ctr:0,qa:0,sc:0,smode:'look',sfound:null,fam:null};
+var PS=null,PSV=null;
+if(!S.pl||typeof S.pl!=='object')S.pl={};
+function rnd(n){return Math.floor(Math.random()*n)}
+function anyOf(a){return a[rnd(a.length)]}
+function isKana(s){return /^[ぁ-ゖァ-ヺー・]+$/.test(s)}
+function hasKan(s){return /[一-龥々]/.test(s)}
+function wr(w,r){return hasKan(w)&&r&&r!==w?'<ruby>'+esc(w)+'<rt>'+esc(r)+'</rt></ruby>':esc(w)}
+function playBar(){return '<div class="chips secs pbar" role="tablist" aria-label="그림 · 이야기 메뉴">'+[['pic','그림 낱말'],['verb','그림 동사'],['story','짧은 이야기'],['tool','여행 도구'],['scene','장면 찾기'],['fam','한자 가족']].map(function(x){return '<button class="chip" role="tab" data-go="'+x[0]+'" aria-pressed="'+(view===x[0])+'">'+x[1]+'</button>'}).join('')+'</div>'}
+function chipRow(key,list,cur,label){return '<div class="chips" role="tablist"'+(label?' aria-label="'+esc(label)+'"':'')+'>'+list.map(function(x){return '<button class="chip" data-'+key+'="'+x[0]+'" aria-pressed="'+(String(cur)===String(x[0]))+'">'+x[1]+'</button>'}).join('')+'</div>'}
+function sessFor(v){if(PSV!==v){PS=null;PSV=v}}
+/* 가나 → 한글 발음 */
+var KH={'あ':'아','い':'이','う':'우','え':'에','お':'오','か':'카','き':'키','く':'쿠','け':'케','こ':'코','が':'가','ぎ':'기','ぐ':'구','げ':'게','ご':'고','さ':'사','し':'시','す':'스','せ':'세','そ':'소','ざ':'자','じ':'지','ず':'즈','ぜ':'제','ぞ':'조','た':'타','ち':'치','つ':'쓰','て':'테','と':'토','だ':'다','ぢ':'지','づ':'즈','で':'데','ど':'도','な':'나','に':'니','ぬ':'누','ね':'네','の':'노','は':'하','ひ':'히','ふ':'후','へ':'헤','ほ':'호','ば':'바','び':'비','ぶ':'부','べ':'베','ぼ':'보','ぱ':'파','ぴ':'피','ぷ':'푸','ぺ':'페','ぽ':'포','ま':'마','み':'미','む':'무','め':'메','も':'모','や':'야','ゆ':'유','よ':'요','ら':'라','り':'리','る':'루','れ':'레','ろ':'로','わ':'와','を':'오','ゔ':'부'};
+var KY={'きゃ':'캬','きゅ':'큐','きょ':'쿄','ぎゃ':'갸','ぎゅ':'규','ぎょ':'교','しゃ':'샤','しゅ':'슈','しょ':'쇼','じゃ':'자','じゅ':'주','じょ':'조','ちゃ':'차','ちゅ':'추','ちょ':'초','にゃ':'냐','にゅ':'뉴','にょ':'뇨','ひゃ':'햐','ひゅ':'휴','ひょ':'효','びゃ':'뱌','びゅ':'뷰','びょ':'뵤','ぴゃ':'퍄','ぴゅ':'퓨','ぴょ':'표','みゃ':'먀','みゅ':'뮤','みょ':'묘','りゃ':'랴','りゅ':'류','りょ':'료','てぃ':'티','でぃ':'디','ふぁ':'파','ふぃ':'피','ふぇ':'페','ふぉ':'포','うぃ':'위','うぇ':'웨','うぉ':'워','しぇ':'셰','じぇ':'제','ちぇ':'체','でゅ':'듀'};
+function hira(s){return s.replace(/[ァ-ヶ]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-0x60)})}
+function vow(h){var c=h.charCodeAt(0)-0xAC00;if(c<0||c>11171)return '';return 'aaaaeeeoooouuuuyyiii'.charAt(0)&&['a','ae','ya','yae','eo','e','yeo','ye','o','wa','wae','oe','yo','u','wo','we','wi','yu','eu','ui','i'][Math.floor(c%588/28)]}
+function addJ(h,j){var c=h.charCodeAt(0)-0xAC00;if(c<0||c>11171||c%28)return h;return String.fromCharCode(h.charCodeAt(0)+j)}
+function k2h(s){s=hira(s);var o=[],i,ch,two,kind=[];
+  for(i=0;i<s.length;i++){ch=s[i];two=s.substr(i,2);
+    if(KY[two]){o.push(KY[two]);kind.push('s');i++;continue}
+    if(ch==='ー'){o.push('-');kind.push('l');continue}
+    if(ch==='っ'){o.push('');kind.push('q');continue}
+    if(ch==='ん'){o.push('');kind.push('n');continue}
+    if(ch==='う'&&o.length&&/^(o|u|yo|yu)$/.test(vow(o[o.length-1]||''))&&kind[kind.length-1]==='s'){o.push('-');kind.push('l');continue}
+    if(KH[ch]){o.push(KH[ch]);kind.push('s');continue}
+    o.push(ch);kind.push('x')}
+  for(i=0;i<o.length;i++){
+    if(kind[i]==='q'||kind[i]==='n'){var p=i-1;while(p>=0&&(kind[p]!=='s'))p--;var nx=s?(function(){for(var k=i+1;k<o.length;k++)if(kind[k]==='s')return o[k];return ''})():'';
+      var j;if(kind[i]==='q'){var c0=nx?nx.charCodeAt(0)-0xAC00:-1,cho=c0>=0?Math.floor(c0/588):-1;j=(cho===15||cho===0||cho===1)?1:(cho===17||cho===7||cho===8)?17:19}
+      else{var c1=nx?nx.charCodeAt(0)-0xAC00:-1,ch1=c1>=0?Math.floor(c1/588):-1;j=!nx?21:(ch1===6||ch1===7||ch1===17||ch1===8)?16:(ch1===15||ch1===0||ch1===1)?21:4}
+      if(p>=0&&p===i-1)o[p]=addJ(o[p],j);else if(kind[i]==='n'&&kind[i-1]==='l'&&p>=0){o[i-1]='';o[p]=addJ(o[p],j===21&&nx?4:4)}else if(kind[i]==='n')o[i]='응'}}
+  return o.join('')}
+/* 헷갈리는 소리 만들기 */
+var DK={'か':'が','き':'ぎ','く':'ぐ','け':'げ','こ':'ご','さ':'ざ','し':'じ','す':'ず','せ':'ぜ','そ':'ぞ','た':'だ','ち':'ぢ','つ':'づ','て':'で','と':'ど','は':'ば','ひ':'び','ふ':'ぶ','へ':'べ','ほ':'ぼ'};
+var DKR={};for(var _k in DK)DKR[DK[_k]]=_k;var HP={'は':'ぱ','ひ':'ぴ','ふ':'ぷ','へ':'ぺ','ほ':'ぽ','ば':'ぱ','び':'ぴ','ぶ':'ぷ','べ':'ぺ','ぼ':'ぽ'};
+function confuse(r,n){var kat=/^[ァ-ヺー]+$/.test(r),h=hira(r),out={},i,c,v;
+  function add(x){if(x&&x!==h&&!/^[っんー]/.test(x))out[x]=1}
+  for(i=0;i<h.length;i++){c=h[i];
+    if(DK[c])add(h.slice(0,i)+DK[c]+h.slice(i+1));if(DKR[c])add(h.slice(0,i)+DKR[c]+h.slice(i+1));if(HP[c])add(h.slice(0,i)+HP[c]+h.slice(i+1));
+    if('ゃゅょ'.indexOf(c)>=0)add(h.slice(0,i)+'やゆよ'.charAt('ゃゅょ'.indexOf(c))+h.slice(i+1));
+    if('やゆよ'.indexOf(c)>=0&&i>0&&/[きぎしじちにひびぴみり]/.test(h[i-1]))add(h.slice(0,i)+'ゃゅょ'.charAt('やゆよ'.indexOf(c))+h.slice(i+1));
+    if(c==='う'&&i>0)add(h.slice(0,i)+h.slice(i+1));if(c==='ー')add(h.slice(0,i)+h.slice(i+1));if(c==='っ')add(h.slice(0,i)+h.slice(i+1));
+    if(i>0&&i<h.length&&/[かきくけこさしすせそたちつてとぱぴぷぺぽ]/.test(c)&&h[i-1]!=='っ'&&h[i-1]!=='ん')add(h.slice(0,i)+'っ'+h.slice(i))}
+  for(i=0;i<h.length;i++){c=h[i];if(/[ょこそとのほもよろごぞどぼぽ]/.test(c)&&h[i+1]!=='う'&&h[i+1]!=='ー')add(h.slice(0,i+1)+(kat?'ー':'う')+h.slice(i+1))}
+  v=shuffle(Object.keys(out)).slice(0,n||3);if(kat)v=v.map(function(x){return x.replace(/[ぁ-ゖ]/g,function(q){return String.fromCharCode(q.charCodeAt(0)+0x60)})});return v}
+/* 동사 바꾸기 */
+var VI={'う':'い','く':'き','ぐ':'ぎ','す':'し','つ':'ち','ぬ':'に','ぶ':'び','む':'み','る':'り'},VA={'う':'わ','く':'か','ぐ':'が','す':'さ','つ':'た','ぬ':'な','ぶ':'ば','む':'ま','る':'ら'},VT={'う':'って','つ':'って','る':'って','ぬ':'んで','ぶ':'んで','む':'んで','く':'いて','ぐ':'いで','す':'して'};
+var FORMS=[['masu','ます형','~합니다'],['te','て형','~하고, ~해서'],['ta','た형','~했다'],['nai','ない형','~하지 않는다'],['tai','たい형','~하고 싶다']];
+function cj1(s,g,f,iku){var l=s.slice(-1),b=s.slice(0,-1);
+  if(g===2){return b+{masu:'ます',te:'て',ta:'た',nai:'ない',tai:'たい'}[f]}
+  if(g===1){if(f==='masu')return b+VI[l]+'ます';if(f==='tai')return b+VI[l]+'たい';if(f==='nai')return b+VA[l]+'ない';var t=iku?'って':VT[l];if(f==='ta')t=t.replace(/て$/,'た').replace(/で$/,'だ');return b+t}
+  return s}
+function conj(v,f){var w=v[0],r=v[1],g=v[2],iku=r==='いく';
+  if(g===3){if(r==='くる'){var k={masu:['来ます','きます'],te:['来て','きて'],ta:['来た','きた'],nai:['来ない','こない'],tai:['来たい','きたい']}[f];return k}
+    var bw=w.slice(0,-2),br=r.slice(0,-2),e={masu:'します',te:'して',ta:'した',nai:'しない',tai:'したい'}[f];return [bw+e,br+e]}
+  return [cj1(w,g,f,iku),cj1(r,g,f,iku)]}
+function conjWrong(v,f){var r=v[1],g=v[2],out={},right=conj(v,f)[1];
+  function add(x){if(x&&x!==right)out[x]=1}
+  if(g!==3){if(r.slice(-1)==='る')add(cj1(r,g===1?2:1,f));else add(cj1(r,2,f));}
+  if(g===1){var b=r.slice(0,-1);['って','んで','いて','して','いで'].forEach(function(t){if(f==='te')add(b+t);if(f==='ta')add(b+t.replace(/て$/,'た').replace(/で$/,'だ'))});if(f==='nai')add(b+VI[r.slice(-1)]+'ない');if(f==='masu')add(b+VA[r.slice(-1)]+'ます');if(f==='tai')add(b+VA[r.slice(-1)]+'たい')}
+  if(g===3&&r==='くる'){add({masu:'くます',te:'くて',ta:'くた',nai:'きない',tai:'くたい'}[f]);add({masu:'こます',te:'こて',ta:'こた',nai:'くない',tai:'こたい'}[f])}
+  if(g===3&&r!=='くる'){var br=r.slice(0,-2);add(br+{masu:'すます',te:'すて',ta:'すた',nai:'さない',tai:'すたい'}[f]);add(br+{masu:'せます',te:'せて',ta:'せた',nai:'すない',tai:'せたい'}[f])}
+  FORMS.forEach(function(x){if(x[0]!==f)add(conj(v,x[0])[1])});
+  return shuffle(Object.keys(out)).slice(0,3)}
+/* 숫자 읽기 */
+var DG=['','いち','に','さん','よん','ご','ろく','なな','はち','きゅう'];
+function u4(n,big){var t=Math.floor(n/1000),h=Math.floor(n/100)%10,d=Math.floor(n/10)%10,o=n%10,p=[];
+  if(t)p.push(t===1?(big?'いっせん':'せん'):t===3?'さんぜん':t===8?'はっせん':DG[t]+'せん');
+  if(h)p.push(h===1?'ひゃく':h===3?'さんびゃく':h===6?'ろっぴゃく':h===8?'はっぴゃく':DG[h]+'ひゃく');
+  if(d)p.push(d===1?'じゅう':DG[d]+'じゅう');if(o)p.push(DG[o]);return p.join('')}
+function numSeg(n){n=Math.max(0,Math.min(999999999999,Math.floor(n)));if(!n)return [{d:'0',r:'ぜろ',u:''}];var ok=Math.floor(n/1e8),mn=Math.floor(n/1e4)%1e4,rs=n%1e4,s=[];
+  if(ok)s.push({d:String(ok),r:(ok===1?'いち':u4(ok,1))+'おく',u:'억 (億)'});
+  if(mn)s.push({d:String(mn),r:(mn===1?'いち':u4(mn,1))+'まん',u:'만 (万)'});
+  if(rs)s.push({d:String(rs),r:u4(rs),u:''});return s}
+function numRead(n){return numSeg(n).map(function(x){return x.r}).join('')}
+var HR=['','いちじ','にじ','さんじ','よじ','ごじ','ろくじ','しちじ','はちじ','くじ','じゅうじ','じゅういちじ','じゅうにじ'];
+var MR=['','いっぷん','にふん','さんぷん','よんぷん','ごふん','ろっぷん','ななふん','はっぷん','きゅうふん'];
+function minRead(m){if(!m)return '';var d=Math.floor(m/10),o=m%10;if(!o)return (d===1?'':DG[d])+'じゅっぷん';return (d?(d===1?'':DG[d])+'じゅう':'')+MR[o]}
+function timeRead(h,m){return HR[h]+minRead(m)}
+function timeWrong(h,m){var o={},right=timeRead(h,m);function add(x){if(x!==right)o[x]=1}
+  var hw={4:'よんじ',7:'ななじ',9:'きゅうじ'}[h];if(hw)add(hw+minRead(m));
+  add(HR[h]+minRead(m).replace('っぷん','ふん').replace('んぷん','んふん'));add(HR[h]+minRead(m).replace(/ふん$/,'ぷん'));
+  add(HR[h%12+1]+minRead(m));add(HR[h]+minRead((m+5)%60||5));
+  return shuffle(Object.keys(o).filter(function(x){return x!==right})).slice(0,3)}
+/* 가나 소리를 문장에서 읽기 */
+function sayLine(jp){say(kanaOf(jp).replace(/「|」|『|』/g,''))}
+var plq=[];
+function playAll(lines){try{speechSynthesis.cancel()}catch(e){}var els=document.querySelectorAll('[data-line]');var vs=[];try{vs=speechSynthesis.getVoices()||[]}catch(e){}var v=vs.filter(function(x){return /^ja/i.test(x.lang)})[0];
+  lines.forEach(function(t,i){var u=new SpeechSynthesisUtterance(kanaOf(t).replace(/「|」/g,''));u.lang='ja-JP';if(v)u.voice=v;u.rate=S.opt.rate;u.onstart=function(){for(var k=0;k<els.length;k++)els[k].classList.toggle('on',+els[k].dataset.line===i)};u.onend=function(){if(i===lines.length-1)for(var k=0;k<els.length;k++)els[k].classList.remove('on')};try{speechSynthesis.speak(u)}catch(e){}})}
+/* 퀴즈 공통 */
+function qHead(s){return '<p class="prog">'+(s.i+1)+' / '+s.q.length+' · 맞힘 '+s.ok+'</p>'}
+function qEnd(s,again){return '<div class="card"><div class="stamp jp">済</div><p class="q">'+s.q.length+'문제 중 '+s.ok+'개 정답</p><div class="row"><button class="btn ghost" data-px="'+again+'">다시 하기</button><button class="btn" data-px="end">끝내기</button></div></div>'}
+function optCls(s,j,ans){return s.pick==null?'':(j===ans?' right':(j===s.pick?' wrong':''))}
+function nextBtn(s){return s.pick!=null?'<button class="btn" data-px="next">'+(s.i+1<s.q.length?'다음':'결과 보기')+'</button>':''}
+/* ---------- 그림 낱말 ---------- */
+function topic(){return PT.filter(function(t){return t.id===PL.topic})[0]}
+function wcard(x,i){var r=x[1],kr=k2h(r);return '<button class="pcard" data-pw="'+i+'">'+pic(x[3]||x[0])+'<span class="jp pw">'+wr(x[0],r)+'</span>'+(isKana(x[0])||!hasKan(x[0])?'':'<span class="jp pr">'+esc(r)+'</span>')+'<span class="pkr">'+esc(kr)+'</span><span class="pko">'+esc(x[2])+'</span></button>'}
+function vPic(){sessFor('pic');var h=head()+playBar();
+  if(!PL.topic){h+='<section class="sec"><h3>그림 낱말 <span>주제를 고르십시오</span></h3><div class="ptiles">'+PT.map(function(t){return '<button class="ptile" data-pt="'+t.id+'">'+pic(t.ic)+'<b>'+esc(t.n)+'</b><small>'+t.w.length+'개</small></button>'}).join('')+'</div></section>';
+    h+='<p class="note">그림을 보고 낱말을 익힌 뒤, <b>これはなんですか</b>에서 헷갈리는 소리(びょういん · びよういん 등) 가운데 맞는 표기를 고르고, <b>듣고 고르기</b>에서 소리를 듣고 그림을 고릅니다.</p>';return h}
+  var T=topic(),s=PS;h+='<button class="back" data-pt="">← 주제 목록</button><div class="row" style="justify-content:space-between"><h2 class="ph">'+esc(T.n)+'</h2></div>'+chipRow('pm',[['list','그림 카드'],['quiz','これはなんですか'],['listen','듣고 고르기']],PL.pmode);
+  if(s&&s.k==='pq'){if(s.i>=s.q.length)return h+qEnd(s,'pq');var q=s.q[s.i],x=T.w[q.w];
+    h+=qHead(s)+'<div class="card pq">'+pic(x[3]||x[0],'big')+'<p class="q jp">これはなんですか</p>'+(s.pick!=null?'<p class="jp pans">'+wr(x[0],x[1])+' · '+esc(x[2])+'</p>':'')+'</div><div class="two">'+q.o.map(function(o,j){return '<button class="opt jp pbig'+optCls(s,j,q.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+esc(o)+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>';return h}
+  if(s&&s.k==='pl'){if(s.i>=s.q.length)return h+qEnd(s,'pl');var q2=s.q[s.i],x2=T.w[q2.w];
+    h+=qHead(s)+'<div class="row" style="justify-content:center"><button class="btn" data-say="'+esc(x2[1])+'">🔊 다시 듣기</button></div>'+(s.pick!=null?'<p class="jp pans" style="text-align:center">'+wr(x2[0],x2[1])+' · '+esc(x2[2])+'</p>':'<p class="meta" style="text-align:center">들은 낱말의 그림을 고르십시오</p>')+'<div class="ppics">'+q2.o.map(function(o,j){var y=T.w[o];return '<button class="ppick'+optCls(s,j,q2.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+' aria-label="보기 '+(j+1)+'">'+pic(y[3]||y[0])+(s.pick!=null?'<span class="jp">'+esc(y[0])+'</span>':'')+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>';return h}
+  if(PL.pmode==='quiz')h+='<div class="sheetish"><p>그림을 보고 맞는 읽기를 고르십시오. 장음(う · ー), 작은 글자(ゃ · っ), 탁음(゛)이 다른 보기가 섞여 나옵니다.</p><button class="btn" data-px="pq">문제 시작 (10문제)</button></div>';
+  if(PL.pmode==='listen')h+='<div class="sheetish"><p>소리를 듣고 맞는 그림을 고르십시오.</p><button class="btn" data-px="pl">문제 시작 (10문제)</button></div>';
+  h+='<div class="pgrid">'+T.w.map(wcard).join('')+'</div><p class="note">카드를 누르면 읽어 줍니다. 한글 발음은 소리를 짐작하기 위한 도움말입니다.</p>';return h}
+function startPic(k){var T=topic(),n=T.w.length,ids=shuffle(T.w.map(function(x,i){return i})).slice(0,Math.min(10,n));
+  if(k==='pq')PS={k:'pq',i:0,ok:0,pick:null,q:ids.map(function(w){var r=T.w[w][1],o=shuffle([r].concat(confuse(r,3)));return {w:w,o:o,a:o.indexOf(r)}})};
+  else PS={k:'pl',i:0,ok:0,pick:null,q:ids.map(function(w){var o=shuffle([w].concat(shuffle(T.w.map(function(x,i){return i}).filter(function(i){return i!==w})).slice(0,3)));return {w:w,o:o,a:o.indexOf(w)}})};
+  touch();render();window.scrollTo(0,0);if(k==='pl')say(T.w[PS.q[0].w][1])}
+/* ---------- 그림 동사 ---------- */
+function vById(w){for(var i=0;i<PV.length;i++)if(PV[i][0]===w)return PV[i]}
+function vruby(v){return wr(v[0],v[1])}
+function vVerb(){sessFor('verb');var h=head()+playBar()+chipRow('vt',[['list','동작 그림'],['pair','짝 동사 (を · が)'],['link','문장 잇기'],['conj','바꿔 쓰기']],PL.vtab,'동사 메뉴'),s=PS;
+  if(s&&s.k==='vq'){if(s.i>=s.q.length)return h+qEnd(s,'vq');var q=s.q[s.i],v=PV[q.v];
+    return h+qHead(s)+'<div class="card pq">'+pic(v[4]||v[0],'big')+'<p class="q">무엇을 하고 있습니까?</p>'+(s.pick!=null?'<p class="pans">'+esc(v[3])+'</p>':'')+'</div><div class="two">'+q.o.map(function(o,j){var y=PV[o];return '<button class="opt jp pbig'+optCls(s,j,q.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+vruby(y)+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&s.k==='vl'){if(s.i>=s.q.length)return h+qEnd(s,'vl');var q1=s.q[s.i],v1=PV[q1.v];
+    return h+qHead(s)+'<div class="row" style="justify-content:center"><button class="btn" data-say="'+esc(v1[1])+'">🔊 다시 듣기</button></div>'+(s.pick!=null?'<p class="jp pans" style="text-align:center">'+vruby(v1)+' · '+esc(v1[3])+'</p>':'<p class="meta" style="text-align:center">들은 동사의 그림을 고르십시오</p>')+'<div class="ppics">'+q1.o.map(function(o,j){var y=PV[o];return '<button class="ppick'+optCls(s,j,q1.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+' aria-label="보기 '+(j+1)+'">'+pic(y[4]||y[0])+(s.pick!=null?'<span class="jp">'+esc(y[0])+'</span>':'')+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&s.k==='pp'){if(s.i>=s.q.length)return h+qEnd(s,'pp');var q2=s.q[s.i],P2=PP[q2.p],ic=q2.side==='t'?P2.t[0]:P2.i[0];
+    return h+qHead(s)+'<div class="card pq">'+pic(ic,'big')+'<p class="q">그림에 맞는 문장은?</p>'+(s.pick!=null?'<p class="pans">'+(q2.side==='t'?'손(사람)이 직접 하고 있으므로 <b>を</b> + 타동사':'저절로 그렇게 되었으므로 <b>が</b> + 자동사')+'</p>':'<p class="meta">손이 보이면 누가 하는 것, 손이 없으면 저절로 된 것입니다.</p>')+'</div><div class="opts">'+q2.o.map(function(o,j){return '<button class="opt jp pbig'+optCls(s,j,q2.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+ruby(o==='t'?P2.ts:P2.is)+(s.pick!=null?' <small class="meta">'+esc(o==='t'?P2.tk:P2.ik)+'</small>':'')+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&s.k==='lk'){if(s.i>=s.q.length)return h+qEnd(s,'lk');var q3=s.q[s.i],K=PK[q3.k],done=q3.vp!=null;
+    h+=qHead(s)+'<div class="card pq">'+pic(K[3],'big')+'<p class="q jp lkq"><span class="lkb'+(q3.np!=null?' on':'')+'">'+(q3.np!=null?ruby(PK[q3.no[q3.np]][0]):'？')+'</span> を <span class="lkb'+(done?' on':'')+'">'+(done?ruby(PK[q3.vo[q3.vp]][1]):'？')+'</span></p>'+(done?'<p class="pans">'+esc(K[2])+(q3.nok&&q3.vok?' — 맞았습니다':' — 정답: '+ruby(K[0])+'を'+ruby(K[1]))+'</p>':'')+'</div>';
+    if(q3.np==null)h+='<p class="meta">① 무엇을? 알맞은 낱말을 고르십시오</p><div class="two">'+q3.no.map(function(o,j){return '<button class="opt jp pbig" data-pn1="'+j+'">'+ruby(PK[o][0])+'</button>'}).join('')+'</div>';
+    else if(!done)h+='<p class="meta">② 어떻게 하나? 알맞은 동사를 고르십시오</p><div class="two">'+q3.vo.map(function(o,j){return '<button class="opt jp pbig" data-pn2="'+j+'">'+ruby(PK[o][1])+'</button>'}).join('')+'</div>';
+    else h+='<button class="btn" data-px="next">'+(s.i+1<s.q.length?'다음':'결과 보기')+'</button>';
+    return h+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&s.k==='cj'){if(s.i>=s.q.length)return h+qEnd(s,'cj');var q4=s.q[s.i],v4=PV[q4.v],F=FORMS.filter(function(x){return x[0]===q4.f})[0];
+    h+=qHead(s)+'<div class="card pq">'+pic(v4[4]||v4[0],'big')+'<p class="q jp">'+vruby(v4)+' <small class="meta">('+esc(v4[3])+' · '+v4[2]+'그룹)</small></p><p>→ <b>'+F[1]+'</b> <span class="meta">'+F[2]+'</span></p></div><div class="two">'+q4.o.map(function(o,j){return '<button class="opt jp pbig'+optCls(s,j,q4.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+esc(o)+'</button>'}).join('')+'</div>';
+    if(s.pick!=null)h+=conjTable(v4);return h+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(PL.vtab==='pair'){h+='<p class="note"><b>を + 타동사</b>: 사람이 직접 하는 일 (손이 보이는 그림)<br><b>が + 자동사</b>: 저절로 그렇게 되는 일 (손이 없는 그림)</p><button class="btn" data-px="pp">짝 동사 문제 (10문제)</button><div class="pairs">'+PP.map(function(P){return '<div class="pairrow"><button class="pcard" data-say="'+esc(kanaOf(P.ts))+'">'+pic(P.t[0])+'<span class="jp pw">'+ruby(P.ts)+'</span><span class="pko">'+esc(P.tk)+'</span></button><button class="pcard" data-say="'+esc(kanaOf(P.is))+'">'+pic(P.i[0])+'<span class="jp pw">'+ruby(P.is)+'</span><span class="pko">'+esc(P.ik)+'</span></button></div>'}).join('')+'</div>';return h}
+  if(PL.vtab==='link'){h+='<p class="note">그림을 보고 <b>무엇을</b>(낱말) → <b>어떻게 하나</b>(동사)를 차례로 골라 문장을 완성합니다. 완성되면 읽어 줍니다.</p><button class="btn" data-px="lk">문장 잇기 시작 (10문제)</button><div class="pgrid">'+PK.map(function(K){return '<button class="pcard" data-say="'+esc(kanaOf(K[0])+'を'+kanaOf(K[1]))+'">'+pic(K[3])+'<span class="jp pw">'+ruby(K[0])+'を'+ruby(K[1])+'</span><span class="pko">'+esc(K[2])+'</span></button>'}).join('')+'</div>';return h}
+  if(PL.vtab==='conj'){h+='<div class="note"><b>1그룹</b> (う단 끝): 飲む → 飲みます · 飲んで · 飲んだ · 飲まない · 飲みたい<br><b>2그룹</b> (る 앞이 い·え단): 食べる → 食べます · 食べて · 食べた · 食べない · 食べたい<br><b>3그룹</b>: する → します · して… / 来る → 来ます · 来て · 来ない(こない)<br>て형 규칙: う·つ·る → って, ぬ·ぶ·む → んで, く → いて (行く는 行って), ぐ → いで, す → して</div><button class="btn" data-px="cj">바꿔 쓰기 문제 (10문제)</button><div class="pgrid">'+PV.map(function(v,i){return '<button class="pcard" data-pcv="'+i+'">'+pic(v[4]||v[0])+'<span class="jp pw">'+vruby(v)+'</span><span class="pko">'+esc(v[3])+' · '+v[2]+'그룹</span></button>'}).join('')+'</div>';if(PL.cv!=null)h+=conjTable(PV[PL.cv],1);return h}
+  h+='<div class="row"><button class="btn" data-px="vq">그림 보고 동사 고르기</button><button class="btn ghost" data-px="vl">듣고 그림 고르기</button></div><div class="pgrid">'+PV.map(function(v){return '<button class="pcard" data-say="'+esc(v[1])+'">'+pic(v[4]||v[0])+'<span class="jp pw">'+vruby(v)+'</span><span class="pkr">'+esc(k2h(v[1]))+'</span><span class="pko">'+esc(v[3])+'</span></button>'}).join('')+'</div>';return h}
+function conjTable(v,pop){return '<div class="ctab'+(pop?' pop':'')+'"><div class="row" style="justify-content:space-between"><b class="jp">'+vruby(v)+' · '+esc(v[3])+'</b>'+(pop?'<button class="btn ghost sm" data-pcv="-1">닫기</button>':'')+'</div><table>'+FORMS.map(function(F){var c=conj(v,F[0]);return '<tr><th>'+F[1]+'</th><td class="jp">'+wr(c[0],c[1])+'</td><td>'+spk(c[1])+'</td></tr>'}).join('')+'</table></div>'}
+function startVerb(k){var n=10;
+  if(k==='vq'||k==='vl'){var ids=shuffle(PV.map(function(x,i){return i})).slice(0,n);PS={k:k,i:0,ok:0,pick:null,q:ids.map(function(v){var o=shuffle([v].concat(shuffle(PV.map(function(x,i){return i}).filter(function(i){return i!==v})).slice(0,3)));return {v:v,o:o,a:o.indexOf(v)}})}}
+  if(k==='pp'){PS={k:k,i:0,ok:0,pick:null,q:shuffle(PP.map(function(x,i){return i})).slice(0,n).map(function(p){var side=Math.random()<.5?'t':'i';return {p:p,side:side,o:['t','i'],a:side==='t'?0:1}})}}
+  if(k==='lk'){PS={k:k,i:0,ok:0,q:shuffle(PK.map(function(x,i){return i})).slice(0,n).map(function(kk){var K=PK[kk],no=[kk],vo=[kk],seenN={},seenV={};seenN[plain(K[0])]=1;seenV[plain(K[1])]=1;shuffle(PK.map(function(x,i){return i})).forEach(function(i){var x=PK[i];if(no.length<4&&!seenN[plain(x[0])]){no.push(i);seenN[plain(x[0])]=1}if(vo.length<4&&!seenV[plain(x[1])]){vo.push(i);seenV[plain(x[1])]=1}});return {k:kk,no:shuffle(no),vo:shuffle(vo),np:null,vp:null}})}}
+  if(k==='cj'){PS={k:k,i:0,ok:0,pick:null,q:shuffle(PV.map(function(x,i){return i})).slice(0,n).map(function(v){var f=anyOf(FORMS)[0],right=conj(PV[v],f)[1],o=shuffle([right].concat(conjWrong(PV[v],f)));return {v:v,f:f,o:o,a:o.indexOf(right)}})}}
+  touch();render();window.scrollTo(0,0);if(k==='vl')say(PV[PS.q[0].v][1])}
+/* ---------- 짧은 이야기 ---------- */
+var WIX=null;
+function wIndex(){if(WIX)return WIX;WIX=[];var seen={};[N5,N4].forEach(function(L,li){L.forEach(function(D){D.vocab.forEach(function(v){if(!seen[v.w]&&hasKan(v.w)){seen[v.w]=1;WIX.push([v.w,v.r,v.m,li?'N4':'N5'])}})})});return WIX}
+function autoWords(txt){var out=[],W=wIndex();W.forEach(function(x){var w=x[0],m=w;if(/[ぁ-ん]$/.test(w)&&w.length>=3)m=w.slice(0,-1);else if(/[ぁ-ん]$/.test(w))return;if(m.length<2&&!(m.length===1&&hasKan(m)&&w===m))return;if(txt.indexOf(m)>=0)out.push(x)});
+  out=out.filter(function(x){return !out.some(function(y){return y!==x&&y[0].length>x[0].length&&y[0].indexOf(x[0])>=0})});return out.slice(0,16)}
+function kanjiOf(txt){var o=[],seen={};for(var i=0;i<txt.length;i++){var c=txt[i];if(/[一-龥]/.test(c)&&!seen[c]){seen[c]=1;o.push(c)}}return o}
+function hunOf(c){return HM[c]||(KJ[c]&&KJ[c][0])||''}
+var KOV={'車':'차','金':'금','行':'행','便':'편','度':'도','北':'북','宅':'택','画':'화','数':'수','更':'경'},KAMB='不楽茶率暴降殺参塞索拓若洞布易省復説切';
+function dueum(x){var c=x.charCodeAt(0)-0xAC00;if(c<0||c>11171)return x;var ch=Math.floor(c/588),ju=Math.floor(c%588/28),jo=c%28,yv=[2,3,6,7,12,17,20].indexOf(ju)>=0;
+  if(ch===5)ch=yv?11:2;else if(ch===2&&yv)ch=11;return String.fromCharCode(0xAC00+ch*588+ju*28+jo)}
+function korOf(w){var o='';for(var i=0;i<w.length;i++){var c=w[i];if(!/[一-龥々]/.test(c)||KAMB.indexOf(c)>=0)return '';if(c==='々'){o+=o.slice(-1);continue}var h=KOV[c];if(!h){h=hunOf(c);if(!h)return '';var p=h.split(' ');h=p[p.length-1].charAt(0)}o+=i?h:dueum(h)}return o}
+function stObj(){if(!PL.st)return null;var p=PL.st.split(':');if(p[0]==='t'){var E=PS_[+p[1]],lv=p[2];return {id:PL.st,t:E.t,k:E.k,lv:lv,s:E[lv==='N4'?'n4':'n5'].map(function(x){return [x[0],x[1],'',x[2]]}),q:E[lv==='N4'?'q4':'q5'],pat:lv==='N4'?E.pat:null,w:null,travel:1,no:+p[1]+1}}
+  var G=GS[p[1]][+p[2]];return {id:PL.st,t:G.t,k:G.k,lv:p[1],s:G.s.map(function(x){return [x[0],x[1],x[2],'']}),q:G.q,w:G.w,pat:null,travel:0,no:+p[2]+1}}
+function vStory(){sessFor('story');var h=head()+playBar(),O=stObj();
+  if(!O){h+=chipRow('stab',[['grade','급수별 여행 회화'],['travel','이찌네 가족 여행 (연재)']],PL.stab);
+    if(PL.stab==='grade'){h+=chipRow('glv',[['N5','N5'],['N4','N4'],['N3','N3'],['N2','N2'],['N1','N1']],PL.glv,'급수')+'<p class="note">공항 · 식당 · 열차 · 버스 · 택시 · 호텔에서 오가는 대화입니다. 이야기마다 본문(후리가나), 한자 독음, 관련 단어, 한글 해석이 함께 있습니다.</p><div class="slist">'+GS[PL.glv].map(function(G,i){var d=S.pl['g:'+PL.glv+':'+i];return '<button class="sitem" data-pst="g:'+PL.glv+':'+i+'">'+pic(G.ic)+'<span><b class="jp">'+ruby(G.t)+'</b><small>'+esc(G.k)+' · 대화 '+G.s.length+'줄'+(d?' · ✓ 완료':'')+'</small></span></button>'}).join('')+'</div>'}
+    else{h+=chipRow('tlv',[['N5','N5 문장'],['N4','N4 문장']],PL.tlv,'급수')+'<p class="note">한 가족의 오사카 여행을 8편으로 이어 갑니다. 같은 줄거리를 N5 문장과 N4 문장으로 읽을 수 있습니다.</p><div class="slist">'+PS_.map(function(E,i){var d=S.pl['t:'+i+':'+PL.tlv];return '<button class="sitem" data-pst="t:'+i+':'+PL.tlv+'">'+pic(E.ic)+'<span><small>제 '+(i+1)+' 화</small><b class="jp">'+ruby(E.t)+'</b><small>'+esc(E.k)+(d?' · ✓ 완료':'')+'</small></span></button>'}).join('')+'</div>'}
+    return h}
+  var s=PS;h+='<button class="back" data-pst="">← 이야기 목록</button><div class="shead"><span class="lvtag">'+O.lv+'</span><h2 class="jp ph">'+ruby(O.t)+'</h2><p class="meta">'+(O.travel?'이찌네 가족 여행 제 '+O.no+' 화 · ':'')+esc(O.k)+'</p></div>';
+  if(s&&s.k==='sq'){if(s.i>=s.q.length){if(s.ok===s.q.length){S.pl[O.id]=1;save()}return h+qEnd(s,'sq')}var q=s.q[s.i];return h+qHead(s)+'<div class="card pq" style="min-height:0"><p class="q">'+esc(q.t)+'</p></div><div class="opts">'+q.o.map(function(o,j){return '<button class="opt'+optCls(s,j,q.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+esc(o)+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&(s.k==='so'||s.k==='sp')){var done=s.got.length===s.n;h+='<p class="note">'+(s.k==='so'?'이야기 순서대로 문장을 누르십시오.':'이야기 순서대로 그림을 누르십시오.')+' (틀림 '+s.miss+')</p>';
+    if(s.got.length)h+='<ol class="sord">'+s.got.map(function(i){return '<li class="jp">'+(s.k==='sp'?pic(O.s[i][3],'sm')+' ':'')+ruby(O.s[i][0])+'</li>'}).join('')+'</ol>';
+    if(!done)h+=s.k==='so'?'<div class="opts">'+s.pool.filter(function(i){return s.got.indexOf(i)<0}).map(function(i){return '<button class="opt jp'+(s.bad===i?' wrong':'')+'" data-pord="'+i+'">'+ruby(O.s[i][0])+'</button>'}).join('')+'</div>':'<div class="ppics">'+s.pool.filter(function(i){return s.got.indexOf(i)<0}).map(function(i){return '<button class="ppick'+(s.bad===i?' wrong':'')+'" data-pord="'+i+'" aria-label="그림">'+pic(O.s[i][3])+'</button>'}).join('')+'</div>';
+    else h+='<div class="card" style="min-height:0"><div class="stamp jp">済</div><p class="q">완성했습니다 · 틀림 '+s.miss+'</p><div class="row"><button class="btn" data-px="end">본문으로</button></div></div>';
+    return h+'<button class="back" data-px="end">그만하기</button>'}
+  var txt=O.s.map(function(x){return plain(x[0])}).join('');
+  h+='<div class="row"><button class="btn" data-pall="1">▶ 전체 듣기</button><button class="btn ghost" data-pko="1">'+(PL.ko?'해석 숨기기':'해석 보기')+'</button></div><div class="slines">'+O.s.map(function(x,i){return '<div class="sline" data-line="'+i+'">'+(x[2]?'<span class="spk2'+(x[2]==='나'?' me':'')+'">'+esc(x[2])+'</span>':(x[3]?pic(x[3],'sm'):''))+'<div class="stx"><p class="jp">'+ruby(x[0])+'</p>'+(PL.ko?'<p class="sko">'+esc(x[1])+'</p>':'')+'</div>'+spk(kanaOf(x[0]).replace(/「|」/g,''))+'</div>'}).join('')+'</div>';
+  if(O.pat)h+='<section class="sec"><h3>문형 <span>N4</span></h3><div class="wtab">'+O.pat.map(function(p){return '<div class="wrow"><b class="jp">'+esc(p[0])+'</b><span>'+esc(p[1])+'</span></div>'}).join('')+'</div></section>';
+  var W=O.w?O.w.map(function(x){return [x[0],x[1],x[2]]}):autoWords(txt);
+  h+='<section class="sec"><h3>관련 단어 <span>'+W.length+'개</span></h3><div class="wtab">'+W.map(function(x){var kr=korOf(x[0]);return '<div class="wrow"><b class="jp">'+wr(x[0],x[1])+'</b>'+(x[1]!==x[0]?'<span class="jp meta">'+esc(x[1])+'</span>':'<span></span>')+'<span>'+esc(x[2])+(kr?' <small class="meta">('+kr+')</small>':'')+'</span>'+spk(x[1].replace(/〜/g,''))+'</div>'}).join('')+'</div></section>';
+  var K=kanjiOf(txt);h+='<section class="sec"><h3>한자 독음 <span>본문 한자 '+K.length+'자</span></h3><div class="kdoks">'+K.map(function(c){var hu=hunOf(c),k=KJ[c];return (k?'<button class="kdok" data-kj="'+c+'">':'<div class="kdok">')+'<b class="jp">'+c+'</b><span>'+esc(hu||'—')+'</span>'+(k?'<small class="jp">'+esc([k[1],k[2]].filter(Boolean).join(' · '))+'</small>':'')+(k?'</button>':'</div>')}).join('')+'</div><p class="note">한국 훈음(뜻 · 소리)입니다. 테두리가 있는 한자를 누르면 일본어 읽기와 획순이 열립니다.</p></section>';
+  h+='<section class="sec"><h3>문제</h3><div class="row"><button class="btn" data-px="sq">내용 문제</button><button class="btn ghost" data-px="so">문장 순서 맞추기</button>'+(O.travel?'<button class="btn ghost" data-px="sp">그림 순서 맞추기</button>':'')+'</div></section>';
+  return h}
+function startStory(k){var O=stObj();if(k==='sq')PS={k:k,i:0,ok:0,pick:null,q:O.q.map(function(x){return {t:x[0],o:x[1],a:x[2]}})};else{var idx=O.s.map(function(x,i){return i});if(k==='sp'){var seen={};idx=idx.filter(function(i){var c=O.s[i][3];if(!c||seen[c])return false;seen[c]=1;return true})}PS={k:k,n:idx.length,pool:shuffle(idx),got:[],miss:0,bad:null,order:idx}}touch();render();window.scrollTo(0,0)}
+/* ---------- 여행 도구 ---------- */
+var CD=[['ホットコーヒー','따뜻한 커피',0,0],['アイスコーヒー','아이스커피',1,0],['ホットカフェラテ','따뜻한 카페라테',0,1],['アイスカフェラテ','아이스 카페라테',1,1],['アイス{抹茶|まっちゃ}ラテ','아이스 말차 라테',1,1],['タピオカミルクティー','버블티',1,1],['ホットティー','따뜻한 홍차',0,1],['オレンジジュース','오렌지 주스',1,0]];
+var CS=[['エス','S'],['エム','M'],['エル','L']],CN=[['{一|ひと}つ','한 잔'],['{二|ふた}つ','두 잔'],['{三|みっ}つ','세 잔'],['{四|よっ}つ','네 잔']],
+ CI=[['','얼음 보통'],['{氷|こおり}{少|すく}なめ','얼음 적게'],['{氷|こおり}{多|おお}め','얼음 많이'],['{氷|こおり}なし','얼음 없이']],CW=[['','당도 보통'],['{甘|あま}さ{少|すく}なめ','당도 적게'],['{甘|あま}さ{半分|はんぶん}','당도 절반'],['{甘|あま}さなし','당도 없이']],CPL=[['{店内|てんない}で','매장에서'],['{持|も}ち{帰|かえ}りで','포장']];
+function cafeSent(){var c=PL.cafe,d=CD[c.d],opts=[];if(d[2]&&c.i)opts.push(CI[c.i][0]);if(d[3]&&c.w)opts.push(CW[c.w][0]);
+  var jp=CPL[c.p][0]+'、'+d[0]+'の'+CS[c.s][0]+'サイズを'+CN[c.n][0]+'ください。'+(opts.length?opts.join('、')+'でお{願|ねが}いします。':'');
+  var ko=CPL[c.p][1]+', '+d[1]+' '+CS[c.s][1]+' 사이즈 '+CN[c.n][1]+' 주세요.'+(opts.length?' '+[d[2]&&c.i?CI[c.i][1]:'',d[3]&&c.w?CW[c.w][1]:''].filter(Boolean).join(', ')+'(으)로 부탁합니다.':'');return [jp,ko]}
+function vTool(){sessFor('tool');var h=head()+playBar()+chipRow('tt',[['cafe','카페 주문'],['num','숫자 · 가격'],['time','시각'],['ctr','조수사'],['qa','질문 듣고 답하기']],PL.ttab,'여행 도구'),s=PS;
+  if(s&&(s.k==='nq'||s.k==='tq'||s.k==='cq')){if(s.i>=s.q.length)return h+qEnd(s,s.k);var q=s.q[s.i];
+    var top=s.k==='nq'?'<div class="row" style="justify-content:center"><button class="btn" data-say="'+esc(q.say)+'">🔊 다시 듣기</button></div><p class="meta" style="text-align:center">들은 금액을 고르십시오</p>':s.k==='tq'?'<div class="card pq">'+clock(q.h,q.m)+'<p class="q">몇 시입니까?</p></div>':'<div class="card pq"><div class="cicons">'+Array(q.n+1).join(pic(PC[q.c].ic,'xs'))+'</div><p class="q jp">'+q.n+PC[q.c].c+' <small class="meta">'+esc(PC[q.c].n)+'</small></p></div>';
+    return h+qHead(s)+top+(s.pick!=null&&s.k==='nq'?'<p class="jp pans" style="text-align:center">'+esc(q.say)+'</p>':'')+'<div class="two">'+q.o.map(function(o,j){return '<button class="opt jp pbig'+optCls(s,j,q.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+esc(o)+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(s&&s.k==='qa'){if(s.i>=s.q.length)return h+qEnd(s,'qa');var Q=PQ[PL.qa],q2=s.q[s.i],x=Q.q[q2.q];
+    return h+qHead(s)+'<div class="card pq" style="min-height:0">'+pic(Q.ic,'sm')+'<button class="btn" data-say="'+esc(kanaOf(x[0]))+'">🔊 질문 다시 듣기</button>'+(s.pick!=null||s.show?'<p class="jp q">'+ruby(x[0])+'</p><p class="meta">'+esc(x[1])+'</p>':'<button class="btn ghost sm" data-pshowq="1">질문 글자 보기</button>')+'</div><p class="meta">알맞은 대답을 고르십시오</p><div class="opts">'+q2.o.map(function(o,j){var y=Q.q[o];return '<button class="opt jp'+optCls(s,j,q2.a)+'" data-pa="'+j+'"'+(s.pick!=null?' disabled':'')+'>'+ruby(y[2])+(s.pick!=null?' <small class="meta">'+esc(y[3])+'</small>':'')+'</button>'}).join('')+'</div>'+nextBtn(s)+'<button class="back" data-px="end">그만하기</button>'}
+  if(PL.ttab==='cafe'){var c=PL.cafe,d=CD[c.d],sn=cafeSent();
+    h+='<p class="note">고르면 주문 문장이 만들어집니다. "크게 보여 주기"로 점원에게 화면을 그대로 보여 줄 수 있습니다.</p>';
+    h+='<div class="cform"><div><b>음료</b>'+chipRow('pcd',CD.map(function(x,i){return [i,x[1]]}),c.d)+'</div><div><b>크기</b>'+chipRow('pcs',CS.map(function(x,i){return [i,x[1]]}),c.s)+'</div><div><b>수량</b>'+chipRow('pcn',CN.map(function(x,i){return [i,x[1]]}),c.n)+'</div>'+(d[2]?'<div><b>얼음</b>'+chipRow('pci',CI.map(function(x,i){return [i,x[1]]}),c.i)+'</div>':'')+(d[3]?'<div><b>당도</b>'+chipRow('pcw',CW.map(function(x,i){return [i,x[1]]}),c.w)+'</div>':'')+'<div><b>먹는 곳</b>'+chipRow('pcp',CPL.map(function(x,i){return [i,x[1]]}),c.p)+'</div></div>';
+    h+='<div class="card order" style="min-height:0">'+pic(d[2]?'アイスコーヒー':'コーヒー','sm')+'<p class="jp ordj">'+ruby(sn[0])+'</p><p class="meta">'+esc(sn[1])+'</p><div class="row" style="justify-content:center">'+spk(kanaOf(sn[0]),'주문 문장 듣기')+'<button class="btn" data-pbig="1">크게 보여 주기</button></div></div>';
+    h+='<section class="sec"><h3>주문할 때 자주 듣는 말</h3><div class="wtab">'+[['ご{注文|ちゅうもん}はお{決|き}まりですか。','주문하시겠어요?'],['{店内|てんない}でお{召|め}し{上|あ}がりですか。','매장에서 드세요?'],['サイズはいかがなさいますか。','사이즈는 어떻게 하시겠어요?'],['{番号|ばんごう}でお{呼|よ}びします。','번호로 불러 드릴게요.']].map(function(x){return '<div class="wrow two-c"><b class="jp">'+ruby(x[0])+'</b><span>'+esc(x[1])+'</span>'+spk(kanaOf(x[0]))+'</div>'}).join('')+'</div></section>';return h}
+  if(PL.ttab==='num'){var seg=numSeg(PL.num);h+='<div class="sec"><label class="meta" for="pnum">숫자를 넣으면 단위별로 나눠 읽어 줍니다</label><input id="pnum" class="finp" type="text" inputmode="numeric" value="'+PL.num+'" autocomplete="off"></div><div id="pnout">'+numOut(seg)+'</div><div class="row"><button class="btn ghost sm" data-pnr="1">무작위 숫자</button><button class="btn ghost sm" data-pnr="2">무작위 가격</button></div>';
+    h+='<div class="note">소리가 바뀌는 곳: 300 さんびゃく · 600 ろっぴゃく · 800 はっぴゃく · 3000 さんぜん · 8000 はっせん · 1000만 いっせんまん. 4는 よん, 7은 なな, 9는 きゅう로 읽습니다.</div><button class="btn" data-px="nq">가격 듣기 문제 (10문제)</button>';return h}
+  if(PL.ttab==='time'){var t=PL.clk;h+='<div class="card pq">'+clock(t[0],t[1])+'<p class="jp q">'+(PL.cshow?esc(timeRead(t[0],t[1]))+(t[1]===30?' <small class="meta">(또는 '+HR[t[0]]+'はん)</small>':''):'몇 시일까요?')+'</p><div class="row" style="justify-content:center"><button class="btn ghost sm" data-pclk="show">'+(PL.cshow?'숨기기':'읽기 보기')+'</button>'+spk(timeRead(t[0],t[1]))+'<button class="btn ghost sm" data-pclk="new">다른 시각</button></div></div>';
+    h+='<div class="wtab">'+[1,2,3,4,5,6,7,8,9,10,15,20,30,45].map(function(m){return '<div class="wrow"><b>'+m+'분</b><span class="jp">'+esc(minRead(m))+'</span>'+spk(minRead(m))+'</div>'}).join('')+'</div><button class="btn" data-px="tq">시각 읽기 문제 (10문제)</button>';return h}
+  if(PL.ttab==='ctr'){var C=PC[PL.ctr];h+=chipRow('pctr',PC.map(function(x,i){return [i,x.c+' '+x.n.replace(/\s*\(.*\)/,'')]}),PL.ctr,'조수사')+'<p class="meta">'+esc(C.n)+' — 붉은 글자는 소리가 바뀌는 곳입니다.</p><div class="ctrg">'+C.r.map(function(r,i){var reg=C.b?DG[i+1]+C.b:'',odd=!C.b||(i===9?r!=='じゅう'+C.b:r!==reg);return '<button class="ctr'+(odd?' odd':'')+'" data-say="'+esc(r)+'"><span class="cicons">'+Array(Math.min(i+1,10)+1).join(pic(C.ic,'xs'))+'</span><b>'+(i+1)+C.c+'</b><span class="jp">'+esc(r)+'</span></button>'}).join('')+'</div><button class="btn" data-px="cq">조수사 문제 (10문제)</button>';return h}
+  if(PL.ttab==='qa'){var Q2=PQ[PL.qa];h+=chipRow('pqa',PQ.map(function(x,i){return [i,x.n]}),PL.qa,'상황')+'<p class="note">점원 · 기사 · 직원이 하는 질문을 소리로 듣고 알맞은 대답을 고릅니다. 실제처럼 글자를 가리고 시작합니다.</p><button class="btn" data-px="qa">'+esc(Q2.n)+' 질문 듣기 시작</button><div class="wtab">'+Q2.q.map(function(x){return '<div class="wrow qa"><div><p class="jp">Q. '+ruby(x[0])+'</p><p class="meta">'+esc(x[1])+'</p><p class="jp">A. '+ruby(x[2])+'</p><p class="meta">'+esc(x[3])+'</p></div>'+spk(kanaOf(x[0]))+'</div>'}).join('')+'</div>';return h}
+  return h}
+function numOut(seg){return '<div class="nseg">'+seg.map(function(x,i){return '<div class="ns s'+i+'"><b>'+Number(x.d).toLocaleString()+'</b><small>'+esc(x.u||'')+'</small><span class="jp">'+esc(x.r)+'</span></div>'}).join('')+'</div><div class="row" style="justify-content:center"><span class="jp q">'+esc(numRead(PL.num))+'</span>'+spk(numRead(PL.num),'숫자 듣기')+'</div>'}
+function price(){var b=anyOf([[100,990,10],[1000,9990,10],[10000,99000,100]]);return b[0]+rnd((b[1]-b[0])/b[2]+1)*b[2]}
+function priceWrong(p){var o={},s=String(p);function add(x){if(x>0&&x!==p)o[x]=1}add(p+anyOf([10,100,1000].filter(function(d){return d<p})));add(Math.abs(p-anyOf([10,100].filter(function(d){return d<p}))));
+  var sw=s.split('');if(sw.length>2){var t=sw[0];sw[0]=sw[1];sw[1]=t;add(+sw.join(''))}add(+s.replace(/3/,'8'));add(+s.replace(/6/,'8'));add(+s.replace(/8/,'6'));add(p*10<100000?p*10:Math.floor(p/10));return shuffle(Object.keys(o).map(Number)).slice(0,3)}
+function startTool(k){var n=10,q=[];
+  if(k==='nq'){for(var i=0;i<n;i++){var p=price(),o=shuffle([p].concat(priceWrong(p)));q.push({say:numRead(p)+'えんです',o:o.map(function(x){return '¥'+x.toLocaleString()}),a:o.indexOf(p)})}}
+  if(k==='tq'){for(var j=0;j<n;j++){var hh=1+rnd(12),mm=anyOf([0,5,10,15,20,25,30,35,40,45,50,55,1,3,4,6,8,9]),r=timeRead(hh,mm),o2=shuffle([r].concat(timeWrong(hh,mm)));q.push({h:hh,m:mm,o:o2,a:o2.indexOf(r)})}}
+  if(k==='cq'){for(var l=0;l<n;l++){var ci=rnd(PC.length),nn=1+rnd(10),r2=PC[ci].r[nn-1],o3=[r2],cand=confuse(r2,4);if(PC[ci].b&&DG[nn]+PC[ci].b!==r2)cand.unshift(DG[nn]+PC[ci].b);cand.forEach(function(x){if(o3.length<4&&o3.indexOf(x)<0)o3.push(x)});o3=shuffle(o3);q.push({c:ci,n:nn,o:o3,a:o3.indexOf(r2),say:r2})}}
+  if(k==='qa'){var Q=PQ[PL.qa];q=shuffle(Q.q.map(function(x,i){return i})).map(function(qi){var o4=shuffle([qi].concat(shuffle(Q.q.map(function(x,i){return i}).filter(function(i){return i!==qi})).slice(0,2)));return {q:qi,o:o4,a:o4.indexOf(qi)}})}
+  PS={k:k,i:0,ok:0,pick:null,q:q};touch();render();window.scrollTo(0,0);if(k==='nq')say(q[0].say);if(k==='qa')say(kanaOf(PQ[PL.qa].q[q[0].q][0]))}
+/* ---------- 장면 찾기 ---------- */
+function vScene(){sessFor('scene');var Sc=PSC[PL.sc],s=PS,h=head()+playBar()+chipRow('psc',PSC.map(function(x,i){return [i,x.k]}),PL.sc,'장면')+chipRow('psm',[['look','둘러보기'],['find','찾기 놀이']],s&&s.k==='sf'?'find':PL.smode);
+  var tgt=s&&s.k==='sf'&&s.i<s.q.length?Sc.it[s.q[s.i]]:null;
+  if(s&&s.k==='sf'){if(s.i>=s.q.length)h+='<div class="card" style="min-height:0"><div class="stamp jp">済</div><p class="q">'+s.q.length+'개를 모두 찾았습니다 · 틀림 '+s.miss+'</p><button class="btn" data-px="sf">다시 하기</button></div>';
+    else h+='<div class="sfq"><span>찾으세요:</span><b class="jp">'+wr(tgt[0],tgt[1])+'</b>'+spk(tgt[1])+'<small class="meta">'+(s.i+1)+' / '+s.q.length+' · 틀림 '+s.miss+'</small></div>'}
+  else h+='<p class="meta">그림 속 물건을 누르면 이름과 소리가 나옵니다.</p>';
+  h+='<div class="scene"><svg viewBox="0 0 300 210" class="pico scn" role="img" aria-label="'+esc(Sc.k)+'">'+zL(0,98,300,98,'thin')+zL(0,206,300,206,'thin')+Sc.it.map(function(x,i){var on=PL.sfound===i||(s&&s.k==='sf'&&s.got&&s.got.indexOf(i)>=0),bad=s&&s.bad===i;return '<g class="sit'+(on?' on':'')+(bad?' bad':'')+'" data-sc="'+i+'" transform="translate('+x[4]+' '+x[5]+') scale('+x[6]+')" tabindex="0" role="button" aria-label="'+esc(x[2])+'"><rect x="0" y="0" width="100" height="100" class="hit"/>'+IC[x[3]]+'</g>'}).join('')+'</svg></div>';
+  if(PL.sfound!=null&&!(s&&s.k==='sf')){var f=Sc.it[PL.sfound];h+='<div class="sfq"><b class="jp">'+wr(f[0],f[1])+'</b><span class="pkr">'+esc(k2h(f[1]))+'</span><span>'+esc(f[2])+'</span>'+spk(f[1])+'</div>'}
+  h+='<div class="wtab">'+Sc.it.map(function(x){return '<div class="wrow"><b class="jp">'+wr(x[0],x[1])+'</b><span>'+esc(x[2])+'</span>'+spk(x[1])+'</div>'}).join('')+'</div>';return h}
+/* ---------- 한자 가족 ---------- */
+var FAM=null;
+function famBuild(){if(FAM)return FAM;var words=[],seen={};function add(w,r,m){if(!hasKan(w)||seen[w])return;seen[w]=1;words.push([w,r,m])}
+  wIndex().forEach(function(x){add(x[0],x[1],x[2])});PT.forEach(function(t){t.w.forEach(function(x){add(x[0],x[1],x[2])})});PV.forEach(function(v){add(v[0],v[1],v[3])});Object.keys(GS).forEach(function(l){GS[l].forEach(function(G){G.w.forEach(function(x){if(!/〜/.test(x[0]))add(x[0],x[1],x[2])})})});
+  var by={};words.forEach(function(x){kanjiOf(x[0]).forEach(function(c){(by[c]=by[c]||[]).push(x)})});
+  var ks=Object.keys(by).filter(function(c){return by[c].length>=3}).sort(function(a,b){return by[b].length-by[a].length});FAM={by:by,ks:ks};return FAM}
+function vFam(){var F=famBuild(),h=head()+playBar();
+  if(!PL.fam){h+='<p class="note">한자 하나가 들어간 일본어 낱말을 가지처럼 펼쳐 봅니다. 한국 한자어와 소리가 비슷해서(電話 → 전화) 이미 아는 한자어로 일본어 낱말을 쉽게 늘릴 수 있습니다.</p><div class="fgrid">'+F.ks.slice(0,90).map(function(c){return '<button class="fk" data-pf="'+c+'"><b class="jp">'+c+'</b><small>'+esc((hunOf(c)||'').split(' ').slice(-1)[0]||'')+' · '+F.by[c].length+'</small></button>'}).join('')+'</div>';return h}
+  var c=PL.fam,ws=F.by[c]||[],ring=ws.slice(0,8),rest=ws.slice(8),n=ring.length,k=KJ[c];
+  h+='<button class="back" data-pf="">← 한자 목록</button><div class="fam"><svg class="flines" viewBox="0 0 100 100" preserveAspectRatio="none">'+ring.map(function(x,i){var a=-Math.PI/2+i*2*Math.PI/n;return '<line x1="50" y1="50" x2="'+(50+36*Math.cos(a)).toFixed(1)+'" y2="'+(50+36*Math.sin(a)).toFixed(1)+'"/>'}).join('')+'</svg><div class="fcen"><span class="jp">'+(k?esc(k[1].split('・')[0].replace(/[ァ-ヶ]/g,function(q){return String.fromCharCode(q.charCodeAt(0)-0x60)})):'')+'</span><b class="jp">'+c+'</b><small>'+esc(hunOf(c))+'</small></div>'+ring.map(function(x,i){var a=-Math.PI/2+i*2*Math.PI/n,kr=korOf(x[0]);return '<button class="fnode" style="left:'+(50+36*Math.cos(a)).toFixed(1)+'%;top:'+(50+36*Math.sin(a)).toFixed(1)+'%" data-say="'+esc(x[1])+'"><span class="jp fr">'+esc(x[1])+'</span><b class="jp">'+esc(x[0])+'</b><span>'+esc(x[2].split(',')[0])+'</span>'+(kr?'<small>'+kr+'</small>':'')+'</button>'}).join('')+'</div>';
+  if(k)h+='<p class="note"><b class="jp">'+c+'</b> '+esc(k[0])+' · 음독 '+esc(k[1]||'—')+' · 훈독 '+esc(k[2]||'—')+' <button class="btn ghost sm" data-kj="'+c+'">획순 보기</button></p>';
+  h+='<div class="wtab">'+ws.map(function(x){var kr=korOf(x[0]);return '<div class="wrow"><b class="jp">'+wr(x[0],x[1])+'</b><span>'+esc(x[2])+(kr?' <small class="meta">('+kr+')</small>':'')+'</span>'+spk(x[1])+'</div>'}).join('')+'</div>';return h}
+/* ---------- 누르기 (그림 · 이야기) ---------- */
+function ans(j){var s=PS,q=s.q[s.i];if(s.pick!=null)return;s.pick=j;tick();if(j===q.a)s.ok++;
+  if(s.k==='pq'){var T=topic();say(T.w[q.w][1])}else if(s.k==='pl'||s.k==='vl'){}else if(s.k==='vq')say(PV[q.v][1]);else if(s.k==='pp'){var P=PP[q.p];say(kanaOf(q.side==='t'?P.ts:P.is))}else if(s.k==='cj')say(conj(PV[q.v],q.f)[1]);else if(s.k==='tq')say(timeRead(q.h,q.m));else if(s.k==='cq')say(q.say);else if(s.k==='qa'){var x=PQ[PL.qa].q[q.o[j]];say(kanaOf(x[2]))}
+  render()}
+function nextQ(){var s=PS;s.i++;s.pick=null;s.show=false;render();window.scrollTo(0,0);var q=s.q[s.i];if(!q)return;
+  if(s.k==='pl')say(topic().w[q.w][1]);if(s.k==='vl')say(PV[q.v][1]);if(s.k==='nq')say(q.say);if(s.k==='qa')say(kanaOf(PQ[PL.qa].q[q.q][0]))}
+document.addEventListener('click',function(e){
+  var g=e.target.closest&&e.target.closest('[data-sc]');
+  if(g&&view==='scene'){var i=+g.getAttribute('data-sc'),Sc=PSC[PL.sc],s=PS;
+    if(s&&s.k==='sf'){if(s.i>=s.q.length)return;if(i===s.q[s.i]){s.got.push(i);s.bad=null;tick();s.i++;render();if(s.i<s.q.length){var nx=Sc.it[s.q[s.i]];setTimeout(function(){say(nx[1])},500)}}else{s.miss++;s.bad=i;render()}return}
+    PL.sfound=i;say(Sc.it[i][1]);render();return}
+  if(e.target.closest&&e.target.closest('.pshow')){var ov=document.querySelector('.pshow');if(ov)ov.remove();return}
+  var t=e.target.closest('button');if(!t)return;var d=t.dataset,hit=true;
+  if(d.go&&isPlay(d.go)){PS=null;PL.sfound=null;if(d.go===view){if(view==='pic')PL.topic=null;if(view==='story')PL.st=null;if(view==='fam')PL.fam=null;if(view==='verb')PL.cv=null;render();window.scrollTo(0,0);e.stopImmediatePropagation();return}return}
+  if(!isPlay(view))return;
+  if(d.pt!=null){PL.topic=d.pt||null;PL.pmode='list';PS=null;render();window.scrollTo(0,0)}
+  else if(d.pm){PL.pmode=d.pm;PS=null;render()}
+  else if(d.pw!=null){var x=topic().w[+d.pw];say(x[1])}
+  else if(d.px){var k=d.px;if(k==='end'){PS=null;render();window.scrollTo(0,0)}else if(k==='next')nextQ();else if(k==='pq'||k==='pl')startPic(k);else if(['vq','vl','pp','lk','cj'].indexOf(k)>=0)startVerb(k);else if(['sq','so','sp'].indexOf(k)>=0)startStory(k);else if(['nq','tq','cq','qa'].indexOf(k)>=0)startTool(k);else if(k==='sf'){var n=PSC[PL.sc].it.length;PS={k:'sf',i:0,q:shuffle(PSC[PL.sc].it.map(function(x,i){return i})).slice(0,Math.min(8,n)),got:[],miss:0,bad:null};PSV='scene';touch();render();say(PSC[PL.sc].it[PS.q[0]][1])}}
+  else if(d.pa!=null)ans(+d.pa);
+  else if(d.vt){PL.vtab=d.vt;PL.cv=null;PS=null;render()}
+  else if(d.pcv!=null){PL.cv=+d.pcv<0?null:+d.pcv;render();if(PL.cv!=null){var el=document.querySelector('.ctab.pop');if(el)el.scrollIntoView({block:'nearest'});say(PV[PL.cv][1])}}
+  else if(d.pn1!=null){var q1=PS.q[PS.i];q1.np=+d.pn1;q1.nok=q1.no[q1.np]===q1.k||plain(PK[q1.no[q1.np]][0])===plain(PK[q1.k][0]);tick();render()}
+  else if(d.pn2!=null){var q2=PS.q[PS.i];q2.vp=+d.pn2;q2.vok=q2.vo[q2.vp]===q2.k||plain(PK[q2.vo[q2.vp]][1])===plain(PK[q2.k][1]);if(q2.nok&&q2.vok)PS.ok++;tick();render();var K=PK[q2.k];say(kanaOf(K[0])+'を'+kanaOf(K[1]))}
+  else if(d.stab){PL.stab=d.stab;render()}
+  else if(d.glv){PL.glv=d.glv;render()}
+  else if(d.tlv){PL.tlv=d.tlv;render()}
+  else if(d.pst!=null){PL.st=d.pst||null;PS=null;try{speechSynthesis.cancel()}catch(x){}render();window.scrollTo(0,0)}
+  else if(d.pko){PL.ko=!PL.ko;render()}
+  else if(d.pall){var O=stObj();playAll(O.s.map(function(x){return x[0]}))}
+  else if(d.pord!=null){var s=PS,i=+d.pord,want=s.order[s.got.length];if(i===want){s.got.push(i);s.bad=null;tick();if(s.got.length===s.n){var O2=stObj();playAll(s.order.map(function(k){return O2.s[k][0]}))}}else{s.miss++;s.bad=i}render()}
+  else if(d.tt){PL.ttab=d.tt;PS=null;render()}
+  else if(d.pcd!=null){PL.cafe.d=+d.pcd;render()}else if(d.pcs!=null){PL.cafe.s=+d.pcs;render()}else if(d.pcn!=null){PL.cafe.n=+d.pcn;render()}else if(d.pci!=null){PL.cafe.i=+d.pci;render()}else if(d.pcw!=null){PL.cafe.w=+d.pcw;render()}else if(d.pcp!=null){PL.cafe.p=+d.pcp;render()}
+  else if(d.pbig){var sn=cafeSent(),dv=document.createElement('div');dv.className='showcard pshow';dv.innerHTML='<p class="jp" style="font-size:30px;line-height:1.9;text-align:center;max-width:820px">'+ruby(sn[0])+'</p><small>'+esc(sn[1])+'</small><em>화면을 누르면 닫힙니다</em>';document.body.appendChild(dv);say(kanaOf(sn[0]))}
+  else if(d.pnr){PL.num=d.pnr==='1'?1+rnd(999999999):price();render()}
+  else if(d.pclk){if(d.pclk==='show')PL.cshow=!PL.cshow;else{PL.clk=[1+rnd(12),rnd(12)*5];PL.cshow=false}render()}
+  else if(d.pctr!=null){PL.ctr=+d.pctr;render()}
+  else if(d.pqa!=null){PL.qa=+d.pqa;PS=null;render()}
+  else if(d.pshowq){PS.show=true;render()}
+  else if(d.psc!=null){PL.sc=+d.psc;PL.sfound=null;PS=null;render()}
+  else if(d.psm){PL.smode=d.psm;PL.sfound=null;if(d.psm==='find'){var n2=PSC[PL.sc].it.length;PS={k:'sf',i:0,q:shuffle(PSC[PL.sc].it.map(function(x,i){return i})).slice(0,Math.min(8,n2)),got:[],miss:0,bad:null};PSV='scene';touch();render();say(PSC[PL.sc].it[PS.q[0]][1])}else{PS=null;render()}}
+  else if(d.pf!=null){PL.fam=d.pf||null;render();window.scrollTo(0,0)}
+  else hit=false;
+  if(hit)e.stopImmediatePropagation()});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.getAttribute&&e.target.getAttribute('data-sc')!=null){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}))}});
+document.addEventListener('input',function(e){var t=e.target;if(t&&t.id==='pnum'){var v=+String(t.value).replace(/[^0-9]/g,'');if(!isNaN(v)){PL.num=v;var o=document.getElementById('pnout');if(o)o.innerHTML=numOut(numSeg(v))}}});
+
 /* ---------- 누르기 ---------- */
 document.addEventListener('click',function(e){
   var t=e.target.closest('button');
@@ -886,7 +1786,7 @@ document.addEventListener('pointermove',function(e){if(!ink)return;var sv=ink.ow
 ['pointerup','pointercancel'].forEach(function(n){document.addEventListener(n,function(){ink=null})});
 document.addEventListener('input',function(e){var t=e.target;if(t&&t.id==='fq'){fq=t.value;var r=document.getElementById('fres');if(r)r.innerHTML=findRes(fq)}});
 document.addEventListener('change',function(e){var t=e.target;if(t&&t.dataset&&t.dataset.fcsel){S.fc[t.dataset.fcsel]=+t.value;save();render()}});
-function fromHash(){var h=(location.hash||'').slice(1),m=h.match(/^(n[45])-(\d+)$/);if(m&&LV[m[1].toUpperCase()][+m[2]-1]){view='day';arg=m[1].toUpperCase()+'-'+(+m[2])}else if(['home','jp','talk','hanja','find','kana','kanji','review','options','travel'].indexOf(h)>=0){view=h}render()}
+function fromHash(){var h=(location.hash||'').slice(1),m=h.match(/^(n[45])-(\d+)$/);if(m&&LV[m[1].toUpperCase()][+m[2]-1]){view='day';arg=m[1].toUpperCase()+'-'+(+m[2])}else if(['home','jp','talk','hanja','find','kana','kanji','review','options','travel','pic','verb','story','tool','scene','fam'].indexOf(h)>=0){view=h}render()}
 window.addEventListener('hashchange',function(){var h=(location.hash||'').slice(1),cur=view==='day'?String(arg).toLowerCase():view;if(h===cur)return;sess=null;fromHash();window.scrollTo(0,0)});
 fromHash();
 })();
