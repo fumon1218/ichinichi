@@ -1,0 +1,55 @@
+name: 안드로이드 APK
+on:
+  push:
+    branches: [main]
+    paths: ['index.html','app-android/**','.github/workflows/android.yml','icon-512.png']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: apk
+  cancel-in-progress: true
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 21 }
+      - name: 앱 껍데기 만들기 (Capacitor 8)
+        run: |
+          pip install --quiet pillow
+          mkdir -p build/www && cd build
+          npm init -y > /dev/null
+          npm i --no-audit --no-fund @capacitor/core@8 @capacitor/cli@8 @capacitor/android@8 @capacitor-community/text-to-speech@8
+          cp ../index.html ../manifest.webmanifest ../icon-192.png ../icon-512.png www/
+          python3 ../app-android/prepare.py www/index.html ../app-android/native.js
+          npx cap init "이찌니찌" kr.okssam.ichinichi --web-dir www
+          npx cap add android
+          npx cap sync android
+          python3 ../app-android/android_fix.py android ${{ github.run_number }}
+      - name: 서명 키 (매번 같은 키라 새 버전을 덮어 설치할 수 있음)
+        env:
+          KS: ${{ secrets.APK_KEYSTORE_B64 }}
+        run: |
+          mkdir -p ~/.android
+          if [ -n "$KS" ]; then echo "$KS" | base64 -d > ~/.android/debug.keystore; else cp app-android/sideload.keystore ~/.android/debug.keystore; fi
+      - name: APK 만들기
+        run: |
+          cd build/android && chmod +x gradlew && ./gradlew assembleDebug --no-daemon -q
+          cp app/build/outputs/apk/debug/app-debug.apk ../../ichinichi.apk
+          ls -la ../../ichinichi.apk
+      - name: 내려받기 주소에 올리기
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: apk
+          name: 이찌니찌 안드로이드 앱 (최신)
+          make_latest: true
+          overwrite_files: true
+          files: ichinichi.apk
+          body: |
+            이찌니찌 안드로이드 앱입니다. 아래 ichinichi.apk 를 휴대폰·태블릿에서 내려받아 설치하세요.
+            처음 설치할 때 "출처를 알 수 없는 앱 설치"를 허용해야 합니다. 새 버전은 같은 방법으로 덮어 설치하면 학습 기록이 그대로 남습니다.
+            빌드 번호 ${{ github.run_number }} · 커밋 ${{ github.sha }}
